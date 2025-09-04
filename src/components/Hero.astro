@@ -1,0 +1,56 @@
+---
+import SocialProof from './SocialProof.astro';
+import patternUrl from '../assets/hero-pattern-bg.svg?url';
+---
+
+<section class="min-h-screen flex items-center pt-20 relative overflow-hidden" style={`background-image: url(${patternUrl}); background-size: cover; background-position: center; background-repeat: no-repeat;`}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <!-- Left Column - Content -->
+      <div class="space-y-8">
+        <!-- Main Heading -->
+        <h1 class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold uppercase leading-none">
+          <span class="block text-primary animate-fade-up animation-delay-100">Individual</span>
+          <span class="block text-primary animate-fade-up animation-delay-200">Software</span>
+          <span class="block text-primary animate-fade-up">Und</span>
+          <span class="block text-primary animate-fade-up">Websites</span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="uppercase text-xl md:text-2xl text-mosaic-dark font-light animate-fade-up animation-delay-300">
+          Innovativ. Präzise. Zeitlos.
+        </p>
+
+        <!-- Description -->
+        <p class="text-mosaic-gray max-w-lg animate-fade-up animation-delay-400">
+          Unsere hochwertigen digitalen Lösungen sind darauf ausgerichtet, Technologie und Strategie
+          aufeinander abzustimmen, um messbare Ergebnisse und nachhaltiges Wachstum zu
+          gewährleisten.
+        </p>
+
+        <!-- Social Proof -->
+        <SocialProof/>
+      </div>
+
+      <!-- Right Column - Visual -->
+      <div class="relative h-[600px] hidden lg:block">
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes flow {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    33% {
+      transform: translateX(30px) translateY(-30px);
+    }
+    66% {
+      transform: translateX(-20px) translateY(20px);
+    }
+  }
+</style>

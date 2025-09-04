@@ -1,0 +1,93 @@
+---
+
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/"
+           class="text-2xl font-bold text-mosaic-dark hover:text-mosaic-primary transition-colors duration-200">
+          Mosaic Software
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#services"
+           class="text-mosaic-gray hover:text-mosaic-dark transition-colors duration-200">Services</a>
+        <a href="#portfolio"
+           class="text-mosaic-gray hover:text-mosaic-dark transition-colors duration-200">Portfolio</a>
+        <a href="#company"
+           class="text-mosaic-gray hover:text-mosaic-dark transition-colors duration-200">Company</a>
+        <a href="#about"
+           class="text-mosaic-gray hover:text-mosaic-dark transition-colors duration-200">About</a>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="hidden md:block">
+        <button
+            class="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
+          Kontakt
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-mosaic-dark">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu"
+       class="fixed top-0 right-0 w-72 h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 md:hidden">
+    <div class="p-6">
+      <button id="close-menu-btn" class="absolute top-6 right-6 text-mosaic-dark">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <div class="mt-12 space-y-6">
+        <a href="#services"
+           class="block text-lg text-mosaic-gray hover:text-mosaic-dark transition-colors">Services</a>
+        <a href="#portfolio"
+           class="block text-lg text-mosaic-gray hover:text-mosaic-dark transition-colors">Portfolio</a>
+        <a href="#company"
+           class="block text-lg text-mosaic-gray hover:text-mosaic-dark transition-colors">Company</a>
+        <a href="#about"
+           class="block text-lg text-mosaic-gray hover:text-mosaic-dark transition-colors">About</a>
+        <button class="w-full bg-primary text-white px-8 py-3 rounded-full font-semibold mt-8">
+          Kontakt
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const closeMenuBtn = document.getElementById('close-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.remove('translate-x-full');
+  });
+
+  closeMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.add('translate-x-full');
+  });
+
+  // Close menu when clicking links
+  const mobileLinks = mobileMenu?.querySelectorAll('a');
+  mobileLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('translate-x-full');
+    });
+  });
+</script>
