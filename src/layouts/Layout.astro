@@ -1,11 +1,28 @@
+---
+import '../styles/global.css'
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Software Zürich - Mosaic Software",
+} = Astro.props;
+---
+
+
+
 <!doctype html>
-<html lang="en">
+<html lang="de">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+    <title>{title}</title>
+    <meta name="description" content={description}/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
 	</head>
 	<body>
 		<slot />
