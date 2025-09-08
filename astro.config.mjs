@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.kita-luftibus.ch',
+  site: 'https://www.mosaic-software.ch',
   vite: {
     plugins: [tailwindcss()],
     css: {
