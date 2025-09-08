@@ -1,0 +1,148 @@
+---
+---
+
+<section id="portfolio" class="relative bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-40">
+    <div class="space-y-24">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 uppercase">Portfolio</h2>
+        <p class="mt-4 text-gray-600 max-w-3xl mx-auto">Ausgewählte Arbeiten. Beim Scrollen stapeln sich die Karten und bleiben am oberen Viewport kleben.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stacking Cards Wrapper -->
+  <div class="relative">
+    <div class="stack">
+      <!-- Card 01 -->
+      <article class="card bg-neutral-900 text-white">
+        <div class="container">
+          <h3 class="text-4xl md:text-5xl font-bold">Corporate websites</h3>
+          <p class="mt-4 text-indigo-100 max-w-2xl">Markenstarke Websites mit Fokus auf Performance und Accessibility.</p>
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="rounded-2xl overflow-hidden shadow-2xl">
+              <img src="https://placehold.co/780x380" alt="Portfolio placeholder" class="w-full h-72 object-cover" />
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-2xl">
+              <img src="https://placehold.co/780x380" alt="Portfolio placeholder" class="w-full h-72 object-cover" />
+            </div>
+          </div>
+          <div class="number">/01</div>
+        </div>
+      </article>
+
+      <!-- Card 02 -->
+      <article class="card bg-indigo-600 text-white">
+        <div class="container">
+          <h3 class="text-4xl md:text-5xl font-bold">Corporate websites</h3>
+          <p class="mt-4 text-indigo-100 max-w-2xl">Markenstarke Websites mit Fokus auf Performance und Accessibility.</p>
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="rounded-2xl overflow-hidden shadow-2xl">
+              <img src="https://placehold.co/780x380" alt="Portfolio placeholder" class="w-full h-72 object-cover" />
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-2xl">
+              <img src="https://placehold.co/780x380" alt="Portfolio placeholder" class="w-full h-72 object-cover" />
+            </div>
+          </div>
+          <div class="number">/02</div>
+        </div>
+      </article>
+
+      <!-- Card 03 -->
+      <article class="card bg-white text-neutral-900">
+        <div class="container">
+          <h3 class="text-4xl md:text-5xl font-bold">eCommerce</h3>
+          <p class="mt-4 text-neutral-600 max-w-2xl">Konversionstarke Shops mit herausragender UX.</p>
+          <div class="mt-8 rounded-2xl overflow-hidden shadow-2xl">
+            <img src="https://placehold.co/780x380" alt="Portfolio placeholder" class="w-full h-80 object-cover" />
+          </div>
+          <div class="number text-neutral-400">/03</div>
+        </div>
+      </article>
+
+      <!-- Card 04 -->
+      <article class="card bg-neutral-900 text-white">
+        <div class="container">
+          <h3 class="text-4xl md:text-5xl font-bold">Brand identity</h3>
+          <p class="mt-4 text-neutral-300 max-w-2xl">Visuelle Systeme, die langfristig tragen.</p>
+          <div class="mt-8 rounded-2xl overflow-hidden shadow-2xl">
+            <img src="https://placehold.co/780x380" alt="Portfolio placeholder" class="w-full h-80 object-cover" />
+          </div>
+          <div class="number">/04</div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <!-- Spacer to allow the last sticky card to scroll past and overlap the previous one -->
+  <div aria-hidden="true" style="height: 60vh"></div>
+</section>
+
+<style>
+  .stack {
+    position: relative;
+  }
+  .card {
+    position: sticky;
+    top: 80px; /* below navbar */
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    z-index: 0;
+    transition: transform 500ms ease, box-shadow 500ms ease, filter 500ms ease;
+    border-radius: 28px;
+  }
+  /* Overlap sooner: reduce spacer so next card arrives earlier while first remains fully visible */
+  .card { margin-bottom: calc(60vh - 80px); }
+  .card + .card { margin-top: -10vh; }
+  .card .container {
+    width: min(1200px, 92%);
+    margin-inline: auto;
+    padding: 56px 0;
+    position: relative;
+  }
+  .card .number {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    font-weight: 800;
+    font-size: clamp(28px, 5vw, 56px);
+    opacity: .3;
+  }
+  /* Depth effect when card is behind */
+  .card.is-behind {
+    transform: scale(.96);
+    filter: saturate(.9) brightness(.98);
+  }
+  .card.is-front {
+    box-shadow: 0 30px 90px rgba(0,0,0,.28);
+  }
+
+  @media (min-width: 1024px) {
+    .card { top: 96px; min-height: calc(100vh - 96px); }
+    /* Desktop: overlap a bit more aggressively */
+    .card { margin-bottom: calc(55vh - 96px); }
+    .card + .card { margin-top: -15vh; }
+  }
+</style>
+
+<script>
+  // Simple IntersectionObserver to toggle depth classes
+  const cards = Array.from(document.querySelectorAll('.stack .card'));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+      if (entry.isIntersecting && entry.intersectionRatio > 0.55) {
+        cards.forEach(c => c.classList.remove('is-front'));
+        el.classList.add('is-front');
+      }
+      // mark cards above as behind for subtle scale
+      const index = cards.indexOf(el);
+      cards.forEach((c, i) => {
+        c.classList.toggle('is-behind', i < index);
+      });
+    });
+  }, { threshold: [0.55] });
+
+  cards.forEach(c => observer.observe(c));
+</script>
