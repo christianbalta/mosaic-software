@@ -5,7 +5,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-40">
     <div class="space-y-24">
       <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-primary uppercase">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-primary">
           Portfolio</h2>
         <p class="mt-4 md:text-lg max-w-3xl mx-auto">Lorem ipsum dolor sit amet, consectetur
           adipisicing elit. Aliquam animi asperiores, culpa cupiditate quaerat quis. Ea esse eveniet
@@ -103,8 +103,8 @@
       </article>
     </div>
   </div>
-  <!-- Spacer to allow the last sticky card to scroll past and overlap the previous one -->
-  <div aria-hidden="true" style="height: 60vh"></div>
+  <!-- Spacer removed to eliminate extra gap after the stack -->
+  <div aria-hidden="true" style="height: 0"></div>
 </section>
 
 <style>
@@ -132,7 +132,7 @@
     content: "";
     position: absolute;
     inset: -2px; /* bleed slightly over the border */
-    background-image: url('../assets/pattern-portfolio-card.svg'); /* default for card 1 */
+    background-image: url('../../assets/pattern-portfolio-card.svg'); /* default for card 1 */
     background-size: cover;
     background-position: center;
     opacity: .1; /* tune visibility */
@@ -143,13 +143,13 @@
 
   /* Per-card pattern images */
   .stack .card:nth-of-type(2)::before {
-    background-image: url('../assets/pattern-portfolio-card-02.svg');
+    background-image: url('../../assets/pattern-portfolio-card-02.svg');
   }
   .stack .card:nth-of-type(3)::before {
-    background-image: url('../assets/pattern-portfolio-card-03.svg');
+    background-image: url('../../assets/pattern-portfolio-card-03.svg');
   }
   .stack .card:nth-of-type(4)::before {
-    background-image: url('../assets/pattern-portfolio-card-04.svg');
+    background-image: url('../../assets/pattern-portfolio-card-04.svg');
   }
 
   /* ensure content sits above overlay */
@@ -168,6 +168,11 @@
 
   .card + .card {
     margin-top: -10vh;
+  }
+
+  /* Remove gap after the last sticky card */
+  .stack .card:last-of-type {
+    margin-bottom: 0;
   }
 
   .card .number {
@@ -202,6 +207,11 @@
 
     .card + .card {
       margin-top: -15vh;
+    }
+
+    /* Remove gap after the last sticky card on desktop */
+    .stack .card:last-of-type {
+      margin-bottom: 0;
     }
   }
 </style>
