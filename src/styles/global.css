@@ -2,11 +2,12 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-primary: #b89d81;
-  --color-primary-dark: #a1886f;
-  --color-primary-light: #cbb79e;
-  --color-dark-bg: #534d4c;
-  --color-darker-bg: #4c4741;
+  --color-dark-brown: #2e221c;
+  --color-desert-rock: #A48D78;
+  --color-soft-sandstone: #CBB9A4;
+  --color-creamed-oat: #E6DAC8;
+  --color-porcelain-mist: #F4F1EA;
+  --color-feather-white: #FAF9F6;
 }
 
 @layer base {
@@ -15,7 +16,8 @@
   }
 
   body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-feather-white);
   }
 }
 

@@ -1,192 +1,251 @@
 ---
+import {Image} from 'astro:assets';
+
+import agebetter from '../../assets/Agebetter-Mockup.png';
+import bioshield from '../../assets/Bioshield-Mockup.png';
+import kitaLuftibus from '../../assets/Kita-Luftibus-Mockup.png';
+import fretz from '../../assets/Fretz-Gartenpflege-Mockup.png';
 ---
 
-<section id="portfolio" class="relative bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-40">
-    <div class="space-y-24">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-primary">
-          Portfolio</h2>
-        <p class="mt-4 md:text-lg max-w-3xl mx-auto">Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Aliquam animi asperiores, culpa cupiditate quaerat quis. Ea esse eveniet
-          fuga fugiat inventore quod.</p>
-      </div>
+<section id="portfolio" class="relative py-24 lg:py-40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-desert-rock">
+        Portfolio</h2>
+      <p class="mt-4 md:text-lg max-w-3xl mx-auto">A selection of our recent work and product
+        collaborations.</p>
     </div>
   </div>
 
-  <!-- Stacking Cards Wrapper -->
+  <!-- Stacking Cards Wrapper using the new card design -->
   <div class="relative">
     <div class="stack">
       <!-- Card 01 -->
-      <article class="card bg-dark-bg text-primary">
-        <div class="container">
-          <h3 class="text-4xl md:text-5xl font-bold">Agebetter GmbH</h3>
-          <p class="mt-4 text-indigo-100 max-w-2xl">Entwicklung der digitalen Plattform Agebetter –
-            einer innovativen Lösung, die Familien dabei unterstützt, schnell und unkompliziert den
-            passenden Pflegedienst für ihre Angehörigen zu finden und zu vergleichen.</p>
-          <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="overflow-hidden shadow-2xl">
-              <img src="https://placehold.co/580x280" alt="Portfolio placeholder"
-                   class="w-full h-72 object-cover"/>
+      <article class="card portfolio-card">
+        <div class="card-inner">
+          <div class="card-copy">
+            <div class="badge" aria-label="No strings attached">
+              <span>Web-Applikation</span>
             </div>
-            <div class="overflow-hidden shadow-2xl">
-              <img src="https://placehold.co/580x280" alt="Portfolio placeholder"
-                   class="w-full h-72 object-cover"/>
-            </div>
+            <h3 class="headline">
+              <span>Agebetter</span>
+            </h3>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
+              aliquid aperiam architecto atque doloribus dolorum eaque excepturi fuga hic illum
+              inventore, iusto, minus molestiae molestias nemo neque possimus quae quaerat quas quos
+              reprehenderit, rerum sint unde veniam vero voluptate voluptates.</p>
+            <a href="#" class="cta">Zur Website</a>
           </div>
-          <div class="number text-neutral-400">/01</div>
+          <div class="card-media">
+            <Image
+                src={agebetter}
+                width={770}
+                height={560}
+                alt="Agebetter Website"/>
+          </div>
         </div>
       </article>
 
       <!-- Card 02 -->
-      <article class="card bg-darker-bg text-primary">
-        <div class="container">
-          <h3 class="text-4xl md:text-5xl font-bold">Swiss Bioshield</h3>
-          <p class="mt-4 text-indigo-100 max-w-2xl">Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Deleniti minima minus omnis velit veniam. Culpa doloribus ducimus est
-            impedit laudantium magnam minima officia perferendis quaerat quasi reiciendis, sequi
-            voluptate.</p>
-          <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="overflow-hidden shadow-2xl">
-              <img src="https://placehold.co/580x280" alt="Portfolio placeholder"
-                   class="w-full h-72 object-cover"/>
+      <article class="card portfolio-card">
+        <div class="card-inner">
+          <div class="card-copy">
+            <div class="badge" aria-label="Design sprints">
+              <span>Online-Shop</span>
             </div>
-            <div class="overflow-hidden shadow-2xl">
-              <img src="https://placehold.co/580x280" alt="Portfolio placeholder"
-                   class="w-full h-72 object-cover"/>
-            </div>
+            <h3 class="headline">
+              <span>Swiss Bioshield</span>
+            </h3>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+              animi aspernatur aut consectetur consequatur eveniet explicabo harum impedit itaque
+              nihil nostrum, placeat quis quos ratione rem, temporibus totam veritatis, voluptates?
+              Accusamus autem culpa explicabo harum nobis optio praesentium veritatis
+              voluptatibus.</p>
+            <a href="#" class="cta">Zur Website</a>
           </div>
-          <div class="number text-neutral-400">/02</div>
+          <div class="card-media">
+            <Image
+                src={bioshield}
+                width={770}
+                height={560}
+                alt="Swiss Bioshield Website"/>
+          </div>
         </div>
       </article>
 
       <!-- Card 03 -->
-      <article class="card bg-dark-bg text-primary">
-        <div class="container">
-          <h3 class="text-4xl md:text-5xl font-bold">KiTa Luftibus</h3>
-          <p class="mt-4 text-white max-w-2xl">Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Consectetur corporis hic ipsa libero magni necessitatibus odio quibusdam sit totam
-            veritatis?</p>
-          <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="overflow-hidden shadow-2xl">
-              <img src="https://placehold.co/580x280" alt="Portfolio placeholder"
-                   class="w-full h-72 object-cover"/>
+      <article class="card portfolio-card">
+        <div class="card-inner">
+          <div class="card-copy">
+            <div class="badge" aria-label="Build and launch">
+              <span>Website</span>
             </div>
-            <div class="overflow-hidden shadow-2xl">
-              <img src="https://placehold.co/580x280" alt="Portfolio placeholder"
-                   class="w-full h-72 object-cover"/>
-            </div>
+            <h3 class="headline">
+              <span>KiTa Luftibus</span>
+            </h3>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At hic
+              officiis temporibus. Explicabo iure laudantium modi officiis recusandae sequi
+              voluptate! Aliquam aliquid, animi distinctio dolor, ducimus fugit molestiae non nulla
+              numquam pariatur placeat quam quasi quod repellendus voluptatibus? Incidunt,
+              maxime.</p>
+            <a href="#" class="cta">Zur Website</a>
           </div>
-          <div class="number text-neutral-400">/03</div>
+          <div class="card-media">
+            <Image
+                src={kitaLuftibus}
+                width={770}
+                height={560}
+                alt="KiTa Luftibus Website"/>
+          </div>
         </div>
       </article>
 
       <!-- Card 04 -->
-      <article class="card bg-darker-bg text-primary">
-        <div class="container">
-          <h3 class="text-4xl md:text-5xl font-bold">Fretz Gartenpflege GmbH</h3>
-          <p class="mt-4 text-neutral-300 max-w-2xl">Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Aperiam distinctio, doloremque esse eveniet facere id illum odio
-            perspiciatis quae totam.</p>
-          <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="overflow-hidden shadow-2xl">
-              <img src="https://placehold.co/580x280" alt="Portfolio placeholder"
-                   class="w-full h-72 object-cover"/>
+      <article class="card portfolio-card bg-primary-light">
+        <div class="card-inner">
+          <div class="card-copy">
+            <div class="badge" aria-label="Website">
+              <span>Website</span>
             </div>
-            <div class="overflow-hidden shadow-2xl">
-              <img src="https://placehold.co/580x280" alt="Portfolio placeholder"
-                   class="w-full h-72 object-cover"/>
-            </div>
+            <h3 class="headline">
+              <span>Fretz Gartenpflege</span>
+            </h3>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
+              dicta facilis fuga id molestiae nesciunt optio reiciendis totam veritatis voluptatum!
+              Consequatur cumque facere nam obcaecati officia voluptate. Ducimus eum hic neque
+              numquam omnis recusandae repudiandae sunt tenetur velit voluptas! Culpa!</p>
+            <a href="#" class="cta">Zur Website</a>
           </div>
-          <div class="number text-neutral-400">/04</div>
+          <div class="card-media">
+            <Image
+                src={fretz}
+                width={770}
+                height={560}
+                alt="Fretz Gartenpflege GmbH Website"/>
+          </div>
         </div>
       </article>
     </div>
   </div>
-  <!-- Spacer removed to eliminate extra gap after the stack -->
   <div aria-hidden="true" style="height: 0"></div>
 </section>
 
 <style>
+  .portfolio-card {
+    background: var(--color-porcelain-mist);
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, .06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+    overflow: hidden;
+  }
+
+  .portfolio-card .card-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .portfolio-card .card-copy {
+    padding: 28px 24px 32px 24px;
+    position: relative;
+  }
+
+  .portfolio-card .card-media img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* badge */
+  .portfolio-card .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: var(--color-dark-brown);
+    border: 1px solid rgba(0, 0, 0, .08);
+    padding: 10px 14px;
+    border-radius: 999px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .06);
+    margin-top: 48px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  /* headline */
+  .portfolio-card .headline {
+    font-weight: 800;
+    color: var(--color-dark-brown);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    font-size: clamp(28px, 4.8vw, 48px);
+  }
+
+  .portfolio-card .headline .accent {
+    display: block;
+    color: var(--color-desert-rock);
+  }
+
+  .portfolio-card .description {
+    margin-top: 16px;
+    color: var(--color-dark-brown);
+    max-width: 60ch;
+  }
+
+  .portfolio-card .cta {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 18px;
+    background: var(--color-desert-rock);
+    color: #fff;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform .2s ease, background .2s ease;
+  }
+
+  .portfolio-card .cta:hover {
+    transform: translateY(-1px);
+    background: var(--color-dark-brown);
+  }
+
   .stack {
     position: relative;
   }
 
   .card {
     position: sticky;
-    top: 80px; /* below navbar */
+    top: 80px;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    min-height: calc(100vh - 80px);
     display: flex;
-    align-items: center;
+    align-items: stretch;
     z-index: 0;
     transition: transform 500ms ease, box-shadow 500ms ease, filter 500ms ease;
     border: 2px solid #fff3;
-    overflow: hidden; /* contain pattern overlay */
   }
 
-  /* Pattern overlay: keeps background color, shows light dots */
-  .card::before {
-    content: "";
-    position: absolute;
-    inset: -2px; /* bleed slightly over the border */
-    background-image: url('../../assets/pattern-portfolio-card.svg'); /* default for card 1 */
-    background-size: cover;
-    background-position: center;
-    opacity: .1; /* tune visibility */
-    mix-blend-mode: screen; /* black becomes neutral, light dots show */
-    pointer-events: none;
-    z-index: 0;
+  .card .card-inner {
+    width: 100%;
   }
 
-  /* Per-card pattern images */
-  .stack .card:nth-of-type(2)::before {
-    background-image: url('../../assets/pattern-portfolio-card-02.svg');
-  }
-  .stack .card:nth-of-type(3)::before {
-    background-image: url('../../assets/pattern-portfolio-card-03.svg');
-  }
-  .stack .card:nth-of-type(4)::before {
-    background-image: url('../../assets/pattern-portfolio-card-04.svg');
-  }
-
-  /* ensure content sits above overlay */
-  .card .container {
-    width: min(1200px, 92%);
-    margin-inline: auto;
-    padding: 56px 0;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Overlap sooner: reduce spacer so next card arrives earlier while first remains fully visible */
   .card {
-    margin-bottom: calc(60vh - 80px);
+    margin-bottom: calc(28vh - 80px);
   }
 
   .card + .card {
-    margin-top: -10vh;
+    margin-top: -14vh;
   }
 
-  /* Remove gap after the last sticky card */
   .stack .card:last-of-type {
     margin-bottom: 0;
   }
 
-  .card .number {
-    position: absolute;
-    right: 16px;
-    top: 16px;
-    font-weight: 800;
-    font-size: clamp(28px, 5vw, 56px);
-    opacity: .3;
-  }
-
-  /* Depth effect when card is behind */
   .card.is-behind {
-    transform: scale(.96);
+    transform: translateY(-6px) scale(.97);
     filter: saturate(.9) brightness(.98);
   }
 
@@ -195,21 +254,33 @@
   }
 
   @media (min-width: 1024px) {
-    .card {
-      top: 96px;
-      min-height: calc(100vh - 96px);
+    .portfolio-card .card-inner {
+      grid-template-columns: 1.1fr 1.2fr;
+      align-items: stretch;
     }
 
-    /* Desktop: overlap a bit more aggressively */
+    .portfolio-card .card-copy {
+      padding: 56px 56px 64px 56px;
+    }
+
+    .portfolio-card .card-media img {
+      height: 560px;
+      border-top-left-radius: 24px;
+      border-bottom-left-radius: 24px;
+    }
+
     .card {
-      margin-bottom: calc(55vh - 96px);
+      top: 96px;
+    }
+
+    .card {
+      margin-bottom: calc(26vh - 96px);
     }
 
     .card + .card {
-      margin-top: -15vh;
+      margin-top: -16vh;
     }
 
-    /* Remove gap after the last sticky card on desktop */
     .stack .card:last-of-type {
       margin-bottom: 0;
     }
@@ -217,22 +288,22 @@
 </style>
 
 <script>
-  // Simple IntersectionObserver to toggle depth classes
+  // Lightweight IntersectionObserver to add depth while scrolling
   const cards = Array.from(document.querySelectorAll('.stack .card'));
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const el = entry.target;
-      if (entry.isIntersecting && entry.intersectionRatio > 0.55) {
-        cards.forEach(c => c.classList.remove('is-front'));
-        el.classList.add('is-front');
-      }
-      // mark cards above as behind for subtle scale
-      const index = cards.indexOf(el);
-      cards.forEach((c, i) => {
-        c.classList.toggle('is-behind', i < index);
+  if (cards.length) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const el = entry.target;
+        if (entry.isIntersecting && entry.intersectionRatio > 0.55) {
+          cards.forEach(c => c.classList.remove('is-front'));
+          el.classList.add('is-front');
+        }
+        const index = cards.indexOf(el);
+        cards.forEach((c, i) => {
+          c.classList.toggle('is-behind', i < index);
+        });
       });
-    });
-  }, {threshold: [0.55]});
-
-  cards.forEach(c => observer.observe(c));
+    }, {threshold: [0.55]});
+    cards.forEach(c => observer.observe(c));
+  }
 </script>
