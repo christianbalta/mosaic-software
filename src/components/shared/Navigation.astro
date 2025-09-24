@@ -1,93 +1,362 @@
 ---
+export interface Props {
+  class?: string;
+}
 
+const { class: className } = Astro.props;
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-creamed-oat">
+<nav class={`fixed top-0 left-0 right-0 z-50 glass-morphism border-b border-creamed-oat ${className || ''}`}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
-      <!-- Logo -->
+      <!-- Logo with animation -->
       <div class="flex-shrink-0">
-        <a href="/public"
-           class="text-2xl font-bold text-dark-brown transition-colors duration-200">
-          Mosaic Software
+        <a href="/" class="group flex items-center space-x-3">
+          <span class="text-2xl font-bold text-dark-brown transition-colors duration-300">
+            Mosaic Software
+          </span>
         </a>
       </div>
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center space-x-8">
-        <a href="#services"
-           class="text-dark-brown transition-colors duration-200">Services</a>
-        <a href="#portfolio"
-           class="text-dark-brown transition-colors duration-200">Portfolio</a>
-        <a href="#company"
-           class="text-dark-brown transition-colors duration-200">Company</a>
-        <a href="#about"
-           class="text-dark-brown transition-colors duration-200">About</a>
+        <a href="#services" class="menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200">Services</a>
+        <a href="#portfolio" class="menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200">Portfolio</a>
+        <a href="#company" class="menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200">Company</a>
+        <a href="#about" class="menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200">About</a>
       </div>
 
       <!-- CTA Button -->
       <div class="hidden md:block">
-        <button
-            class="bg-desert-rock text-white px-8 py-3 rounded-full font-semibold hover:-translate-y-0.5 hover:bg-dark-brown transition-all duration-300">
-          Kontakt
-        </button>
+        <a href="#contact"
+           class="relative inline-flex items-center px-8 py-3 overflow-hidden font-semibold text-feather-white bg-desert-rock rounded-full group hover:bg-dark-brown transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+          <span class="relative z-10">Kontakt</span>
+        </a>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-mosaic-dark">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
+      <!-- Animated Hamburger Button -->
+      <button id="mobile-menu-btn"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+              class="md:hidden relative w-10 h-10 flex flex-col justify-center items-center group">
+        <span class="sr-only">Toggle menu</span>
+        <span class="hamburger-line w-6 h-0.5 bg-dark-brown mb-1.5"></span>
+        <span class="hamburger-line w-6 h-0.5 bg-dark-brown mb-1.5"></span>
+        <span class="hamburger-line w-6 h-0.5 bg-dark-brown"></span>
       </button>
-    </div>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu"
-       class="fixed top-0 right-0 w-72 h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 md:hidden">
-    <div class="p-6">
-      <button id="close-menu-btn" class="absolute top-6 right-6 text-mosaic-dark">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-      <div class="mt-12 space-y-6">
-        <a href="#services"
-           class="block text-lg text-mosaic-gray hover:text-mosaic-dark transition-colors">Services</a>
-        <a href="#portfolio"
-           class="block text-lg text-mosaic-gray hover:text-mosaic-dark transition-colors">Portfolio</a>
-        <a href="#company"
-           class="block text-lg text-mosaic-gray hover:text-mosaic-dark transition-colors">Company</a>
-        <a href="#about"
-           class="block text-lg text-mosaic-gray hover:text-mosaic-dark transition-colors">About</a>
-        <button class="w-full bg-primary text-white px-8 py-3 rounded-full font-semibold mt-8">
-          Kontakt
-        </button>
-      </div>
     </div>
   </div>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay"
+     class="fixed inset-0 bg-dark-brown/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-500 md:hidden"></div>
+
+<!-- Mobile Menu Panel -->
+<div id="mobile-menu"
+     class="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-feather-white transform translate-x-full transition-transform duration-500 ease-out md:hidden z-50 shadow-2xl custom-scrollbar overflow-y-auto">
+
+  <!-- Decorative elements with soft colors -->
+  <div class="absolute top-0 right-0 w-64 h-64 bg-soft-sandstone opacity-10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 w-64 h-64 bg-desert-rock opacity-10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <!-- Menu Header -->
+  <div class="relative p-6 border-b border-creamed-oat">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <span class="text-xl font-bold text-dark-brown">Mosaic</span>
+      </div>
+      <button id="close-menu-btn"
+              class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-porcelain-mist transition-colors duration-200"
+              aria-label="Close menu">
+        <i class="fas fa-times text-dark-brown text-lg"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menu Content -->
+  <div class="relative p-6">
+    <!-- Main Navigation -->
+    <nav class="space-y-2">
+      <a href="#services" class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300">
+        <div class="flex items-center space-x-4">
+          <div class="w-10 h-10 bg-soft-sandstone rounded-lg flex items-center justify-center group-hover:bg-desert-rock group-hover:scale-110 transition-all duration-300">
+            <i class="fas fa-cog text-dark-brown group-hover:text-feather-white transition-colors duration-300"></i>
+          </div>
+          <span class="text-lg font-medium text-dark-brown">Services</span>
+        </div>
+        <i class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"></i>
+      </a>
+
+      <a href="#portfolio" class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300">
+        <div class="flex items-center space-x-4">
+          <div class="w-10 h-10 bg-soft-sandstone rounded-lg flex items-center justify-center group-hover:bg-desert-rock group-hover:scale-110 transition-all duration-300">
+            <i class="fas fa-briefcase text-dark-brown group-hover:text-feather-white transition-colors duration-300"></i>
+          </div>
+          <span class="text-lg font-medium text-dark-brown">Portfolio</span>
+        </div>
+        <i class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"></i>
+      </a>
+
+      <a href="#company" class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300">
+        <div class="flex items-center space-x-4">
+          <div class="w-10 h-10 bg-soft-sandstone rounded-lg flex items-center justify-center group-hover:bg-desert-rock group-hover:scale-110 transition-all duration-300">
+            <i class="fas fa-building text-dark-brown group-hover:text-feather-white transition-colors duration-300"></i>
+          </div>
+          <span class="text-lg font-medium text-dark-brown">Company</span>
+        </div>
+        <i class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"></i>
+      </a>
+
+      <a href="#about" class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300">
+        <div class="flex items-center space-x-4">
+          <div class="w-10 h-10 bg-soft-sandstone rounded-lg flex items-center justify-center group-hover:bg-desert-rock group-hover:scale-110 transition-all duration-300">
+            <i class="fas fa-users text-dark-brown group-hover:text-feather-white transition-colors duration-300"></i>
+          </div>
+          <span class="text-lg font-medium text-dark-brown">About</span>
+        </div>
+        <i class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"></i>
+      </a>
+    </nav>
+
+    <!-- Divider -->
+    <div class="my-6 border-t border-creamed-oat"></div>
+
+    <!-- CTA Button -->
+    <div class="menu-item">
+      <a href="#contact"
+         class="block w-full text-center px-6 py-4 rounded-xl bg-desert-rock text-feather-white font-semibold hover:bg-dark-brown hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+        <i class="fas fa-envelope mr-2"></i>
+        Kontakt
+      </a>
+    </div>
+
+    <!-- Social Links -->
+    <div class="mt-8 menu-item">
+      <p class="text-sm text-desert-rock mb-4">Folge uns</p>
+      <div class="flex space-x-4">
+        <a href="#"
+           class="w-10 h-10 bg-porcelain-mist rounded-full flex items-center justify-center hover:bg-desert-rock hover:text-feather-white text-dark-brown transition-all duration-300">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#"
+           class="w-10 h-10 bg-porcelain-mist rounded-full flex items-center justify-center hover:bg-desert-rock hover:text-feather-white text-dark-brown transition-all duration-300">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Additional Quick Links -->
+    <div class="mt-6 pt-6 border-t border-creamed-oat menu-item">
+      <div class="space-y-3">
+        <a href="#privacy" class="flex items-center text-sm text-desert-rock transition-colors">
+          <i class="fas fa-shield-alt mr-3 w-4"></i>
+          Datenschutz
+        </a>
+        <a href="#terms" class="flex items-center text-sm text-desert-rock transition-colors">
+          <i class="fas fa-file-contract mr-3 w-4"></i>
+          Impressum
+        </a>
+        <a href="#terms" class="flex items-center text-sm text-desert-rock transition-colors">
+          <i class="fas fa-file-signature mr-3 w-4"></i>
+          AGB
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+  /* Opacity utilities for overlays */
+  .bg-dark-brown\/50 {
+    background-color: rgba(46, 34, 28, 0.5);
+  }
+
+  /* Glassmorphism effect */
+  .glass-morphism {
+    background: rgba(250, 249, 246, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Custom animations */
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .menu-item {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+  }
+
+  :global(body.menu-open) .menu-item:nth-child(1) { animation-delay: 0.1s; }
+  :global(body.menu-open) .menu-item:nth-child(2) { animation-delay: 0.15s; }
+  :global(body.menu-open) .menu-item:nth-child(3) { animation-delay: 0.2s; }
+  :global(body.menu-open) .menu-item:nth-child(4) { animation-delay: 0.25s; }
+  :global(body.menu-open) .menu-item:nth-child(5) { animation-delay: 0.3s; }
+  :global(body.menu-open) .menu-item:nth-child(6) { animation-delay: 0.35s; }
+
+  /* Hamburger animation */
+  .hamburger-line {
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  :global(body.menu-open) .hamburger-line:nth-child(2) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  :global(body.menu-open) .hamburger-line:nth-child(3) {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  :global(body.menu-open) .hamburger-line:nth-child(4) {
+    transform: rotate(-45deg) translate(8px, -8px);
+  }
+
+  /* Menu link underline effect */
+  .menu-link {
+    position: relative;
+  }
+
+  .menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-desert-rock);
+    transition: width 0.3s ease;
+  }
+
+  .menu-link:hover::after {
+    width: 100%;
+  }
+
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--color-porcelain-mist);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-soft-sandstone);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-desert-rock);
+  }
+
+  /* Transition utilities */
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+
+  .transition-colors {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+
+  .transition-transform {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+
+  .transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+  }
+
+  /* Transform utilities */
+  .hover\:-translate-y-0\.5:hover { transform: translateY(-0.125rem); }
+  .hover\:-translate-y-1:hover { transform: translateY(-0.25rem); }
+  .group:hover .group-hover\:scale-110 { transform: scale(1.1); }
+  .group:hover .group-hover\:translate-x-1 { transform: translateX(0.25rem); }
+</style>
 
 <script>
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const closeMenuBtn = document.getElementById('close-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+  const body = document.body;
 
-  mobileMenuBtn?.addEventListener('click', () => {
+  function openMenu() {
+    body.classList.add('menu-open');
+    mobileMenuOverlay?.classList.remove('opacity-0', 'pointer-events-none');
+    mobileMenuOverlay?.classList.add('opacity-100');
     mobileMenu?.classList.remove('translate-x-full');
-  });
+    body.classList.add('overflow-hidden');
+    mobileMenuBtn?.setAttribute('aria-expanded', 'true');
+  }
 
-  closeMenuBtn?.addEventListener('click', () => {
+  function closeMenu() {
+    body.classList.remove('menu-open');
+    mobileMenuOverlay?.classList.add('opacity-0', 'pointer-events-none');
+    mobileMenuOverlay?.classList.remove('opacity-100');
     mobileMenu?.classList.add('translate-x-full');
-  });
+    body.classList.remove('overflow-hidden');
+    mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+  }
+
+  // Event listeners
+  mobileMenuBtn?.addEventListener('click', openMenu);
+  closeMenuBtn?.addEventListener('click', closeMenu);
+  mobileMenuOverlay?.addEventListener('click', closeMenu);
 
   // Close menu when clicking links
   const mobileLinks = mobileMenu?.querySelectorAll('a');
   mobileLinks?.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu?.classList.add('translate-x-full');
-    });
+    link.addEventListener('click', closeMenu);
   });
+
+  // Escape key handling
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && body.classList.contains('menu-open')) {
+      closeMenu();
+    }
+  });
+
+  // Touch gesture handling
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  mobileMenu?.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  mobileMenu?.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchEndX > touchStartX + 50) {
+      closeMenu();
+    }
+  }, { passive: true });
 </script>

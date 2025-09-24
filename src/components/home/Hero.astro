@@ -1,56 +1,433 @@
 ---
-import SocialProof from './SocialProof.astro';
-import patternUrl from '../../assets/hero-pattern-bg.svg?url';
+import {Image} from 'astro:assets'
+
+import bioshield from "../../assets/carousel/bioshield-carousel.png";
+import bioshield2 from "../../assets/carousel/bioshield-carousel-2.png";
+import fretzGarten from "../../assets/carousel/fretz-garten-carousel.png";
+import fretzGarten2 from "../../assets/carousel/fretz-garten-carousel-2.png";
+import kitaLuftibus from "../../assets/carousel/kita-luftibus-carousel.png";
+import kitaLuftibus2 from "../../assets/carousel/kita-luftibus-carousel-2.png";
+import kucaSVrtom from "../../assets/carousel/kuca-s-vrtom-carousel.png";
+import kucaSVrtom2 from "../../assets/carousel/kuca-s-vrtom-carousel-2.png";
+import msure from "../../assets/carousel/msure-carousel.png";
+import msure2 from "../../assets/carousel/msure-carousel-2.png";
+import wachtelschachtel from "../../assets/carousel/wachtelschachtel-carousel.png";
+import wachtelschachtel2 from "../../assets/carousel/wachtelschachtel-carousel-2.png";
 ---
 
-<section class="min-h-screen flex items-center pt-20 relative overflow-hidden" style={`background-image: url(${patternUrl}); background-size: cover; background-position: center; background-repeat: no-repeat;`}>
-  <div class="mx-auto w-full max-w-screen-2xl px-3 sm:px-4 lg:px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
-      <!-- Left Column - Content -->
-      <div class="space-y-8">
-        <!-- Main Heading -->
-        <h1 class="text-desert-rock text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold uppercase leading-none">
-          <span class="block animate-fade-up animation-delay-100">Individual</span>
-          <span class="block animate-fade-up animation-delay-200">Software</span>
-          <span class="block animate-fade-up">Und</span>
-          <span class="block animate-fade-up">Websites</span>
-        </h1>
+<header class="hero">
+  <div class="hero-content">
+    <h1 class="text-5xl md:text-5xl lg:text-6xl font-bold tracking-tight text-desert-rock uppercase">
+      <span>Individual</span><br/>
+      Software und Websites
+    </h1>
+    <p class="md:text-lg max-w-3xl mx-auto text-dark-brown">
+      Aus Vielfalt wird Einheit. Aus Ideen Software.
+    </p>
+    <button
+        class="bg-desert-rock text-white px-8 py-3 rounded-full font-semibold hover:-translate-y-0.5 hover:bg-dark-brown transition-all duration-300">
+      Jetzt Anfragen
+    </button>
+  </div>
 
-        <!-- Subheading -->
-        <p class="uppercase text-xl md:text-2xl text-mosaic-dark font-light animate-fade-up animation-delay-300 text-dark-brown">
-          Innovativ. Präzise. Zeitlos.
-        </p>
-
-        <!-- Description -->
-        <p class="text-mosaic-gray max-w-lg animate-fade-up animation-delay-400 text-dark-brown">
-          Unsere hochwertigen digitalen Lösungen sind darauf ausgerichtet, Technologie und Strategie
-          aufeinander abzustimmen, um messbare Ergebnisse und nachhaltiges Wachstum zu
-          gewährleisten.
-        </p>
-
-        <!-- Social Proof -->
-        <SocialProof/>
-      </div>
-
-      <!-- Right Column - Visual -->
-      <div class="relative h-[600px] hidden lg:block">
-
-
+  <!-- 3D Carousel -->
+  <div class="carousel-container">
+    <div class="carousel-slider">
+      <div class="carousel-circle">
+        <div class="carousel-images">
+          <!-- Image Pair 1 -->
+          <div class="image-pair">
+            <div class="carousel-image">
+              <Image src={bioshield} alt="Bioshield project" loading="lazy" width={280}
+                     height={400}/>
+            </div>
+            <div class="carousel-image">
+              <Image src={bioshield2} alt="Bioshield project" loading="lazy" width={280}
+                     height={400}/>
+            </div>
+          </div>
+          <!-- Image Pair 2 -->
+          <div class="image-pair">
+            <div class="carousel-image">
+              <Image src={fretzGarten} alt="Fretz Garten project" loading="lazy" width={280}
+                     height={400}/>
+            </div>
+            <div class="carousel-image">
+              <Image src={fretzGarten2} alt="Fretz Garten project" loading="lazy" width={280}
+                     height={400}/>
+            </div>
+          </div>
+          <!-- Image Pair 3 -->
+          <div class="image-pair">
+            <div class="carousel-image">
+              <Image src={kitaLuftibus} alt="Kita Luftibus project" loading="lazy" width={280}
+                     height={400}/>
+            </div>
+            <div class="carousel-image">
+              <Image src={kitaLuftibus2} alt="Kita Luftibus project" loading="lazy" width={280}
+                     height={400}/>
+            </div>
+          </div>
+          <!-- Image Pair 4 -->
+          <div class="image-pair">
+            <div class="carousel-image">
+              <Image src={kucaSVrtom} alt="Kuca s Vrtom project" loading="lazy" width={280}
+                     height={400}/>
+            </div>
+            <div class="carousel-image">
+              <Image src={kucaSVrtom2} alt="Kuca s Vrtom project" loading="lazy" width={280}
+                     height={400}/>
+            </div>
+          </div>
+          <!-- Image Pair 5 -->
+          <div class="image-pair">
+            <div class="carousel-image">
+              <Image src={msure} alt="Msure project" loading="lazy" width={280} height={400}/>
+            </div>
+            <div class="carousel-image">
+              <Image src={msure2} alt="Msure project" loading="lazy" width={280} height={400}/>
+            </div>
+          </div>
+          <!-- Image Pair 6 -->
+          <div class="image-pair">
+            <div class="carousel-image">
+              <Image src={wachtelschachtel} alt="Wachtelschachtel project" loading="lazy"
+                     width={280} height={400}/>
+            </div>
+            <div class="carousel-image">
+              <Image src={wachtelschachtel2} alt="Wachtelschachtel project" loading="lazy"
+                     width={280} height={400}/>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</section>
+
+  <!-- Feature Cards -->
+  <div class="feature-cards">
+    <div class="feature-card">
+      <h3 class="feature-title">5/5 ⭐ Bewertungen</h3>
+      <p class="feature-description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium delectus possimus quos
+        tempore vel veritatis?
+      </p>
+    </div>
+    <div class="feature-card bordered">
+      <h3 class="feature-title">🌟 Individuelles Design</h3>
+      <p class="feature-description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse harum minima nostrum nulla ut. Sed.
+      </p>
+    </div>
+    <div class="feature-card">
+      <h3 class="feature-title">🔧 Rundum-Service</h3>
+      <p class="feature-description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At beatae dolor eos iure labore praesentium.
+      </p>
+    </div>
+  </div>
+</header>
 
 <style>
-  @keyframes flow {
-    0%, 100% {
-      transform: translateX(0) translateY(0);
+  /* Base */
+  .hero {
+    margin-top: 50px;
+    padding: 100px 40px;
+    min-height: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    text-align: center;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+    line-height: 1.6em;
+    color: rgba(0, 0, 0, 0.6);
+    max-width: 600px;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid rgba(19, 21, 23, 0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-large {
+    padding: 15px 60px;
+    font-size: 16px;
+  }
+
+  /* 3D Carousel */
+  .carousel-container {
+    position: absolute;
+    top: 270px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1600px;
+    height: 600px;
+    z-index: 1;
+    overflow: hidden;
+    mask: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 19.72%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 19.72%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  .carousel-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transform: perspective(600px);
+    transform-style: preserve-3d;
+  }
+
+  .carousel-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+  }
+
+  .carousel-images {
+    position: relative;
+    width: 1400px;
+    height: 400px;
+    transform-style: preserve-3d;
+    animation: rotateCarousel 60s linear infinite;
+  }
+
+  .image-pair {
+    position: absolute;
+    width: 1400px;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform-style: preserve-3d;
+  }
+
+  .image-pair:nth-child(1) {
+    transform: rotateY(0deg);
+  }
+
+  .image-pair:nth-child(2) {
+    transform: rotateY(30deg);
+  }
+
+  .image-pair:nth-child(3) {
+    transform: rotateY(60deg);
+  }
+
+  .image-pair:nth-child(4) {
+    transform: rotateY(90deg);
+  }
+
+  .image-pair:nth-child(5) {
+    transform: rotateY(120deg);
+  }
+
+  .image-pair:nth-child(6) {
+    transform: rotateY(150deg);
+  }
+
+  .carousel-image {
+    width: 280px;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    will-change: transform;
+  }
+
+  .carousel-image:first-child {
+    transform: rotateY(90deg);
+  }
+
+  .carousel-image:last-child {
+    transform: rotateY(-90deg);
+  }
+
+  .carousel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Placeholder styles */
+  .image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  @keyframes rotateCarousel {
+    from {
+      transform: rotateY(0deg);
     }
-    33% {
-      transform: translateX(30px) translateY(-30px);
+    to {
+      transform: rotateY(-360deg);
     }
-    66% {
-      transform: translateX(-20px) translateY(20px);
+  }
+
+  /* Feature Cards */
+  .feature-cards {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 60px;
+    z-index: 2;
+  }
+
+  .feature-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .feature-card.bordered {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .feature-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: rgb(30, 32, 36);
+  }
+
+  .feature-description {
+    font-size: 12px;
+    line-height: 1.6em;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 1199px) {
+    .hero-title {
+      font-size: 48px;
+    }
+
+    .carousel-container {
+      width: 100vw;
+    }
+
+    .carousel-images {
+      width: 1000px;
+    }
+
+    .image-pair {
+      width: 1000px;
+    }
+
+    .carousel-image {
+      width: 240px;
+      height: 340px;
+    }
+  }
+
+  @media (max-width: 809px) {
+    .hero {
+      padding: 40px 24px;
+      min-height: auto;
+    }
+
+    .hero-title {
+      font-size: 36px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+    }
+
+    .carousel-container {
+      height: 400px;
+      top: 340px;
+    }
+
+    .carousel-images {
+      width: 1400px;
+      height: 400px;
+    }
+
+    .image-pair {
+      width: 1400px;
+      height: 400px;
+    }
+
+    .carousel-image {
+      width: 280px;
+      height: 400px;
+    }
+
+    .feature-cards {
+      flex-direction: column;
+      margin-top: 280px; /* Push below absolute carousel on mobile */
+    }
+
+    .feature-card.bordered {
+      border: none;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
   }
 </style>

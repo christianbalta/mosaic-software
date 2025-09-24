@@ -7,7 +7,7 @@ import kitaLuftibus from '../../assets/Kita-Luftibus-Mockup.png';
 import fretz from '../../assets/Fretz-Gartenpflege-Mockup.png';
 ---
 
-<section id="portfolio" class="relative py-24 lg:py-40">
+<section id="portfolio" class="relative py-16 lg:py-32">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
       <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-desert-rock">
@@ -251,6 +251,34 @@ import fretz from '../../assets/Fretz-Gartenpflege-Mockup.png';
 
   .card.is-front {
     box-shadow: 0 30px 90px rgba(0, 0, 0, .28);
+  }
+
+  /* Mobile adjustments: disable sticky stacking to prevent overlap */
+  @media (max-width: 809px) {
+    .stack {
+      /* make sure container doesn't interfere */
+      position: static;
+    }
+    .card {
+      position: static;
+      top: auto;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px; /* regular spacing between cards */
+      z-index: auto;
+      border: 1px solid rgba(0,0,0,.06);
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+      transform: none !important;
+      filter: none !important;
+    }
+    .card + .card {
+      margin-top: 0; /* remove overlap pull-up */
+    }
+    .portfolio-card .card-media img {
+      height: 320px; /* keep image visible on small screens */
+      border-radius: 0; /* avoid odd rounding when stacked */
+    }
   }
 
   @media (min-width: 1024px) {
