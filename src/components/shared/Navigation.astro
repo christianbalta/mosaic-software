@@ -20,10 +20,9 @@ const { class: className } = Astro.props;
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center space-x-8">
-        <a href="#services" class="menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200">Services</a>
-        <a href="#portfolio" class="menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200">Portfolio</a>
-        <a href="#company" class="menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200">Company</a>
-        <a href="#about" class="menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200">About</a>
+        <a href="/services" class="menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200">Services</a>
+        <a href="/portfolio" class="menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200">Portfolio</a>
+        <a href="/unternehmen" class="menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200">Unternehmen</a>
       </div>
 
       <!-- CTA Button -->
@@ -78,7 +77,7 @@ const { class: className } = Astro.props;
   <div class="relative p-6">
     <!-- Main Navigation -->
     <nav class="space-y-2">
-      <a href="#services" class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300">
+      <a href="/services" class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300">
         <div class="flex items-center space-x-4">
           <div class="w-10 h-10 bg-soft-sandstone rounded-lg flex items-center justify-center group-hover:bg-desert-rock group-hover:scale-110 transition-all duration-300">
             <i class="fas fa-cog text-dark-brown group-hover:text-feather-white transition-colors duration-300"></i>
@@ -88,7 +87,7 @@ const { class: className } = Astro.props;
         <i class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"></i>
       </a>
 
-      <a href="#portfolio" class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300">
+      <a href="/portfolio" class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300">
         <div class="flex items-center space-x-4">
           <div class="w-10 h-10 bg-soft-sandstone rounded-lg flex items-center justify-center group-hover:bg-desert-rock group-hover:scale-110 transition-all duration-300">
             <i class="fas fa-briefcase text-dark-brown group-hover:text-feather-white transition-colors duration-300"></i>
@@ -98,22 +97,12 @@ const { class: className } = Astro.props;
         <i class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"></i>
       </a>
 
-      <a href="#company" class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300">
+      <a href="/unternehmen" class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300">
         <div class="flex items-center space-x-4">
           <div class="w-10 h-10 bg-soft-sandstone rounded-lg flex items-center justify-center group-hover:bg-desert-rock group-hover:scale-110 transition-all duration-300">
             <i class="fas fa-building text-dark-brown group-hover:text-feather-white transition-colors duration-300"></i>
           </div>
-          <span class="text-lg font-medium text-dark-brown">Company</span>
-        </div>
-        <i class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"></i>
-      </a>
-
-      <a href="#about" class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300">
-        <div class="flex items-center space-x-4">
-          <div class="w-10 h-10 bg-soft-sandstone rounded-lg flex items-center justify-center group-hover:bg-desert-rock group-hover:scale-110 transition-all duration-300">
-            <i class="fas fa-users text-dark-brown group-hover:text-feather-white transition-colors duration-300"></i>
-          </div>
-          <span class="text-lg font-medium text-dark-brown">About</span>
+          <span class="text-lg font-medium text-dark-brown">Unternehmen</span>
         </div>
         <i class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"></i>
       </a>
@@ -124,7 +113,7 @@ const { class: className } = Astro.props;
 
     <!-- CTA Button -->
     <div class="menu-item">
-      <a href="#contact"
+      <a href="/kontakt"
          class="block w-full text-center px-6 py-4 rounded-xl bg-desert-rock text-feather-white font-semibold hover:bg-dark-brown hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
         <i class="fas fa-envelope mr-2"></i>
         Kontakt
@@ -149,7 +138,7 @@ const { class: className } = Astro.props;
     <!-- Additional Quick Links -->
     <div class="mt-6 pt-6 border-t border-creamed-oat menu-item">
       <div class="space-y-3">
-        <a href="#privacy" class="flex items-center text-sm text-desert-rock transition-colors">
+        <a href="/datenschutz" class="flex items-center text-sm text-desert-rock transition-colors">
           <i class="fas fa-shield-alt mr-3 w-4"></i>
           Datenschutz
         </a>
