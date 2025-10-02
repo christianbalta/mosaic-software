@@ -1,0 +1,216 @@
+---
+import mosaicLogo from "@/assets/Mosaic-Software-logo.svg";
+import { Image } from "astro:assets";
+import type { NavigationLink } from '@/types';
+
+const quickLinks: NavigationLink[] = [
+  { label: 'Services', href: '/services' },
+  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'Unternehmen', href: '/unternehmen' },
+  { label: 'Kontakt', href: '#contact' }
+];
+
+const services: string[] = [
+  'Individualsoftware',
+  'Website & Shops',
+  'Startups'
+];
+
+const legalLinks: NavigationLink[] = [
+  { label: 'Datenschutz', href: '/datenschutz' },
+  { label: 'Impressum', href: '/impressum' },
+  { label: 'AGB', href: '/agb' }
+];
+---
+
+<footer class="bg-dark-brown text-feather-white relative overflow-hidden">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- Main footer content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+
+      <!-- Company Info -->
+      <div class="lg:col-span-2">
+        <div class="mb-6">
+          <Image src={mosaicLogo} alt="Mosaic Software Logo" width={120} class="mb-4 brightness-0 invert"/>
+          <p class="text-soft-sandstone text-sm leading-relaxed max-w-md">
+            Deine vertrauensvolle Softwareagentur in Zürich. Wir entwickeln individuelle Software und Websites für moderne Unternehmen.
+          </p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="space-y-3">
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-map-marker-alt text-desert-rock w-4"></i>
+            <span class="text-sm text-soft-sandstone">Brunnenstrasse 7<br>8610 Uster</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-envelope text-desert-rock w-4"></i>
+            <a href="mailto:contact@mosaic-software.ch" class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200">
+              contact@mosaic-software.ch
+            </a>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-phone text-desert-rock w-4"></i>
+            <a href="tel:+41764739974" class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200">
+              +41 76 473 99 74
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6 text-feather-white">Navigation</h3>
+        <ul class="space-y-3">
+          <li>
+            <a href="/services" class="text-soft-sandstone hover:text-feather-white transition-colors duration-200 text-sm">
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="/portfolio" class="text-soft-sandstone hover:text-feather-white transition-colors duration-200 text-sm">
+              Portfolio
+            </a>
+          </li>
+          <li>
+            <a href="/unternehmen" class="text-soft-sandstone hover:text-feather-white transition-colors duration-200 text-sm">
+              Unternehmen
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="text-soft-sandstone hover:text-feather-white transition-colors duration-200 text-sm">
+              Kontakt
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6 text-feather-white">Services</h3>
+        <ul class="space-y-3">
+          <li>
+            <span class="text-soft-sandstone text-sm">Individualsoftware</span>
+          </li>
+          <li>
+            <span class="text-soft-sandstone text-sm">Website & Shops</span>
+          </li>
+          <li>
+            <span class="text-soft-sandstone text-sm">Startups</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Social Media -->
+    <div class="border-t border-desert-rock/30 pt-8 mb-8">
+      <div class="flex justify-center lg:justify-start">
+        <!-- Social Links -->
+        <div>
+          <h4 class="text-sm font-medium text-feather-white mb-4">Folge uns</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 bg-desert-rock/20 rounded-full flex items-center justify-center hover:bg-desert-rock hover:scale-110 transition-all duration-300 group">
+              <i class="fab fa-instagram text-soft-sandstone group-hover:text-feather-white"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-desert-rock/20 rounded-full flex items-center justify-center hover:bg-desert-rock hover:scale-110 transition-all duration-300 group">
+              <i class="fab fa-linkedin-in text-soft-sandstone group-hover:text-feather-white"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-desert-rock/30 pt-8">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
+
+        <!-- Copyright -->
+        <div class="text-sm text-soft-sandstone">
+          © {new Date().getFullYear()} Mosaic Software. Alle Rechte vorbehalten.
+        </div>
+
+        <!-- Legal Links -->
+        <div class="flex flex-wrap items-center space-x-6">
+          <a href="/datenschutz" class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200">
+            Datenschutz
+          </a>
+          <a href="/impressum" class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200">
+            Impressum
+          </a>
+          <a href="/agb" class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200">
+            AGB
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll to top button -->
+  <button
+    id="scroll-to-top"
+    class="fixed bottom-8 right-8 w-12 h-12 bg-desert-rock hover:bg-dark-brown text-feather-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none z-50"
+    aria-label="Nach oben scrollen"
+  >
+    <i class="fas fa-chevron-up"></i>
+  </button>
+</footer>
+
+<style>
+  .group:hover .group-hover\:text-feather-white {
+    color: var(--color-feather-white);
+  }
+
+  .group:hover .group-hover\:scale-110 {
+    transform: scale(1.1);
+  }
+
+  .transition-all {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-colors {
+    transition: color 0.2s ease-in-out;
+  }
+
+  button:focus {
+    box-shadow: 0 0 0 3px rgba(164, 141, 120, 0.2);
+    outline: none;
+  }
+
+  a:focus {
+    outline: 2px solid var(--color-desert-rock);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  #scroll-to-top.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+</style>
+
+<script>
+  const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+  if (scrollToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('show');
+      } else {
+        scrollToTopBtn.classList.remove('show');
+      }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+</script>
