@@ -1,0 +1,78 @@
+<section id="overview">
+  <div class="ml-auto mr-auto w-fit mt-20 text-desert-rock tracking-wide">
+    OPTIMIEREN SIE IHRE GESCHÄFTSPROZESSE
+  </div>
+  <h1
+    class="text-3xl lg:text-6xl font-bold ml-auto mr-auto w-fit text-desert-rock mt-4 mb-8 lg:mb-20"
+  >
+    Softwarelösungen
+  </h1>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-10 text-dark-brown">
+    <div
+      class="p-5 lg:p-10 rounded-lg bg-porcelain-mist border border-creamed-oat hover:scale-105 transform transition-transform duration-200 cursor-pointer"
+      id="webClickSource"
+    >
+      <div class="mb-3 lg:mb-6 flex flex-row gap-4 lg:gap-6 items-center">
+        <i class="fa-solid fa-cloud scale-150"></i>
+        <div class="text-xl font-bold">Web-Applikationen</div>
+      </div>
+      <div>
+        Wir entwickeln leistungsstarke Web-Applikationen, die speziell auf Ihre
+        Geschäftsprozesse zugeschnitten sind.
+      </div>
+    </div>
+
+    <div
+      class="p-5 lg:p-10 rounded-lg bg-porcelain-mist border border-creamed-oat hover:scale-105 transform transition-transform duration-200 cursor-pointer"
+      id="mobileClickSource"
+    >
+      <div class="mb-3 lg:mb-6 flex flex-row gap-4 lg:gap-6 items-center">
+        <i class="fa-solid fa-mobile-screen scale-150"></i>
+        <div class="text-xl font-bold">Mobile-Apps</div>
+      </div>
+      <div>
+        Unsere Apps funktionieren einwandfrei auf iOS und Android und tragen
+        wesentlich zur Steigerung Ihrer Kundenbindung bei.
+      </div>
+    </div>
+
+    <div
+      class="p-5 lg:p-10 rounded-lg bg-porcelain-mist border border-creamed-oat hover:scale-105 transform transition-transform duration-200 cursor-pointer"
+      id="desktopClickSource"
+    >
+      <div class="mb-3 lg:mb-6 flex flex-row gap-4 lg:gap-6 items-center">
+        <i class="fa-solid fa-display scale-150"></i>
+        <div class="text-xl font-bold">Desktop-Applikationen</div>
+      </div>
+      <div>
+        Unsere Desktop-Applikationen bieten eine hohe Leistung und
+        Benutzerfreundlichkeit, welche nahtlos in Ihre bestehenden Systeme
+        integriert werden.
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const web = document.getElementById("webClickSource");
+  const mobile = document.getElementById("mobileClickSource");
+  const desktop = document.getElementById("desktopClickSource");
+
+  web?.addEventListener("click", () => scrollToElement("webapplications"));
+  mobile?.addEventListener("click", () => scrollToElement("mobileapps"));
+  desktop?.addEventListener("click", () =>
+    scrollToElement("desktopapplications"),
+  );
+
+  function scrollToElement(id: string): void {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const start = window.scrollY - 80;
+    const end = element.getBoundingClientRect().top + start;
+    const distance = end - start;
+
+    window.scrollTo(0, start + distance);
+  }
+</script>
