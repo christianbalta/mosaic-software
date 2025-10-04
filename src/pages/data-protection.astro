@@ -1,0 +1,16 @@
+---
+import DateProtection from "../components/data-protection/DataProtection.astro";
+import Footer from "../components/shared/Footer.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Datenschutzerklärung | Mosaic Software">
+  <Navigation />
+  <main
+    class="!pt-20 mx-auto w-full max-w-screen-2xl p-3 sm:p-4 lg:p-6 flex flex-col gap-14 lg:gap-20"
+  >
+    <DateProtection />
+  </main>
+  <Footer />
+</Layout>
