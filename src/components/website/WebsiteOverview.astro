@@ -13,7 +13,7 @@
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-10 text-dark-brown">
     <div
       class="p-5 lg:p-10 rounded-lg bg-porcelain-mist border border-creamed-oat hover:scale-105 transform transition-transform duration-200 cursor-pointer"
-      id="designClickSource"
+      onclick="location.href = '/website#webdesign'"
     >
       <div class="mb-3 lg:mb-6 flex flex-row gap-4 lg:gap-6 items-center">
         <i class="fa-solid fa-object-group scale-150"></i>
@@ -27,7 +27,7 @@
 
     <div
       class="p-5 lg:p-10 rounded-lg bg-porcelain-mist border border-creamed-oat hover:scale-105 transform transition-transform duration-200 cursor-pointer"
-      id="shopClickSource"
+      onclick="location.href = '/website#shops'"
     >
       <div class="mb-3 lg:mb-6 flex flex-row gap-4 lg:gap-6 items-center">
         <i class="fa-solid fa-cart-shopping scale-150"></i>
@@ -41,7 +41,7 @@
 
     <div
       class="p-5 lg:p-10 rounded-lg bg-porcelain-mist border border-creamed-oat hover:scale-105 transform transition-transform duration-200 cursor-pointer"
-      id="seoClickSource"
+      onclick="location.href = '/website#seo'"
     >
       <div class="mb-3 lg:mb-6 flex flex-row gap-4 lg:gap-6 items-center">
         <i class="fa-solid fa-magnifying-glass scale-150"></i>
@@ -54,24 +54,3 @@
     </div>
   </div>
 </section>
-
-<script>
-  const design = document.getElementById("designClickSource");
-  const shop = document.getElementById("shopClickSource");
-  const seo = document.getElementById("seoClickSource");
-
-  design?.addEventListener("click", () => scrollToElement("webdesign"));
-  shop?.addEventListener("click", () => scrollToElement("shops"));
-  seo?.addEventListener("click", () => scrollToElement("seo"));
-
-  function scrollToElement(id: string): void {
-    const element = document.getElementById(id);
-    if (!element) return;
-
-    const start = window.scrollY - 80;
-    const end = element.getBoundingClientRect().top + start;
-    const distance = end - start;
-
-    window.scrollTo(0, start + distance);
-  }
-</script>

@@ -38,9 +38,9 @@ import { Image } from "astro:assets";
           >Website</a
         >
         <a
-          href="/unternehmen"
-          class={`menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200 ${Astro.url.pathname === "/unternehmen" ? "text-desert-rock" : ""}`}
-          >Unternehmen</a
+          href="/startups"
+          class={`menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200 ${Astro.url.pathname === "/startups" ? "text-desert-rock" : ""}`}
+          >Startups</a
         >
       </div>
 
@@ -138,26 +138,7 @@ import { Image } from "astro:assets";
       </a>
 
       <a
-        href="/portfolio"
-        class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300"
-      >
-        <div class="flex items-center space-x-4">
-          <div
-            class="w-10 h-10 bg-soft-sandstone rounded-lg flex items-center justify-center group-hover:bg-desert-rock group-hover:scale-110 transition-all duration-300"
-          >
-            <i
-              class="fas fa-briefcase text-dark-brown group-hover:text-feather-white transition-colors duration-300"
-            ></i>
-          </div>
-          <span class="text-lg font-medium text-dark-brown">Portfolio</span>
-        </div>
-        <i
-          class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"
-        ></i>
-      </a>
-
-      <a
-        href="/unternehmen"
+        href="/startups"
         class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300"
       >
         <div class="flex items-center space-x-4">
@@ -168,7 +149,7 @@ import { Image } from "astro:assets";
               class="fas fa-building text-dark-brown group-hover:text-feather-white transition-colors duration-300"
             ></i>
           </div>
-          <span class="text-lg font-medium text-dark-brown">Unternehmen</span>
+          <span class="text-lg font-medium text-dark-brown">Startups</span>
         </div>
         <i
           class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"
@@ -195,16 +176,11 @@ import { Image } from "astro:assets";
       <p class="text-sm text-desert-rock mb-4">Folge uns</p>
       <div class="flex space-x-4">
         <a
-          href="#"
+          href="https://www.instagram.com/mosaicsoftware/"
+          target="_blank"
           class="w-10 h-10 bg-porcelain-mist rounded-full flex items-center justify-center hover:bg-desert-rock hover:text-feather-white text-dark-brown transition-all duration-300"
         >
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a
-          href="#"
-          class="w-10 h-10 bg-porcelain-mist rounded-full flex items-center justify-center hover:bg-desert-rock hover:text-feather-white text-dark-brown transition-all duration-300"
-        >
-          <i class="fab fa-linkedin-in"></i>
+          <i class="fa-brands fa-instagram"></i>
         </a>
       </div>
     </div>
@@ -220,18 +196,11 @@ import { Image } from "astro:assets";
           Datenschutz
         </a>
         <a
-          href="#terms"
+          href="/impressum"
           class="flex items-center text-sm text-desert-rock transition-colors"
         >
           <i class="fas fa-file-contract mr-3 w-4"></i>
           Impressum
-        </a>
-        <a
-          href="#terms"
-          class="flex items-center text-sm text-desert-rock transition-colors"
-        >
-          <i class="fas fa-file-signature mr-3 w-4"></i>
-          AGB
         </a>
       </div>
     </div>

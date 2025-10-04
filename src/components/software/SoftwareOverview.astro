@@ -13,7 +13,7 @@
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-10 text-dark-brown">
     <div
       class="p-5 lg:p-10 rounded-lg bg-porcelain-mist border border-creamed-oat hover:scale-105 transform transition-transform duration-200 cursor-pointer"
-      id="webClickSource"
+      onclick="location.href = '/software#webapplications'"
     >
       <div class="mb-3 lg:mb-6 flex flex-row gap-4 lg:gap-6 items-center">
         <i class="fa-solid fa-cloud scale-150"></i>
@@ -27,7 +27,7 @@
 
     <div
       class="p-5 lg:p-10 rounded-lg bg-porcelain-mist border border-creamed-oat hover:scale-105 transform transition-transform duration-200 cursor-pointer"
-      id="mobileClickSource"
+      onclick="location.href = '/software#mobileapps'"
     >
       <div class="mb-3 lg:mb-6 flex flex-row gap-4 lg:gap-6 items-center">
         <i class="fa-solid fa-mobile-screen scale-150"></i>
@@ -41,7 +41,7 @@
 
     <div
       class="p-5 lg:p-10 rounded-lg bg-porcelain-mist border border-creamed-oat hover:scale-105 transform transition-transform duration-200 cursor-pointer"
-      id="desktopClickSource"
+      onclick="location.href = '/software#desktopapplications'"
     >
       <div class="mb-3 lg:mb-6 flex flex-row gap-4 lg:gap-6 items-center">
         <i class="fa-solid fa-display scale-150"></i>
@@ -55,26 +55,3 @@
     </div>
   </div>
 </section>
-
-<script>
-  const web = document.getElementById("webClickSource");
-  const mobile = document.getElementById("mobileClickSource");
-  const desktop = document.getElementById("desktopClickSource");
-
-  web?.addEventListener("click", () => scrollToElement("webapplications"));
-  mobile?.addEventListener("click", () => scrollToElement("mobileapps"));
-  desktop?.addEventListener("click", () =>
-    scrollToElement("desktopapplications"),
-  );
-
-  function scrollToElement(id: string): void {
-    const element = document.getElementById(id);
-    if (!element) return;
-
-    const start = window.scrollY - 80;
-    const end = element.getBoundingClientRect().top + start;
-    const distance = end - start;
-
-    window.scrollTo(0, start + distance);
-  }
-</script>
