@@ -1,19 +1,24 @@
 ---
-import {Image} from 'astro:assets';
+import { Image } from "astro:assets";
 
-import agebetter from '../../assets/Agebetter-Mockup.png';
-import bioshield from '../../assets/Bioshield-Mockup.png';
-import kitaLuftibus from '../../assets/Kita-Luftibus-Mockup.png';
-import fretz from '../../assets/Fretz-Gartenpflege-Mockup.png';
+import agebetter from "../../assets/Agebetter-Mockup.png";
+import bioshield from "../../assets/Bioshield-Mockup.png";
+import kitaLuftibus from "../../assets/Kita-Luftibus-Mockup.png";
+import fretz from "../../assets/Fretz-Gartenpflege-Mockup.png";
 ---
 
 <section id="portfolio" class="relative py-16 lg:py-32">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-desert-rock">
-        Portfolio</h2>
-      <p class="mt-4 md:text-lg max-w-3xl mx-auto">A selection of our recent work and product
-        collaborations.</p>
+      <h2
+        class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-desert-rock"
+      >
+        Portfolio
+      </h2>
+      <p class="mt-4 md:text-lg max-w-3xl mx-auto">
+        Unser Portfolio steht für innovative Lösungen und digitale Erfolge – von
+        smarten Apps bis zu leistungsstarken Shops und Websites.
+      </p>
     </div>
   </div>
 
@@ -30,18 +35,26 @@ import fretz from '../../assets/Fretz-Gartenpflege-Mockup.png';
             <h3 class="headline">
               <span>Agebetter</span>
             </h3>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
-              aliquid aperiam architecto atque doloribus dolorum eaque excepturi fuga hic illum
-              inventore, iusto, minus molestiae molestias nemo neque possimus quae quaerat quas quos
-              reprehenderit, rerum sint unde veniam vero voluptate voluptates.</p>
-            <a href="#" class="cta">Zur Website</a>
+            <p class="description">
+              Entwicklung einer Web-Applikation zum Vergleich von
+              Spitex-Dienstleistern mit der Möglichkeit, individuelle Offerten
+              direkt anzufordern. Ziel ist eine benutzerfreundliche Plattform,
+              die Transparenz und einfache Entscheidungsfindung bietet. Das
+              Projekt befindet sich aktuell im Aufbau.
+            </p>
+            <a
+              href="https://webapp-dev.agebetter.ch"
+              target="_blank"
+              class="cta">Zur Website</a
+            >
           </div>
           <div class="card-media">
             <Image
-                src={agebetter}
-                width={770}
-                height={560}
-                alt="Agebetter Website"/>
+              src={agebetter}
+              width={770}
+              height={560}
+              alt="Agebetter Website"
+            />
           </div>
         </div>
       </article>
@@ -56,19 +69,22 @@ import fretz from '../../assets/Fretz-Gartenpflege-Mockup.png';
             <h3 class="headline">
               <span>Swiss Bioshield</span>
             </h3>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-              animi aspernatur aut consectetur consequatur eveniet explicabo harum impedit itaque
-              nihil nostrum, placeat quis quos ratione rem, temporibus totam veritatis, voluptates?
-              Accusamus autem culpa explicabo harum nobis optio praesentium veritatis
-              voluptatibus.</p>
-            <a href="#" class="cta">Zur Website</a>
+            <p class="description">
+              IT-Partner des internationalen Franchise-Unternehmens –
+              verantwortlich für den Aufbau und die laufende Betreuung der
+              gesamten Onlinepräsenz, inklusive integriertem Onlineshop.
+            </p>
+            <a href="https://bioshield.swiss" target="_blank" class="cta"
+              >Zur Website</a
+            >
           </div>
           <div class="card-media">
             <Image
-                src={bioshield}
-                width={770}
-                height={560}
-                alt="Swiss Bioshield Website"/>
+              src={bioshield}
+              width={770}
+              height={560}
+              alt="Swiss Bioshield Website"
+            />
           </div>
         </div>
       </article>
@@ -83,19 +99,21 @@ import fretz from '../../assets/Fretz-Gartenpflege-Mockup.png';
             <h3 class="headline">
               <span>KiTa Luftibus</span>
             </h3>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At hic
-              officiis temporibus. Explicabo iure laudantium modi officiis recusandae sequi
-              voluptate! Aliquam aliquid, animi distinctio dolor, ducimus fugit molestiae non nulla
-              numquam pariatur placeat quam quasi quod repellendus voluptatibus? Incidunt,
-              maxime.</p>
-            <a href="#" class="cta">Zur Website</a>
+            <p class="description">
+              Einladende Website mit integriertem Blog – optimiert für digitale
+              Sichtbarkeit und Benutzerfreundlichkeit.
+            </p>
+            <a href="https://www.kita-luftibus.ch" target="_blank" class="cta"
+              >Zur Website</a
+            >
           </div>
           <div class="card-media">
             <Image
-                src={kitaLuftibus}
-                width={770}
-                height={560}
-                alt="KiTa Luftibus Website"/>
+              src={kitaLuftibus}
+              width={770}
+              height={560}
+              alt="KiTa Luftibus Website"
+            />
           </div>
         </div>
       </article>
@@ -110,18 +128,22 @@ import fretz from '../../assets/Fretz-Gartenpflege-Mockup.png';
             <h3 class="headline">
               <span>Fretz Gartenpflege</span>
             </h3>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-              dicta facilis fuga id molestiae nesciunt optio reiciendis totam veritatis voluptatum!
-              Consequatur cumque facere nam obcaecati officia voluptate. Ducimus eum hic neque
-              numquam omnis recusandae repudiandae sunt tenetur velit voluptas! Culpa!</p>
-            <a href="#" class="cta">Zur Website</a>
+            <p class="description">
+              Aufbau und SEO-Optimierung der Website zur Steigerung der
+              Online-Sichtbarkeit. Gezielt entwickelt zur Gewinnung neuer Kunden
+              und Stärkung der digitalen Präsenz.
+            </p>
+            <a href="https://fretz-garten.ch" target="_blank" class="cta"
+              >Zur Website</a
+            >
           </div>
           <div class="card-media">
             <Image
-                src={fretz}
-                width={770}
-                height={560}
-                alt="Fretz Gartenpflege GmbH Website"/>
+              src={fretz}
+              width={770}
+              height={560}
+              alt="Fretz Gartenpflege GmbH Website"
+            />
           </div>
         </div>
       </article>
@@ -134,8 +156,8 @@ import fretz from '../../assets/Fretz-Gartenpflege-Mockup.png';
   .portfolio-card {
     background: var(--color-porcelain-mist);
     border-radius: 24px;
-    border: 1px solid rgba(0, 0, 0, .06);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
     overflow: hidden;
   }
 
@@ -164,10 +186,10 @@ import fretz from '../../assets/Fretz-Gartenpflege-Mockup.png';
     gap: 8px;
     background: #fff;
     color: var(--color-dark-brown);
-    border: 1px solid rgba(0, 0, 0, .08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     padding: 10px 14px;
     border-radius: 999px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, .06);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
     margin-top: 48px;
     margin-bottom: 18px;
     font-size: 14px;
@@ -203,7 +225,9 @@ import fretz from '../../assets/Fretz-Gartenpflege-Mockup.png';
     border-radius: 12px;
     font-weight: 700;
     text-decoration: none;
-    transition: transform .2s ease, background .2s ease;
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease;
   }
 
   .portfolio-card .cta:hover {
@@ -224,7 +248,10 @@ import fretz from '../../assets/Fretz-Gartenpflege-Mockup.png';
     display: flex;
     align-items: stretch;
     z-index: 0;
-    transition: transform 500ms ease, box-shadow 500ms ease, filter 500ms ease;
+    transition:
+      transform 500ms ease,
+      box-shadow 500ms ease,
+      filter 500ms ease;
     border: 2px solid #fff3;
   }
 
@@ -245,12 +272,12 @@ import fretz from '../../assets/Fretz-Gartenpflege-Mockup.png';
   }
 
   .card.is-behind {
-    transform: translateY(-6px) scale(.97);
-    filter: saturate(.9) brightness(.98);
+    transform: translateY(-6px) scale(0.97);
+    filter: saturate(0.9) brightness(0.98);
   }
 
   .card.is-front {
-    box-shadow: 0 30px 90px rgba(0, 0, 0, .28);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
   }
 
   /* Mobile adjustments: disable sticky stacking to prevent overlap */
@@ -262,13 +289,13 @@ import fretz from '../../assets/Fretz-Gartenpflege-Mockup.png';
     .card {
       position: static;
       top: auto;
-      width: 100%;
+      width: calc(100% - 1.5rem);
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 24px; /* regular spacing between cards */
       z-index: auto;
-      border: 1px solid rgba(0,0,0,.06);
-      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
       transform: none !important;
       filter: none !important;
     }
@@ -317,21 +344,26 @@ import fretz from '../../assets/Fretz-Gartenpflege-Mockup.png';
 
 <script>
   // Lightweight IntersectionObserver to add depth while scrolling
-  const cards = Array.from(document.querySelectorAll('.stack .card'));
-  if (cards.length) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const el = entry.target;
-        if (entry.isIntersecting && entry.intersectionRatio > 0.55) {
-          cards.forEach(c => c.classList.remove('is-front'));
-          el.classList.add('is-front');
-        }
-        const index = cards.indexOf(el);
-        cards.forEach((c, i) => {
-          c.classList.toggle('is-behind', i < index);
-        });
-      });
-    }, {threshold: [0.55]});
-    cards.forEach(c => observer.observe(c));
-  }
+  document.addEventListener("astro:page-load", () => {
+    const cards = Array.from(document.querySelectorAll(".stack .card"));
+    if (cards.length) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const el = entry.target;
+            if (entry.isIntersecting && entry.intersectionRatio > 0.55) {
+              cards.forEach((c) => c.classList.remove("is-front"));
+              el.classList.add("is-front");
+            }
+            const index = cards.indexOf(el);
+            cards.forEach((c, i) => {
+              c.classList.toggle("is-behind", i < index);
+            });
+          });
+        },
+        { threshold: [0.55] },
+      );
+      cards.forEach((c) => observer.observe(c));
+    }
+  });
 </script>
