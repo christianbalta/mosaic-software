@@ -176,9 +176,11 @@ import { Image } from "astro:assets";
 
         if (nearBottom) {
           scrollToTopBtn.classList.remove("bottom-8");
-          scrollToTopBtn.classList.add("bottom-24");
+          scrollToTopBtn.classList.add("bottom-28");
+          scrollToTopBtn.classList.add("lg:bottom-24");
         } else {
-          scrollToTopBtn.classList.remove("bottom-24");
+          scrollToTopBtn.classList.remove("bottom-28");
+          scrollToTopBtn.classList.remove("lg:bottom-24");
           scrollToTopBtn.classList.add("bottom-8");
         }
       });
