@@ -1,5 +1,10 @@
+---
+import { Image } from "astro:assets";
+import illustration from "../../assets/icons/webapp.svg";
+---
+
 <section id="webapplications" class="pt-14 lg:pt-20">
-  <div class="text-dark-brown grid grid-cols-1 sm:grid-cols-2">
+  <div class="text-dark-brown grid grid-cols-1 sm:grid-cols-2 gap-8">
     <div>
       <h2
         class="text-xl lg:text-3xl py-4 lg:py-6 font-semibold text-desert-rock"
@@ -18,7 +23,13 @@
         und intuitiv zu bedienen sind.
       </div>
     </div>
-
-    <div class="flex justify-center items-center">**Illustration**</div>
+    <div class="flex items-center justify-center">
+      <Image
+        src={illustration}
+        alt="Webapplikation Illustration"
+        loading="lazy"
+        width={280}
+      />
+    </div>
   </div>
 </section>
