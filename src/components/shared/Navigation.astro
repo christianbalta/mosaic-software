@@ -30,24 +30,19 @@ import { Image } from "astro:assets";
         <a
           href="/software"
           class={`menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200 ${Astro.url.pathname === "/software" ? "text-desert-rock" : ""}`}
-          >Software</a
+          >Softwarelösungen</a
         >
         <a
           href="/website"
           class={`menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200 ${Astro.url.pathname === "/website" ? "text-desert-rock" : ""}`}
-          >Website</a
-        >
-        <a
-          href="/startups"
-          class={`menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200 ${Astro.url.pathname === "/startups" ? "text-desert-rock" : ""}`}
-          >Startups</a
+          >Websites & Shops</a
         >
       </div>
 
       <!-- CTA Button -->
       <div class="hidden md:block">
         <a
-          href="#contact"
+          href="/#contact"
           class="relative inline-flex items-center px-8 py-3 overflow-hidden font-semibold text-feather-white bg-desert-rock rounded-full group hover:bg-dark-brown transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
         >
           <span class="relative z-10">Kontakt</span>
@@ -80,7 +75,7 @@ import { Image } from "astro:assets";
 <!-- Mobile Menu Panel -->
 <div
   id="mobile-menu"
-  class="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-feather-white transform translate-x-full transition-transform duration-500 ease-out md:hidden z-50 shadow-2xl custom-scrollbar overflow-y-auto"
+  class="fixed top-0 right-0 bottom-0 w-full bg-feather-white transform translate-x-full transition-transform duration-500 ease-out md:hidden z-[100] shadow-2xl custom-scrollbar overflow-y-auto"
 >
   <!-- Decorative elements with soft colors -->
   <div
@@ -93,15 +88,14 @@ import { Image } from "astro:assets";
   </div>
 
   <!-- Menu Header -->
-  <div class="relative p-6 border-b border-creamed-oat">
-    <div class="flex items-center justify-between">
+  <div class="relative px-4 border-b border-creamed-oat h-20">
+    <div class="flex items-center justify-between h-full">
       <div class="flex items-center space-x-3">
         <Image
           src={mosaicLogo}
           alt="Mosaic Software Logo"
           loading="lazy"
           width={100}
-          height={50}
         />
       </div>
       <button
@@ -119,7 +113,7 @@ import { Image } from "astro:assets";
     <!-- Main Navigation -->
     <nav class="space-y-2">
       <a
-        href="/services"
+        href="/software"
         class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300"
       >
         <div class="flex items-center space-x-4">
@@ -127,18 +121,19 @@ import { Image } from "astro:assets";
             class="w-10 h-10 bg-soft-sandstone rounded-lg flex items-center justify-center group-hover:bg-desert-rock group-hover:scale-110 transition-all duration-300"
           >
             <i
-              class="fas fa-cog text-dark-brown group-hover:text-feather-white transition-colors duration-300"
+              class="fa-solid fa-display text-dark-brown group-hover:text-feather-white transition-colors duration-300"
             ></i>
           </div>
-          <span class="text-lg font-medium text-dark-brown">Services</span>
+          <span class="text-lg font-medium text-dark-brown"
+            >Softwarelösungen</span
+          >
         </div>
         <i
           class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"
         ></i>
       </a>
-
       <a
-        href="/startups"
+        href="/website"
         class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300"
       >
         <div class="flex items-center space-x-4">
@@ -146,10 +141,12 @@ import { Image } from "astro:assets";
             class="w-10 h-10 bg-soft-sandstone rounded-lg flex items-center justify-center group-hover:bg-desert-rock group-hover:scale-110 transition-all duration-300"
           >
             <i
-              class="fas fa-building text-dark-brown group-hover:text-feather-white transition-colors duration-300"
+              class="fa-solid fa-object-group text-dark-brown group-hover:text-feather-white transition-colors duration-300"
             ></i>
           </div>
-          <span class="text-lg font-medium text-dark-brown">Startups</span>
+          <span class="text-lg font-medium text-dark-brown"
+            >Websites & Shops</span
+          >
         </div>
         <i
           class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"
@@ -163,26 +160,12 @@ import { Image } from "astro:assets";
     <!-- CTA Button -->
     <div class="menu-item">
       <a
-        href="/kontakt"
+        href="/#contact"
         class="block w-full text-center px-6 py-4 rounded-xl bg-desert-rock text-feather-white font-semibold hover:bg-dark-brown hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
       >
         <i class="fas fa-envelope mr-2"></i>
         Kontakt
       </a>
-    </div>
-
-    <!-- Social Links -->
-    <div class="mt-8 menu-item">
-      <p class="text-sm text-desert-rock mb-4">Folge uns</p>
-      <div class="flex space-x-4">
-        <a
-          href="https://www.instagram.com/mosaicsoftware/"
-          target="_blank"
-          class="w-10 h-10 bg-porcelain-mist rounded-full flex items-center justify-center hover:bg-desert-rock hover:text-feather-white text-dark-brown transition-all duration-300"
-        >
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-      </div>
     </div>
 
     <!-- Additional Quick Links -->
@@ -368,68 +351,70 @@ import { Image } from "astro:assets";
 </style>
 
 <script>
-  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-  const closeMenuBtn = document.getElementById("close-menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const mobileMenuOverlay = document.getElementById("mobile-menu-overlay");
-  const body = document.body;
+  document.addEventListener("astro:page-load", () => {
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const closeMenuBtn = document.getElementById("close-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileMenuOverlay = document.getElementById("mobile-menu-overlay");
+    const body = document.body;
 
-  function openMenu() {
-    body.classList.add("menu-open");
-    mobileMenuOverlay?.classList.remove("opacity-0", "pointer-events-none");
-    mobileMenuOverlay?.classList.add("opacity-100");
-    mobileMenu?.classList.remove("translate-x-full");
-    body.classList.add("overflow-hidden");
-    mobileMenuBtn?.setAttribute("aria-expanded", "true");
-  }
-
-  function closeMenu() {
-    body.classList.remove("menu-open");
-    mobileMenuOverlay?.classList.add("opacity-0", "pointer-events-none");
-    mobileMenuOverlay?.classList.remove("opacity-100");
-    mobileMenu?.classList.add("translate-x-full");
-    body.classList.remove("overflow-hidden");
-    mobileMenuBtn?.setAttribute("aria-expanded", "false");
-  }
-
-  // Event listeners
-  mobileMenuBtn?.addEventListener("click", openMenu);
-  closeMenuBtn?.addEventListener("click", closeMenu);
-  mobileMenuOverlay?.addEventListener("click", closeMenu);
-
-  // Close menu when clicking links
-  const mobileLinks = mobileMenu?.querySelectorAll("a");
-  mobileLinks?.forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  // Escape key handling
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && body.classList.contains("menu-open")) {
-      closeMenu();
+    function openMenu() {
+      body.classList.add("menu-open");
+      mobileMenuOverlay?.classList.remove("opacity-0", "pointer-events-none");
+      mobileMenuOverlay?.classList.add("opacity-100");
+      mobileMenu?.classList.remove("translate-x-full");
+      body.classList.add("overflow-hidden");
+      mobileMenuBtn?.setAttribute("aria-expanded", "true");
     }
-  });
 
-  // Touch gesture handling
-  let touchStartX = 0;
-  let touchEndX = 0;
+    function closeMenu() {
+      body.classList.remove("menu-open");
+      mobileMenuOverlay?.classList.add("opacity-0", "pointer-events-none");
+      mobileMenuOverlay?.classList.remove("opacity-100");
+      mobileMenu?.classList.add("translate-x-full");
+      body.classList.remove("overflow-hidden");
+      mobileMenuBtn?.setAttribute("aria-expanded", "false");
+    }
 
-  mobileMenu?.addEventListener(
-    "touchstart",
-    (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    },
-    { passive: true },
-  );
+    // Event listeners
+    mobileMenuBtn?.addEventListener("click", openMenu);
+    closeMenuBtn?.addEventListener("click", closeMenu);
+    mobileMenuOverlay?.addEventListener("click", closeMenu);
 
-  mobileMenu?.addEventListener(
-    "touchend",
-    (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      if (touchEndX > touchStartX + 50) {
+    // Close menu when clicking links
+    const mobileLinks = mobileMenu?.querySelectorAll("a");
+    mobileLinks?.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    // Escape key handling
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && body.classList.contains("menu-open")) {
         closeMenu();
       }
-    },
-    { passive: true },
-  );
+    });
+
+    // Touch gesture handling
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    mobileMenu?.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      },
+      { passive: true },
+    );
+
+    mobileMenu?.addEventListener(
+      "touchend",
+      (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchEndX > touchStartX + 50) {
+          closeMenu();
+        }
+      },
+      { passive: true },
+    );
+  });
 </script>

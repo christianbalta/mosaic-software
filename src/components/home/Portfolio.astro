@@ -349,24 +349,26 @@ import fretz from "../../assets/Fretz-Gartenpflege-Mockup.png";
 
 <script>
   // Lightweight IntersectionObserver to add depth while scrolling
-  const cards = Array.from(document.querySelectorAll(".stack .card"));
-  if (cards.length) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const el = entry.target;
-          if (entry.isIntersecting && entry.intersectionRatio > 0.55) {
-            cards.forEach((c) => c.classList.remove("is-front"));
-            el.classList.add("is-front");
-          }
-          const index = cards.indexOf(el);
-          cards.forEach((c, i) => {
-            c.classList.toggle("is-behind", i < index);
+  document.addEventListener("astro:page-load", () => {
+    const cards = Array.from(document.querySelectorAll(".stack .card"));
+    if (cards.length) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const el = entry.target;
+            if (entry.isIntersecting && entry.intersectionRatio > 0.55) {
+              cards.forEach((c) => c.classList.remove("is-front"));
+              el.classList.add("is-front");
+            }
+            const index = cards.indexOf(el);
+            cards.forEach((c, i) => {
+              c.classList.toggle("is-behind", i < index);
+            });
           });
-        });
-      },
-      { threshold: [0.55] },
-    );
-    cards.forEach((c) => observer.observe(c));
-  }
+        },
+        { threshold: [0.55] },
+      );
+      cards.forEach((c) => observer.observe(c));
+    }
+  });
 </script>
