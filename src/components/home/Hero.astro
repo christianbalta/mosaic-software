@@ -1,33 +1,37 @@
 ---
-import {Image} from 'astro:assets'
+import { Image } from "astro:assets";
 
-import bioshield from "../../assets/carousel/bioshield-carousel.png";
 import bioshield2 from "../../assets/carousel/bioshield-carousel-2.png";
-import fretzGarten from "../../assets/carousel/fretz-garten-carousel.png";
+import bioshield from "../../assets/carousel/bioshield-carousel.png";
 import fretzGarten2 from "../../assets/carousel/fretz-garten-carousel-2.png";
-import kitaLuftibus from "../../assets/carousel/kita-luftibus-carousel.png";
+import fretzGarten from "../../assets/carousel/fretz-garten-carousel.png";
 import kitaLuftibus2 from "../../assets/carousel/kita-luftibus-carousel-2.png";
-import kucaSVrtom from "../../assets/carousel/kuca-s-vrtom-carousel.png";
+import kitaLuftibus from "../../assets/carousel/kita-luftibus-carousel.png";
 import kucaSVrtom2 from "../../assets/carousel/kuca-s-vrtom-carousel-2.png";
-import msure from "../../assets/carousel/msure-carousel.png";
+import kucaSVrtom from "../../assets/carousel/kuca-s-vrtom-carousel.png";
 import msure2 from "../../assets/carousel/msure-carousel-2.png";
-import wachtelschachtel from "../../assets/carousel/wachtelschachtel-carousel.png";
+import msure from "../../assets/carousel/msure-carousel.png";
 import wachtelschachtel2 from "../../assets/carousel/wachtelschachtel-carousel-2.png";
+import wachtelschachtel from "../../assets/carousel/wachtelschachtel-carousel.png";
 ---
 
 <header class="hero">
   <div class="hero-content">
-    <h1 class="text-5xl md:text-5xl lg:text-6xl font-bold tracking-tight text-desert-rock uppercase">
-      <span>Individual</span><br/>
+    <h1
+      class="text-5xl md:text-5xl lg:text-6xl font-bold tracking-tight text-desert-rock uppercase"
+    >
+      <span>Individuelle</span><br />
       Software und Websites
     </h1>
     <p class="md:text-lg max-w-3xl mx-auto text-dark-brown">
       Aus Vielfalt wird Einheit. Aus Ideen Software.
     </p>
-    <button
-        class="bg-desert-rock text-white px-8 py-3 rounded-full font-semibold hover:-translate-y-0.5 hover:bg-dark-brown transition-all duration-300">
+    <a
+      href="#contact"
+      class="bg-desert-rock text-white px-8 py-3 rounded-full font-semibold hover:-translate-y-0.5 hover:bg-dark-brown transition-all duration-300"
+    >
       Jetzt anfragen
-    </button>
+    </a>
   </div>
 
   <!-- 3D Carousel -->
@@ -38,65 +42,127 @@ import wachtelschachtel2 from "../../assets/carousel/wachtelschachtel-carousel-2
           <!-- Image Pair 1 -->
           <div class="image-pair">
             <div class="carousel-image">
-              <Image src={bioshield} alt="Bioshield project" loading="lazy" width={280}
-                     height={400}/>
+              <Image
+                src={bioshield}
+                alt="Bioshield project"
+                loading="eager"
+                width={280}
+                height={400}
+              />
             </div>
             <div class="carousel-image">
-              <Image src={bioshield2} alt="Bioshield project" loading="lazy" width={280}
-                     height={400}/>
+              <Image
+                src={bioshield2}
+                alt="Bioshield project"
+                loading="eager"
+                width={280}
+                height={400}
+              />
             </div>
           </div>
           <!-- Image Pair 2 -->
           <div class="image-pair">
             <div class="carousel-image">
-              <Image src={fretzGarten} alt="Fretz Garten project" loading="lazy" width={280}
-                     height={400}/>
+              <Image
+                src={fretzGarten}
+                alt="Fretz Garten project"
+                loading="eager"
+                width={280}
+                height={400}
+              />
             </div>
             <div class="carousel-image">
-              <Image src={fretzGarten2} alt="Fretz Garten project" loading="lazy" width={280}
-                     height={400}/>
+              <Image
+                src={fretzGarten2}
+                alt="Fretz Garten project"
+                loading="eager"
+                width={280}
+                height={400}
+              />
             </div>
           </div>
           <!-- Image Pair 3 -->
           <div class="image-pair">
             <div class="carousel-image">
-              <Image src={kitaLuftibus} alt="Kita Luftibus project" loading="lazy" width={280}
-                     height={400}/>
+              <Image
+                src={kitaLuftibus}
+                alt="Kita Luftibus project"
+                loading="eager"
+                width={280}
+                height={400}
+              />
             </div>
             <div class="carousel-image">
-              <Image src={kitaLuftibus2} alt="Kita Luftibus project" loading="lazy" width={280}
-                     height={400}/>
+              <Image
+                src={kitaLuftibus2}
+                alt="Kita Luftibus project"
+                loading="eager"
+                width={280}
+                height={400}
+              />
             </div>
           </div>
           <!-- Image Pair 4 -->
           <div class="image-pair">
             <div class="carousel-image">
-              <Image src={kucaSVrtom} alt="Kuca s Vrtom project" loading="lazy" width={280}
-                     height={400}/>
+              <Image
+                src={kucaSVrtom}
+                alt="Kuca s Vrtom project"
+                loading="eager"
+                width={280}
+                height={400}
+              />
             </div>
             <div class="carousel-image">
-              <Image src={kucaSVrtom2} alt="Kuca s Vrtom project" loading="lazy" width={280}
-                     height={400}/>
+              <Image
+                src={kucaSVrtom2}
+                alt="Kuca s Vrtom project"
+                loading="eager"
+                width={280}
+                height={400}
+              />
             </div>
           </div>
           <!-- Image Pair 5 -->
           <div class="image-pair">
             <div class="carousel-image">
-              <Image src={msure} alt="Msure project" loading="lazy" width={280} height={400}/>
+              <Image
+                src={msure}
+                alt="Msure project"
+                loading="eager"
+                width={280}
+                height={400}
+              />
             </div>
             <div class="carousel-image">
-              <Image src={msure2} alt="Msure project" loading="lazy" width={280} height={400}/>
+              <Image
+                src={msure2}
+                alt="Msure project"
+                loading="eager"
+                width={280}
+                height={400}
+              />
             </div>
           </div>
           <!-- Image Pair 6 -->
           <div class="image-pair">
             <div class="carousel-image">
-              <Image src={wachtelschachtel} alt="Wachtelschachtel project" loading="lazy"
-                     width={280} height={400}/>
+              <Image
+                src={wachtelschachtel}
+                alt="Wachtelschachtel project"
+                loading="eager"
+                width={280}
+                height={400}
+              />
             </div>
             <div class="carousel-image">
-              <Image src={wachtelschachtel2} alt="Wachtelschachtel project" loading="lazy"
-                     width={280} height={400}/>
+              <Image
+                src={wachtelschachtel2}
+                alt="Wachtelschachtel project"
+                loading="eager"
+                width={280}
+                height={400}
+              />
             </div>
           </div>
         </div>
@@ -104,25 +170,25 @@ import wachtelschachtel2 from "../../assets/carousel/wachtelschachtel-carousel-2
     </div>
   </div>
 
-  <!-- Feature Cards -->
+  <!-- TODO: Feature Cards -->
   <div class="feature-cards">
     <div class="feature-card">
-      <h3 class="feature-title">5/5 ⭐ Bewertungen</h3>
+      <h3 class="feature-title">5⭐ Bewertung</h3>
       <p class="feature-description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium delectus possimus quos
-        tempore vel veritatis?
+        Höchste Kundenzufriedenheit – bestätigt durch Top-Bewertungen.
       </p>
     </div>
     <div class="feature-card bordered">
-      <h3 class="feature-title">🌟 Individuelles Design</h3>
+      <h3 class="feature-title">🔧 Rundum-Service</h3>
       <p class="feature-description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse harum minima nostrum nulla ut. Sed.
+        Alles aus einer Hand – von der Beratung bis zur Umsetzung.
       </p>
     </div>
     <div class="feature-card">
-      <h3 class="feature-title">🔧 Rundum-Service</h3>
+      <h3 class="feature-title">🇨🇭 Swiss Made Software</h3>
       <p class="feature-description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At beatae dolor eos iure labore praesentium.
+        Unsere Software wird vollständig in der Schweiz entwickelt – mit
+        höchsten Qualitätsstandards.
       </p>
     </div>
   </div>
@@ -131,9 +197,8 @@ import wachtelschachtel2 from "../../assets/carousel/wachtelschachtel-carousel-2
 <style>
   /* Base */
   .hero {
-    margin-top: 50px;
     padding: 100px 40px;
-    min-height: 1000px;
+    min-height: 1030px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -173,7 +238,7 @@ import wachtelschachtel2 from "../../assets/carousel/wachtelschachtel-carousel-2
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -199,8 +264,20 @@ import wachtelschachtel2 from "../../assets/carousel/wachtelschachtel-carousel-2
     height: 600px;
     z-index: 1;
     overflow: hidden;
-    mask: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 19.72%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
-    -webkit-mask: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 19.72%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+    mask: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 19.72%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    -webkit-mask: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 19.72%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0) 100%
+    );
   }
 
   .carousel-slider {
@@ -314,7 +391,6 @@ import wachtelschachtel2 from "../../assets/carousel/wachtelschachtel-carousel-2
   /* Feature Cards */
   .feature-cards {
     display: flex;
-    gap: 20px;
     width: 100%;
     max-width: 1200px;
     margin-top: 60px;
@@ -372,11 +448,11 @@ import wachtelschachtel2 from "../../assets/carousel/wachtelschachtel-carousel-2
     }
 
     .carousel-images {
-      width: 1000px;
+      width: 1200px;
     }
 
     .image-pair {
-      width: 1000px;
+      width: 1200px;
     }
 
     .carousel-image {
@@ -401,7 +477,7 @@ import wachtelschachtel2 from "../../assets/carousel/wachtelschachtel-carousel-2
 
     .carousel-container {
       height: 400px;
-      top: 340px;
+      top: 280px;
     }
 
     .carousel-images {
@@ -421,13 +497,19 @@ import wachtelschachtel2 from "../../assets/carousel/wachtelschachtel-carousel-2
 
     .feature-cards {
       flex-direction: column;
-      margin-top: 280px; /* Push below absolute carousel on mobile */
+      margin-top: 330px; /* Push below absolute carousel on mobile */
     }
 
     .feature-card.bordered {
       border: none;
       border-top: 1px solid rgba(0, 0, 0, 0.1);
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @media (max-width: 388px) {
+    .carousel-container {
+      top: 340px;
     }
   }
 </style>

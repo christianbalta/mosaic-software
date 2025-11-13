@@ -1,0 +1,20 @@
+---
+import Footer from "../components/shared/Footer.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import DesktopApplications from "../components/software/DesktopApplications.astro";
+import MobileApps from "../components/software/MobileApps.astro";
+import Overview from "../components/software/SoftwareOverview.astro";
+import Webapplications from "../components/software/WebApplications.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Softwarelösungen | Mosaic Software">
+  <Navigation />
+  <main class="!py-20 mx-auto w-full max-w-screen-2xl p-3 sm:p-4 lg:p-6">
+    <Overview />
+    <Webapplications />
+    <MobileApps />
+    <DesktopApplications />
+  </main>
+  <Footer />
+</Layout>

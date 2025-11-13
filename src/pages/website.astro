@@ -1,0 +1,20 @@
+---
+import Footer from "../components/shared/Footer.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import Seo from "../components/website/Seo.astro";
+import Shops from "../components/website/Shops.astro";
+import WebDesign from "../components/website/WebDesign.astro";
+import Overview from "../components/website/WebsiteOverview.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Website, Shops & SEO | Mosaic Software">
+  <Navigation />
+  <main class="!py-20 mx-auto w-full max-w-screen-2xl p-3 sm:p-4 lg:p-6">
+    <Overview />
+    <WebDesign />
+    <Shops />
+    <Seo />
+  </main>
+  <Footer />
+</Layout>

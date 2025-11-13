@@ -1,20 +1,26 @@
 ---
 import mosaicLogo from "../../assets/Mosaic-Software-logo.svg";
 import { Image } from "astro:assets";
-import type { NavigationLink } from '@/types';
 ---
 
 <footer class="bg-dark-brown text-feather-white relative overflow-hidden">
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div
+    class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4 lg:pb-6 lg:pt-16"
+  >
     <!-- Main footer content -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
       <!-- Company Info -->
-      <div class="lg:col-span-2">
+      <div>
         <div class="mb-6">
-          <Image src={mosaicLogo} alt="Mosaic Software Logo" width={120} class="mb-4 brightness-0 invert"/>
+          <Image
+            src={mosaicLogo}
+            alt="Mosaic Software Logo"
+            width={120}
+            class="mb-4 brightness-0 invert"
+          />
           <p class="text-soft-sandstone text-sm leading-relaxed max-w-md">
-            Deine vertrauensvolle Softwareagentur in Zürich. Wir entwickeln individuelle Software und Websites für moderne Unternehmen.
+            Deine vertrauensvolle Softwareagentur in Zürich. Wir entwickeln
+            individuelle Software und Websites für moderne Unternehmen.
           </p>
         </div>
 
@@ -22,17 +28,25 @@ import type { NavigationLink } from '@/types';
         <div class="space-y-3">
           <div class="flex items-center space-x-3">
             <i class="fas fa-map-marker-alt text-desert-rock w-4"></i>
-            <span class="text-sm text-soft-sandstone">Brunnenstrasse 7<br>8610 Uster</span>
+            <span class="text-sm text-soft-sandstone"
+              >Brunnenstrasse 7<br />8610 Uster</span
+            >
           </div>
           <div class="flex items-center space-x-3">
             <i class="fas fa-envelope text-desert-rock w-4"></i>
-            <a href="mailto:contact@mosaic-software.ch" class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200">
+            <a
+              href="mailto:contact@mosaic-software.ch"
+              class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200"
+            >
               contact@mosaic-software.ch
             </a>
           </div>
           <div class="flex items-center space-x-3">
             <i class="fas fa-phone text-desert-rock w-4"></i>
-            <a href="tel:+41764739974" class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200">
+            <a
+              href="tel:+41764739974"
+              class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200"
+            >
               +41 76 473 99 74
             </a>
           </div>
@@ -41,70 +55,36 @@ import type { NavigationLink } from '@/types';
 
       <!-- Quick Links -->
       <div>
-        <h3 class="text-lg font-semibold mb-6 text-feather-white">Navigation</h3>
+        <h3 class="text-lg font-semibold mb-6 text-feather-white">
+          Dienstleistungen
+        </h3>
         <ul class="space-y-3">
           <li>
-            <a href="/services" class="text-soft-sandstone hover:text-feather-white transition-colors duration-200 text-sm">
-              Services
+            <a
+              href="/software"
+              class="text-soft-sandstone hover:text-feather-white transition-colors duration-200 text-sm"
+            >
+              Softwarelösungen
             </a>
           </li>
+
           <li>
-            <a href="/portfolio" class="text-soft-sandstone hover:text-feather-white transition-colors duration-200 text-sm">
-              Portfolio
-            </a>
-          </li>
-          <li>
-            <a href="/unternehmen" class="text-soft-sandstone hover:text-feather-white transition-colors duration-200 text-sm">
-              Unternehmen
-            </a>
-          </li>
-          <li>
-            <a href="#contact" class="text-soft-sandstone hover:text-feather-white transition-colors duration-200 text-sm">
-              Kontakt
+            <a
+              href="/website"
+              class="text-soft-sandstone hover:text-feather-white transition-colors duration-200 text-sm"
+            >
+              Websites & Shops
             </a>
           </li>
         </ul>
-      </div>
-
-      <!-- Services -->
-      <div>
-        <h3 class="text-lg font-semibold mb-6 text-feather-white">Services</h3>
-        <ul class="space-y-3">
-          <li>
-            <span class="text-soft-sandstone text-sm">Individualsoftware</span>
-          </li>
-          <li>
-            <span class="text-soft-sandstone text-sm">Website & Shops</span>
-          </li>
-          <li>
-            <span class="text-soft-sandstone text-sm">Startups</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Social Media -->
-    <div class="border-t border-desert-rock/30 pt-8 mb-8">
-      <div class="flex justify-center lg:justify-start">
-        <!-- Social Links -->
-        <div>
-          <h4 class="text-sm font-medium text-feather-white mb-4">Folge uns</h4>
-          <div class="flex space-x-4">
-            <a href="#" class="w-10 h-10 bg-desert-rock/20 rounded-full flex items-center justify-center hover:bg-desert-rock hover:scale-110 transition-all duration-300 group">
-              <i class="fab fa-instagram text-soft-sandstone group-hover:text-feather-white"></i>
-            </a>
-            <a href="#" class="w-10 h-10 bg-desert-rock/20 rounded-full flex items-center justify-center hover:bg-desert-rock hover:scale-110 transition-all duration-300 group">
-              <i class="fab fa-linkedin-in text-soft-sandstone group-hover:text-feather-white"></i>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
 
     <!-- Bottom Bar -->
     <div class="border-t border-desert-rock/30 pt-8">
-      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
-
+      <div
+        class="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0"
+      >
         <!-- Copyright -->
         <div class="text-sm text-soft-sandstone">
           © {new Date().getFullYear()} Mosaic Software. Alle Rechte vorbehalten.
@@ -112,14 +92,17 @@ import type { NavigationLink } from '@/types';
 
         <!-- Legal Links -->
         <div class="flex flex-wrap items-center space-x-6">
-          <a href="/datenschutz" class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200">
+          <a
+            href="/data-protection"
+            class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200"
+          >
             Datenschutz
           </a>
-          <a href="/impressum" class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200">
+          <a
+            href="/impressum"
+            class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200"
+          >
             Impressum
-          </a>
-          <a href="/agb" class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200">
-            AGB
           </a>
         </div>
       </div>
@@ -158,7 +141,7 @@ import type { NavigationLink } from '@/types';
     outline: none;
   }
 
-  a:focus {
+  a:not(.group):focus {
     outline: 2px solid var(--color-desert-rock);
     outline-offset: 2px;
     border-radius: 2px;
@@ -176,22 +159,38 @@ import type { NavigationLink } from '@/types';
 </style>
 
 <script>
-  const scrollToTopBtn = document.getElementById('scroll-to-top');
+  document.addEventListener("astro:page-load", () => {
+    const scrollToTopBtn = document.getElementById("scroll-to-top");
 
-  if (scrollToTopBtn) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        scrollToTopBtn.classList.add('show');
-      } else {
-        scrollToTopBtn.classList.remove('show');
-      }
-    });
+    if (scrollToTopBtn) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          scrollToTopBtn.classList.add("show");
+        } else {
+          scrollToTopBtn.classList.remove("show");
+        }
 
-    scrollToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+        const nearBottom =
+          window.scrollY >=
+          document.documentElement.scrollHeight - window.innerHeight - 55;
+
+        if (nearBottom) {
+          scrollToTopBtn.classList.remove("bottom-8");
+          scrollToTopBtn.classList.add("bottom-28");
+          scrollToTopBtn.classList.add("lg:bottom-24");
+        } else {
+          scrollToTopBtn.classList.remove("bottom-28");
+          scrollToTopBtn.classList.remove("lg:bottom-24");
+          scrollToTopBtn.classList.add("bottom-8");
+        }
       });
-    });
-  }
+
+      scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    }
+  });
 </script>

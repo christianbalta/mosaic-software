@@ -1,24 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/shared/Navigation.astro';
-import Hero from '../components/home/Hero.astro';
-import TechPartner from "../components/home/TechPartner.astro";
 import Focus from "../components/home/Focus.astro";
+import Hero from "../components/home/Hero.astro";
 import Portfolio from "../components/home/Portfolio.astro";
-import About from "../components/home/About.astro";
+import TechPartner from "../components/home/TechPartner.astro";
 import Contact from "../components/shared/Contact.astro";
 import Footer from "../components/shared/Footer.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Softwareagentur Zürich | Mosaic Software">
-  <Navigation/>
-  <main>
-    <Hero/>
-    <TechPartner/>
-    <Focus/>
-    <Portfolio/>
-    <About/>
-    <Contact/>
+  <Navigation />
+  <main class="!pt-20">
+    <Hero />
+    <TechPartner />
+    <Focus />
+    <Portfolio />
+    <!-- TODO -->
+    <!-- <About /> -->
+    <Contact />
   </main>
-  <Footer/>
+  <Footer />
 </Layout>

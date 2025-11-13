@@ -3,11 +3,11 @@
 
 @theme {
   --color-dark-brown: #2e221c;
-  --color-desert-rock: #A48D78;
-  --color-soft-sandstone: #CBB9A4;
-  --color-creamed-oat: #E6DAC8;
-  --color-porcelain-mist: #F4F1EA;
-  --color-feather-white: #FAF9F6;
+  --color-desert-rock: #a48d78;
+  --color-soft-sandstone: #cbb9a4;
+  --color-creamed-oat: #e6dac8;
+  --color-porcelain-mist: #f4f1ea;
+  --color-feather-white: #faf9f6;
 }
 
 @layer base {
@@ -16,7 +16,7 @@
   }
 
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     background-color: var(--color-feather-white);
   }
 }
@@ -115,7 +115,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -124,7 +125,8 @@
 }
 
 @keyframes flow {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0) translateY(0);
   }
   33% {
