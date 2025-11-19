@@ -1,10 +1,11 @@
 ---
 import mosaicLogo from "../../assets/Mosaic-Software-logo.svg";
-import { Image } from "astro:assets";
+import {Image} from "astro:assets";
+import ButtonPrimary from "./ButtonPrimary.astro";
 ---
 
 <nav
-  class="fixed top-0 left-0 right-0 z-50 glass-morphism border-b border-creamed-oat h-20"
+    class="fixed top-0 left-0 right-0 z-50 glass-morphism border-b border-creamed-oat h-20"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
@@ -12,10 +13,10 @@ import { Image } from "astro:assets";
       <div class="flex-shrink-0">
         <a href="/" class="group flex items-center space-x-3">
           <Image
-            src={mosaicLogo}
-            alt="Mosaic Software Logo"
-            loading="lazy"
-            width={100}
+              src={mosaicLogo}
+              alt="Mosaic Software Logo"
+              loading="lazy"
+              width={100}
           />
         </a>
       </div>
@@ -23,38 +24,33 @@ import { Image } from "astro:assets";
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center space-x-8">
         <a
-          href="/"
-          class={`menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200 ${Astro.url.pathname === "/" ? "text-desert-rock" : ""}`}
-          >Home</a
+            href="/"
+            class={`menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200 ${Astro.url.pathname === "/" ? "text-desert-rock" : ""}`}
+        >Home</a
         >
         <a
-          href="/software"
-          class={`menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200 ${Astro.url.pathname === "/software" ? "text-desert-rock" : ""}`}
-          >Softwarelösungen</a
+            href="/individualsoftware"
+            class={`menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200 ${Astro.url.pathname === "/software" ? "text-desert-rock" : ""}`}
+        >Individualsoftware</a
         >
         <a
-          href="/website"
-          class={`menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200 ${Astro.url.pathname === "/website" ? "text-desert-rock" : ""}`}
-          >Websites & Shops</a
+            href="/website"
+            class={`menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200 ${Astro.url.pathname === "/website" ? "text-desert-rock" : ""}`}
+        >Websites & Shops</a
         >
       </div>
 
       <!-- CTA Button -->
       <div class="hidden md:block">
-        <a
-          href="/#contact"
-          class="relative inline-flex items-center px-8 py-3 overflow-hidden font-semibold text-feather-white bg-desert-rock rounded-full group hover:bg-dark-brown transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
-        >
-          <span class="relative z-10">Kontakt</span>
-        </a>
+        <ButtonPrimary href="/#contact" label="Kontakt"/>
       </div>
 
       <!-- Animated Hamburger Button -->
       <button
-        id="mobile-menu-btn"
-        aria-controls="mobile-menu"
-        aria-expanded="false"
-        class="md:hidden relative w-10 h-10 flex flex-col justify-center items-center group"
+          id="mobile-menu-btn"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          class="md:hidden relative w-10 h-10 flex flex-col justify-center items-center group"
       >
         <span class="sr-only">Toggle menu</span>
         <span class="hamburger-line w-6 h-0.5 bg-dark-brown mb-1.5"></span>
@@ -67,23 +63,23 @@ import { Image } from "astro:assets";
 
 <!-- Mobile Menu Overlay -->
 <div
-  id="mobile-menu-overlay"
-  class="fixed inset-0 bg-dark-brown/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-500 md:hidden"
+    id="mobile-menu-overlay"
+    class="fixed inset-0 bg-dark-brown/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-500 md:hidden"
 >
 </div>
 
 <!-- Mobile Menu Panel -->
 <div
-  id="mobile-menu"
-  class="fixed top-0 right-0 bottom-0 w-full bg-feather-white transform translate-x-full transition-transform duration-500 ease-out md:hidden z-[100] shadow-2xl custom-scrollbar overflow-y-auto"
+    id="mobile-menu"
+    class="fixed top-0 right-0 bottom-0 w-full bg-feather-white transform translate-x-full transition-transform duration-500 ease-out md:hidden z-[100] shadow-2xl custom-scrollbar overflow-y-auto"
 >
   <!-- Decorative elements with soft colors -->
   <div
-    class="absolute top-0 right-0 w-64 h-64 bg-soft-sandstone opacity-10 rounded-full blur-3xl pointer-events-none"
+      class="absolute top-0 right-0 w-64 h-64 bg-soft-sandstone opacity-10 rounded-full blur-3xl pointer-events-none"
   >
   </div>
   <div
-    class="absolute bottom-0 left-0 w-64 h-64 bg-desert-rock opacity-10 rounded-full blur-3xl pointer-events-none"
+      class="absolute bottom-0 left-0 w-64 h-64 bg-desert-rock opacity-10 rounded-full blur-3xl pointer-events-none"
   >
   </div>
 
@@ -92,16 +88,16 @@ import { Image } from "astro:assets";
     <div class="flex items-center justify-between h-full">
       <div class="flex items-center space-x-3">
         <Image
-          src={mosaicLogo}
-          alt="Mosaic Software Logo"
-          loading="lazy"
-          width={100}
+            src={mosaicLogo}
+            alt="Mosaic Software Logo"
+            loading="lazy"
+            width={100}
         />
       </div>
       <button
-        id="close-menu-btn"
-        class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-porcelain-mist transition-colors duration-200"
-        aria-label="Close menu"
+          id="close-menu-btn"
+          class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-porcelain-mist transition-colors duration-200"
+          aria-label="Close menu"
       >
         <i class="fas fa-times text-dark-brown text-lg"></i>
       </button>
@@ -113,43 +109,43 @@ import { Image } from "astro:assets";
     <!-- Main Navigation -->
     <nav class="space-y-2">
       <a
-        href="/software"
-        class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300"
+          href="/individualsoftware"
+          class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300"
       >
         <div class="flex items-center space-x-4">
           <div
-            class="w-10 h-10 bg-soft-sandstone rounded-lg flex items-center justify-center group-hover:bg-desert-rock group-hover:scale-110 transition-all duration-300"
+              class="w-10 h-10 bg-soft-sandstone rounded-lg flex items-center justify-center group-hover:bg-desert-rock group-hover:scale-110 transition-all duration-300"
           >
             <i
-              class="fa-solid fa-display text-dark-brown group-hover:text-feather-white transition-colors duration-300"
+                class="fa-solid fa-display text-dark-brown group-hover:text-feather-white transition-colors duration-300"
             ></i>
           </div>
           <span class="text-lg font-medium text-dark-brown"
-            >Softwarelösungen</span
+          >Individualsoftware</span
           >
         </div>
         <i
-          class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"
+            class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"
         ></i>
       </a>
       <a
-        href="/website"
-        class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300"
+          href="/website"
+          class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300"
       >
         <div class="flex items-center space-x-4">
           <div
-            class="w-10 h-10 bg-soft-sandstone rounded-lg flex items-center justify-center group-hover:bg-desert-rock group-hover:scale-110 transition-all duration-300"
+              class="w-10 h-10 bg-soft-sandstone rounded-lg flex items-center justify-center group-hover:bg-desert-rock group-hover:scale-110 transition-all duration-300"
           >
             <i
-              class="fa-solid fa-object-group text-dark-brown group-hover:text-feather-white transition-colors duration-300"
+                class="fa-solid fa-object-group text-dark-brown group-hover:text-feather-white transition-colors duration-300"
             ></i>
           </div>
           <span class="text-lg font-medium text-dark-brown"
-            >Websites & Shops</span
+          >Websites & Shops</span
           >
         </div>
         <i
-          class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"
+            class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"
         ></i>
       </a>
     </nav>
@@ -159,28 +155,22 @@ import { Image } from "astro:assets";
 
     <!-- CTA Button -->
     <div class="menu-item">
-      <a
-        href="/#contact"
-        class="block w-full text-center px-6 py-4 rounded-xl bg-desert-rock text-feather-white font-semibold hover:bg-dark-brown hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
-      >
-        <i class="fas fa-envelope mr-2"></i>
-        Kontakt
-      </a>
+      <ButtonPrimary href="/#contact" label="Kontakt"/>
     </div>
 
     <!-- Additional Quick Links -->
     <div class="mt-6 pt-6 border-t border-creamed-oat menu-item">
       <div class="space-y-3">
         <a
-          href="/data-protection"
-          class="flex items-center text-sm text-desert-rock transition-colors"
+            href="/data-protection"
+            class="flex items-center text-sm text-desert-rock transition-colors"
         >
           <i class="fas fa-shield-alt mr-3 w-4"></i>
           Datenschutz
         </a>
         <a
-          href="/impressum"
-          class="flex items-center text-sm text-desert-rock transition-colors"
+            href="/impressum"
+            class="flex items-center text-sm text-desert-rock transition-colors"
         >
           <i class="fas fa-file-contract mr-3 w-4"></i>
           Impressum
@@ -237,18 +227,23 @@ import { Image } from "astro:assets";
   :global(body.menu-open) .menu-item:nth-child(1) {
     animation-delay: 0.1s;
   }
+
   :global(body.menu-open) .menu-item:nth-child(2) {
     animation-delay: 0.15s;
   }
+
   :global(body.menu-open) .menu-item:nth-child(3) {
     animation-delay: 0.2s;
   }
+
   :global(body.menu-open) .menu-item:nth-child(4) {
     animation-delay: 0.25s;
   }
+
   :global(body.menu-open) .menu-item:nth-child(5) {
     animation-delay: 0.3s;
   }
+
   :global(body.menu-open) .menu-item:nth-child(6) {
     animation-delay: 0.35s;
   }
@@ -339,12 +334,15 @@ import { Image } from "astro:assets";
   .hover\:-translate-y-0\.5:hover {
     transform: translateY(-0.125rem);
   }
+
   .hover\:-translate-y-1:hover {
     transform: translateY(-0.25rem);
   }
+
   .group:hover .group-hover\:scale-110 {
     transform: scale(1.1);
   }
+
   .group:hover .group-hover\:translate-x-1 {
     transform: translateX(0.25rem);
   }
@@ -399,22 +397,22 @@ import { Image } from "astro:assets";
     let touchEndX = 0;
 
     mobileMenu?.addEventListener(
-      "touchstart",
-      (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-      },
-      { passive: true },
+        "touchstart",
+        (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        },
+        {passive: true},
     );
 
     mobileMenu?.addEventListener(
-      "touchend",
-      (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        if (touchEndX > touchStartX + 50) {
-          closeMenu();
-        }
-      },
-      { passive: true },
+        "touchend",
+        (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          if (touchEndX > touchStartX + 50) {
+            closeMenu();
+          }
+        },
+        {passive: true},
     );
   });
 </script>

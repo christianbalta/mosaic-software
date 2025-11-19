@@ -1,0 +1,84 @@
+---
+import defaultImg from "../../../assets/Agebetter-Mockup.png";
+import {Image} from "astro:assets";
+import type { Project } from "../../../types/project.ts";
+
+interface Props {
+  title?: string;
+  projects?: Project[];
+}
+
+const {
+  title = 'Referenzen',
+  projects = [
+    {
+      service: 'Desktop App',
+      title: 'Canline',
+      description:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et harum laboriosam quae repudiandae sequi, tempora voluptatum! Necessitatibus possimus provident quos.',
+      problem: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad cupiditate explicabo harum incidunt optio quod similique sit vitae voluptatem.',
+      solution: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, soluta! Lorem ipsum dolor sit amet.',
+      image: defaultImg,
+      imageAlt: 'Project showcase image',
+    },
+  ],
+} = Astro.props as Props;
+---
+
+<section id="projects" aria-labelledby="projects-title" class="space-y-8">
+  <div class="mb-1">
+    <h2 id="projects-title" class="text-3xl sm:text-4xl lg:text-5xl leading-tight text-dark-brown">
+      {title}
+    </h2>
+  </div>
+
+  <div class="mt-5">
+    {projects.map((p: Project) => (
+        <article class="relative rounded-2xl border border-soft-sandstone/60 bg-white/70 my-5">
+          <div class="grid gap-8 p-6 sm:p-8 lg:p-10 items-start lg:grid-cols-2">
+            <!-- Left: Content -->
+            <div class="space-y-6">
+              <div class="text-xs font-semibold uppercase tracking-wider text-white">
+                {p.service && (
+                    <span
+                        class="inline-block rounded-full bg-desert-rock px-3 py-1">
+                    {p.service}
+                  </span>
+                )}
+              </div>
+              <h3 class="text-3xl sm:text-4xl lg:text-5xl text-dark-brown">
+                {p.title}
+              </h3>
+
+              <p class="text-base sm:text-lg lg:text-xl max-w-prose text-dark-brown/90">
+                {p.description}
+              </p>
+
+              <div class="grid grid-cols-1 gap-6 pt-4">
+                <div class="space-y-1">
+                  <div class="text-sm uppercase tracking-wide text-desert-rock text-bold">
+                    Anforderung
+                  </div>
+                  <div class="text-dark-brown text-lg">{p.problem}</div>
+                </div>
+                <div class="space-y-1">
+                  <div class="text-sm uppercase tracking-wide text-desert-rock text-bold">Lösung
+                  </div>
+                  <div class="text-dark-brown text-lg">{p.solution}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:pl-4 self-center">
+              <Image
+                  src={p.image}
+                  alt={p.imageAlt ?? p.title}
+                  class="w-full h-72 sm:h-96 lg:h-[420px] object-cover rounded-2xl"
+              />
+            </div>
+          </div>
+        </article>
+    ))}
+  </div>
+</section>

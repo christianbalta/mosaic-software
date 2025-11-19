@@ -1,0 +1,88 @@
+---
+import fretzIcon from "../../../assets/testimonial/fretz-garten-favicon.png";
+import msureIcon from "../../../assets/testimonial/msure_favicon.png";
+import swissBioshieldIcon from "../../../assets/testimonial/swiss-bioshield_favicon.png";
+---
+
+<section id="testimonials" class="space-y-8">
+  <header class="grid gap-6 lg:grid-cols-2 items-start">
+    <div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl leading-tight text-dark-brown">
+        Warum Kunden<br/> uns vertrauen
+      </h2>
+    </div>
+  </header>
+
+  <div class="grid gap-6 lg:grid-cols-3">
+    <!-- Rating summary card -->
+    <aside
+        class="rounded-2xl bg-forest-green text-white p-8 relative overflow-hidden bg-black-olive">
+      <div class="absolute inset-0 opacity-10 pointer-events-none"></div>
+      <div class="relative space-y-4 text-center">
+        <div class="text-6xl leading-none">5.0</div>
+        <div class="flex items-center justify-center gap-2 text-xl">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p class="mt-4 opacity-90">Kunden Erfahrungen die für sich selbst sprechen</p>
+        <div class="flex items-center justify-center gap-3 pt-4">
+          <div class="w-12 h-12 rounded-full ring-2 ring-white overflow-hidden">
+            <img src={fretzIcon.src} alt="Fretz Garten favicon"
+                 class="w-full h-full object-cover"/>
+          </div>
+          <div class="w-12 h-12 rounded-full ring-2 ring-white overflow-hidden -ml-4">
+            <img src={msureIcon.src} alt="Kita Luftibus favicon"
+                 class="w-full h-full object-cover"/>
+          </div>
+          <div class="w-12 h-12 rounded-full ring-2 ring-white overflow-hidden -ml-4">
+            <img src={swissBioshieldIcon.src} alt="Swiss Bioshield favicon"
+                 class="w-full h-full object-cover"/>
+          </div>
+          <a
+              href="https://share.google/34igVAKgClDJYKlIL"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-12 h-12 rounded-full overflow-hidden -ml-4 ring-2 bg-desert-rock text-feather-white inline-flex items-center justify-center"
+              aria-label="Mehr Bewertungen ansehen"
+              role="button"
+          >
+            <i class="fa-solid fa-plus"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Testimonial (single card) -->
+    <div class="lg:col-span-2">
+      <div class="rounded-2xl glass p-6 sm:p-8 flex flex-col gap-4">
+        <div class="flex items-center gap-3 text-desert-rock">
+          <div class="flex items-center gap-1 text-forest-green">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+        <p class="text-dark-brown text-base sm:text-lg leading-relaxed">
+          Top Service von Mosaic Software GmbH!
+
+          Wir sind sehr zufrieden mit den Diensten der Mosaic Software GmbH. Das Team hat uns
+          professionell bei der Entwicklung und Integration unserer Softwarelösungen
+          unterstützt. Die Beratung war kompetent, die Kommunikation klar und die Lösungen
+          perfekt auf unsere Bedürfnisse abgestimmt. Wir können die Mosaic Software GmbH
+          uneingeschränkt empfehlen!
+        </p>
+        <div class="flex items-center justify-between pt-2">
+          <div>
+            <div class="font-semibold text-dark-brown">Reha Karakus</div>
+            <div class="text-desert-rock text-sm">Inhaber, Fretz Gartenpflege GmbH</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

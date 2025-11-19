@@ -1,0 +1,46 @@
+---
+import type {FAQItem} from "../../../types/faq.ts";
+
+const {title = 'FAQ', items = []} = Astro.props as {
+  title: string;
+  items: FAQItem[];
+};
+
+const description = 'Antworten auf häufige Fragen – ideal für die Planung Ihres Projekts.';
+---
+
+<section id="faq" class="space-y-10">
+  <header class="space-y-3">
+    <h2 class="text-3xl sm:text-4xl lg:text-5xl text-dark-brown">{title}</h2>
+    <p class="max-w-3xl text-desert-rock">{description}</p>
+  </header>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- FAQ list -->
+    <div class="space-y-4 lg:col-span-2">
+      {items.map((item) => (
+          <details class="p-5 rounded-xl glass">
+            <summary class="cursor-pointer text-dark-brown">{item.question}</summary>
+            <p class="mt-3 text-dark-brown">{item.answer}</p>
+          </details>
+      ))}
+    </div>
+
+    <aside class="space-y-6">
+      <div
+          class="rounded-2xl p-6 sm:p-7 lg:p-8 bg-black-olive text-feather-white relative overflow-hidden">
+        <div
+            class="flex items-center justify-center w-12 h-12 rounded-full bg-desert-rock text-feather-white mb-4">
+          <i class="fa-solid fa-comments text-feather-white"></i>
+        </div>
+        <h3 class="text-lg font-semibold">Sie haben weitere Fragen?</h3>
+        <p class="mt-2">Unser Team beantwortet Ihre Fragen schnell und unkompliziert.</p>
+        <a href="mailto:contact@mosaic-software.ch"
+           class="mt-5 inline-flex items-center px-4 py-2 rounded-lg bg-desert-rock text-feather-white hover-lift">
+          Kontakt aufnehmen
+          <i class="fa-solid fa-envelope ms-2"></i>
+        </a>
+      </div>
+    </aside>
+  </div>
+</section>

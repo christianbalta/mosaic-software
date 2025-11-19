@@ -1,0 +1,64 @@
+---
+export interface Props {
+  href?: string;
+  label?: string;
+  target?: string;
+  rel?: string;
+  type?: 'button' | 'submit' | 'reset';
+  class?: string;
+}
+
+const {
+  href,
+  label,
+  color = '#000',
+  target,
+  rel,
+  type = 'button',
+  class: className = ''
+} = Astro.props as Props;
+
+const Tag = href ? 'a' : 'button';
+---
+<Tag
+    href={href}
+    target={target}
+    rel={rel}
+    type={!href ? type : undefined}
+    style={`--clr: ${color}`}
+    class={`group inline-flex items-center gap-3 rounded-full font-semibold leading-none text-white px-6 py-3 pl-5 whitespace-nowrap overflow-hidden transition-colors duration-300 bg-[var(--clr)] hover:bg-black ${className}`}
+>
+  <span
+      class="relative grid place-items-center w-[25px] h-[25px] rounded-full overflow-hidden shrink-0 bg-white text-[var(--clr)] transition-colors duration-300 group-hover:text-black">
+    <svg
+        viewBox="0 0 14 15"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-[10px] h-auto transition-transform duration-300 ease-in-out group-hover:translate-x-[150%] group-hover:-translate-y-[150%]"
+        width="10"
+        aria-hidden="true"
+        focusable="false"
+    >
+      <path
+          d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+          fill="currentColor"
+      />
+    </svg>
+    <svg
+        viewBox="0 0 14 15"
+        fill="none"
+        width="10"
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-[10px] h-auto absolute transition-transform duration-300 ease-in-out delay-100 -translate-x-[150%] translate-y-[150%] group-hover:translate-x-0 group-hover:translate-y-0"
+        aria-hidden="true"
+        focusable="false"
+    >
+      <path
+          d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+          fill="currentColor"
+      />
+    </svg>
+  </span>
+  {label}
+  <slot/>
+</Tag>

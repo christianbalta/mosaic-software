@@ -1,0 +1,34 @@
+---
+export interface Props {
+  href?: string;
+  label?: string;
+  target?: string;
+  rel?: string;
+  type?: 'button' | 'submit' | 'reset';
+  class?: string;
+}
+
+const {
+  href,
+  label,
+  borderColor = 'var(--color-desert-rock)',
+  textColor = '#000',
+  target,
+  rel,
+  type = 'button',
+  class: className = ''
+} = Astro.props as Props;
+
+const Tag = href ? 'a' : 'button';
+---
+<Tag
+    href={href}
+    target={target}
+    rel={rel}
+    type={!href ? type : undefined}
+    style={`--ms-border: ${borderColor}; --ms-text: ${textColor}`}
+    class={`group inline-flex items-center gap-3 rounded-full font-semibold leading-none px-6 py-4 pl-5 whitespace-nowrap overflow-hidden transition-colors duration-300 border-2 bg-transparent text-[var(--ms-text)] border-[var(--ms-border)] hover:bg-[var(--ms-border)] hover:text-white ${className}`}
+>
+  {label}
+  <slot/>
+</Tag>

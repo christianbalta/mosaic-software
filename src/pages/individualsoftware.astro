@@ -1,0 +1,130 @@
+---
+import Footer from "../components/shared/Footer.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/shared/sections/Hero.astro";
+import Services from "../components/shared/sections/Services.astro";
+import Projects from "../components/shared/sections/Projects.astro";
+import Testimonials from "../components/shared/sections/Testimonials.astro";
+import FAQ from "../components/shared/sections/FAQ.astro";
+import Contact from "../components/shared/Contact.astro";
+import AgebetterImg from "../assets/Agebetter-Mockup.png";
+import type {Project} from "../types/project.ts";
+import type {FAQItem} from "../types/faq.ts";
+import type {ServiceItem} from "../types/serviceItem.ts";
+import heroImg from "../assets/software/DSC00216.jpg";
+
+const projects: Project[] = [
+  {
+    service: 'Desktop App',
+    title: 'Canline',
+    description:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et harum laboriosam quae repudiandae sequi, tempora voluptatum! Necessitatibus possimus provident quos.',
+    problem:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad cupiditate explicabo harum incidunt optio quod similique sit vitae voluptatem.',
+    solution:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, soluta! Lorem ipsum dolor sit amet.',
+    image: AgebetterImg,
+    imageAlt: 'Project showcase image',
+  },
+  {
+    service: 'Web App',
+    title: 'Agebetter',
+    description:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi aspernatur at cumque deleniti dignissimos doloribus illum impedit necessitatibus.',
+    problem:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur dicta doloremque doloribus earum esse expedita impedit ipsa iure laboriosam.',
+    solution:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, dicta. Soluta aperiam, repellat beatae eveniet cumque.',
+    image: AgebetterImg,
+    imageAlt: 'Bioshield mobile app mockup',
+  }
+];
+
+const faqItems: FAQItem[] = [
+  {
+    question: 'Was kostet Individualsoftware in Zürich?',
+    answer:
+        'Die Kosten hängen von Umfang, Komplexität und Integrationen ab. Nach einem kostenlosen Erstgespräch erhalten Sie eine transparente Aufwandsschätzung.',
+  },
+  {
+    question: 'Wie schnell können wir starten?',
+    answer:
+        'In der Regel innerhalb von 2–3 Wochen. Wir priorisieren schnelle MVPs, um früh Feedback und Nutzen zu liefern.',
+  },
+  {
+    question: 'Arbeitet ihr auch mit bestehenden Systemen?',
+    answer:
+        'Ja. Wir integrieren nahtlos in ERP, CRM, Zahlungsanbieter und bestehende Datenquellen mit robusten APIs.',
+  },
+  {
+    question: 'Bietet ihr Wartung & Support?',
+    answer:
+        'Ja. Wir übernehmen Betrieb, Monitoring, Sicherheits‑Updates und Weiterentwicklung mit klaren SLAs.',
+  },
+];
+
+const
+    serviceItems: ServiceItem[] = [
+      {
+        icon: 'fa-solid fa-globe',
+        title: 'Web-Applikationen',
+        description: 'Moderne Webanwendungen für optimale Performance.',
+      },
+      {
+        icon: 'fa-solid fa-mobile-screen-button',
+        title: 'Mobile Apps',
+        description: 'Native und Cross-Platform Apps für iOS und Android.',
+      },
+      {
+        icon: 'fa-solid fa-plug',
+        title: 'APIs & Integrationen',
+        description: 'Sichere, performante Schnittstellen und System‑Integrationen.',
+      },
+      {
+        icon: 'fa-solid fa-desktop',
+        title: 'Desktop-Software',
+        description: 'Leistungsstarke Desktop-Anwendungen für Windows und Mac.',
+      },
+    ];
+const playbackId = 'AgbCqAPj9r6nKpGNSOEJMLxMZKmQKC7ab5DPylVeqIs';
+const videoTitle = 'Mosaic Software GmbH - Software Development';
+const serviceTitel = 'Individuelle Softwarelösungen <br/> für Web, Mobile <br/> und Desktop';
+const serviceDescription = 'Wir entwickeln Anwendungen für alle Plattformen. Mit modernsten Technologien und bewährten Frameworks realisieren wir Ihre digitalen Projekte – von der Web-App bis zur Desktop-Software.';
+
+const heroTitle = 'Individualsoftware<br>in Zürich'
+const heroDescription = "Wir sind Ihr Partner für professionelle Individualsoftware. Mit über 15 Jahren Erfahrung transformieren wir komplexe Anforderungen in elegante, zuverlässige Lösungen – termingerecht und im Budget."
+const heroIconsWithText = [
+  {icon: 'fa-solid fa-shield', text: 'Abgestimmte Prozesse'},
+  {icon: 'fa-solid fa-gauge-high', text: 'Agile Entwicklung'},
+  {icon: 'fa-solid fa-lock', text: 'Sichere Software'}
+]
+---
+
+<Layout
+    title="Individualsoftware Zürich | Mosaic Software"
+    description="Wir entwickeln performante Individualsoftware und moderne Web‑, Mobile‑ und Desktop‑Lösungen. Zuverlässig, sicher und skalierbar."
+>
+  <Navigation/>
+
+  <main class="mx-auto w-full max-w-screen-2xl p-3 sm:p-6 lg:p-10 space-y-24 !pt-20">
+    <Hero
+        h1={heroTitle}
+        description={heroDescription}
+        iconTexts={heroIconsWithText}
+        heroImage={heroImg}
+    />
+    <Services items={serviceItems} title={serviceTitel} description={serviceDescription}
+              playbackId={playbackId} videoTitle={videoTitle}/>
+    <Testimonials/>
+    <Projects projects={projects}/>
+
+    <FAQ
+        title="FAQ: Individualsoftware"
+        items={faqItems}
+    />
+  </main>
+
+  <Contact/>
+  <Footer/>
+</Layout>

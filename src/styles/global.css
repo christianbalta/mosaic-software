@@ -1,8 +1,10 @@
 @import "tailwindcss";
+
 @plugin "@tailwindcss/typography";
 
 @theme {
   --color-dark-brown: #2e221c;
+  --color-black-olive: #5a6a4f;
   --color-desert-rock: #a48d78;
   --color-soft-sandstone: #cbb9a4;
   --color-creamed-oat: #e6dac8;

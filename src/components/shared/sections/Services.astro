@@ -1,0 +1,77 @@
+---
+import {MuxPlayer} from '@mux/mux-player-astro';
+import type {ServiceItem} from "../../../types/serviceItem.ts";
+
+const {
+  title = '',
+  description = '',
+  items = [],
+  playbackId = '',
+  videoTitle = '',
+} = Astro.props as {
+  title: string;
+  description: string;
+  items: ServiceItem[];
+  playbackId: string;
+  videoTitle: string;
+};
+---
+
+<section id="services" class="space-y-8">
+  <div id="services" class="mb-1">
+    <div class="relative rounded-2xl">
+      <div class="grid gap-6 md:gap-8 items-start lg:grid-cols-2">
+        <div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl leading-tight text-dark-brown"
+              set:html={title}></h2>
+        </div>
+        <div>
+          <p class="text-base sm:text-lg lg:text-xl max-w-prose text-dark-brown">{description}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative rounded-2xl">
+    <div class="grid gap-10 items-start lg:grid-cols-4">
+      <div class="lg:col-span-1 lg:self-center">
+        <ul class="w-full max-w-none space-y-0">
+          {items.map((service, index) => (
+              <li class="relative flex items-start py-7">
+                <div
+                    class="flex items-center justify-center w-14 h-14 mr-6 rounded-full bg-white shadow-[0_4px_40px_rgba(0,0,0,0.05)] flex-none">
+                  <i class={`${service.icon} text-2xl text-desert-rock`}></i>
+                </div>
+                <div>
+                  <div class="mb-2 text-lg text-dark-brown">{service.title}</div>
+                  <div>{service.description}</div>
+                </div>
+                {index < items.length - 1 && (
+                    <span
+                        class="absolute left-7 top-24 bottom-[-14px] border-l border-dashed border-soft-sandstone"></span>
+                )}
+              </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="lg:col-span-3">
+        <div class="relative">
+          <div class="relative overflow-hidden w-full max-w-none rounded-2xl">
+            <MuxPlayer
+                theme="minimal"
+                playbackId={playbackId}
+                metadata={{
+                  video_title: videoTitle,
+                }}
+                primaryColor="#fff"
+                secondaryColor="#a48d78"
+                accentColor="#cbb9a4"
+                defaultShowRemainingTime={true}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

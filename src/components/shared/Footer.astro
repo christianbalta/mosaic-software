@@ -1,24 +1,24 @@
 ---
 import mosaicLogo from "../../assets/Mosaic-Software-logo.svg";
-import { Image } from "astro:assets";
+import {Image} from "astro:assets";
 ---
 
 <footer class="bg-dark-brown text-feather-white relative overflow-hidden">
   <div
-    class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4 lg:pb-6 lg:pt-16"
+      class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4 lg:pb-6 lg:pt-16"
   >
     <!-- Main footer content -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 text-white">
       <!-- Company Info -->
       <div>
         <div class="mb-6">
           <Image
-            src={mosaicLogo}
-            alt="Mosaic Software Logo"
-            width={120}
-            class="mb-4 brightness-0 invert"
+              src={mosaicLogo}
+              alt="Mosaic Software Logo"
+              width={120}
+              class="mb-4 brightness-0 invert"
           />
-          <p class="text-soft-sandstone text-sm leading-relaxed max-w-md">
+          <p class="text-sm leading-relaxed max-w-md">
             Deine vertrauensvolle Softwareagentur in Zürich. Wir entwickeln
             individuelle Software und Websites für moderne Unternehmen.
           </p>
@@ -27,25 +27,25 @@ import { Image } from "astro:assets";
         <!-- Contact Info -->
         <div class="space-y-3">
           <div class="flex items-center space-x-3">
-            <i class="fas fa-map-marker-alt text-desert-rock w-4"></i>
-            <span class="text-sm text-soft-sandstone"
-              >Brunnenstrasse 7<br />8610 Uster</span
+            <i class="fas fa-map-marker-alt  w-4"></i>
+            <span class="text-sm"
+            >Brunnenstrasse 7<br/>8610 Uster</span
             >
           </div>
           <div class="flex items-center space-x-3">
-            <i class="fas fa-envelope text-desert-rock w-4"></i>
+            <i class="fas fa-envelope  w-4"></i>
             <a
-              href="mailto:contact@mosaic-software.ch"
-              class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200"
+                href="mailto:contact@mosaic-software.ch"
+                class="text-sm hover:text-feather-white transition-colors duration-200"
             >
               contact@mosaic-software.ch
             </a>
           </div>
           <div class="flex items-center space-x-3">
-            <i class="fas fa-phone text-desert-rock w-4"></i>
+            <i class="fas fa-phone w-4"></i>
             <a
-              href="tel:+41764739974"
-              class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200"
+                href="tel:+41764739974"
+                class="text-sm hover:text-feather-white transition-colors duration-200"
             >
               +41 76 473 99 74
             </a>
@@ -55,14 +55,14 @@ import { Image } from "astro:assets";
 
       <!-- Quick Links -->
       <div>
-        <h3 class="text-lg font-semibold mb-6 text-feather-white">
+        <h3 class="text-lg mb-6 text-feather-white">
           Dienstleistungen
         </h3>
         <ul class="space-y-3">
           <li>
             <a
-              href="/software"
-              class="text-soft-sandstone hover:text-feather-white transition-colors duration-200 text-sm"
+                href="/src/pages/individualsoftware"
+                class="hover:text-feather-white transition-colors duration-200 text-sm"
             >
               Softwarelösungen
             </a>
@@ -70,8 +70,8 @@ import { Image } from "astro:assets";
 
           <li>
             <a
-              href="/website"
-              class="text-soft-sandstone hover:text-feather-white transition-colors duration-200 text-sm"
+                href="/website"
+                class="hover:text-feather-white transition-colors duration-200 text-sm"
             >
               Websites & Shops
             </a>
@@ -83,7 +83,7 @@ import { Image } from "astro:assets";
     <!-- Bottom Bar -->
     <div class="border-t border-desert-rock/30 pt-8">
       <div
-        class="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0"
+          class="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0"
       >
         <!-- Copyright -->
         <div class="text-sm text-soft-sandstone">
@@ -93,14 +93,14 @@ import { Image } from "astro:assets";
         <!-- Legal Links -->
         <div class="flex flex-wrap items-center space-x-6">
           <a
-            href="/data-protection"
-            class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200"
+              href="/data-protection"
+              class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200"
           >
             Datenschutz
           </a>
           <a
-            href="/impressum"
-            class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200"
+              href="/impressum"
+              class="text-sm text-soft-sandstone hover:text-feather-white transition-colors duration-200"
           >
             Impressum
           </a>
@@ -111,9 +111,9 @@ import { Image } from "astro:assets";
 
   <!-- Scroll to top button -->
   <button
-    id="scroll-to-top"
-    class="fixed bottom-8 right-8 w-12 h-12 bg-desert-rock hover:bg-dark-brown text-feather-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none z-50"
-    aria-label="Nach oben scrollen"
+      id="scroll-to-top"
+      class="fixed bottom-8 right-8 w-12 h-12 bg-desert-rock hover:bg-dark-brown text-feather-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none z-50"
+      aria-label="Nach oben scrollen"
   >
     <i class="fas fa-chevron-up"></i>
   </button>
@@ -171,8 +171,8 @@ import { Image } from "astro:assets";
         }
 
         const nearBottom =
-          window.scrollY >=
-          document.documentElement.scrollHeight - window.innerHeight - 55;
+            window.scrollY >=
+            document.documentElement.scrollHeight - window.innerHeight - 55;
 
         if (nearBottom) {
           scrollToTopBtn.classList.remove("bottom-8");

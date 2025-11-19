@@ -1,0 +1,63 @@
+---
+import {Image} from "astro:assets";
+import type {ImageMetadata} from "astro";
+import ButtonPrimary from "../ButtonPrimary.astro";
+import ButtonSecondary from "../ButtonSecondary.astro";
+
+const {
+  h1 = "",
+  description = "",
+  iconTexts = [] as { icon: string; text: string }[],
+  heroImage,
+  imgAlt = "Individualsoftware Entwicklung in Aktion",
+} = Astro.props as {
+  h1: string;
+  description: string;
+  iconTexts: { icon: string; text: string }[];
+  heroImage: ImageMetadata;
+  imgAlt?: string;
+};
+---
+
+<section id="hero" class="relative overflow-hidden rounded-2xl">
+  <div class="relative grid gap-10 lg:grid-cols-2 items-center py-8 sm:py-12 lg:py-16">
+    <div class="space-y-6 animate-fade-up">
+      <div
+          class="inline-flex items-center gap-3 rounded-full bg-white/90 px-4 py-2 shadow-md ring-1 ring-soft-sandstone">
+        <i class="fa-solid fa-star text-dark-brown"></i>
+        <div class="leading-tight">
+          <div class="font-semibold text-dark-brown">5.0 Bewertung</div>
+          <div class="text-sm text-stone-500">auf Google</div>
+        </div>
+      </div>
+
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl leading-tight text-dark-brown" set:html={h1}></h1>
+
+      <p class="text-base sm:text-lg lg:text-xl max-w-prose text-dark-brown">{description}</p>
+
+      <div class="flex flex-wrap items-center gap-3">
+        <ButtonPrimary href="#kontakt" label="Jetzt Projekt starten"/>
+        <ButtonSecondary href="#leistungen" label="Unsere Leistungen"/>
+      </div>
+
+      {iconTexts?.length > 0 && (
+          <div class="flex flex-wrap gap-6 pt-4 text-lg text-dark-brown">
+            {iconTexts.map((it) => (
+                <span class="inline-flex items-center gap-2">
+              <i class={it.icon}></i> {it.text}
+            </span>
+            ))}
+          </div>
+      )}
+    </div>
+
+    <div class="relative">
+      <Image
+          src={heroImage}
+          alt={imgAlt}
+          class="w-full rounded-xl object-cover aspect-[4/3]"
+      />
+      <div class="absolute inset-0 pointer-events-none"></div>
+    </div>
+  </div>
+</section>
