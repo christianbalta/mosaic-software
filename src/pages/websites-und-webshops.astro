@@ -1,0 +1,131 @@
+---
+import Footer from "../components/shared/Footer.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/shared/sections/Hero.astro";
+import Services from "../components/shared/sections/Services.astro";
+import Projects from "../components/shared/sections/Projects.astro";
+import Testimonials from "../components/shared/sections/Testimonials.astro";
+import FAQ from "../components/shared/sections/FAQ.astro";
+import Contact from "../components/shared/Contact.astro";
+import bioShield from "../assets/Bioshield-Mockup.png";
+import kitaLuftibus from "../assets/Kita-Luftibus-Mockup.png";
+import type {Project} from "../types/project.ts";
+import type {FAQItem} from "../types/faq.ts";
+import type {ServiceItem} from "../types/serviceItem.ts";
+import heroImg from "../assets/software/DSC00216.jpg";
+
+const heroTitle = 'Websites & Webshops<br>in Zürich'
+const heroDescription = "Wir erstellen moderne Websites und leistungsstarke Webshops, die schnell laden, konvertieren und leicht zu pflegen sind. Von Konzept und Design bis zur Umsetzung – alles aus einer Hand.";
+const heroIconsWithText = [
+  {icon: 'fa-solid fa-bolt', text: 'Schnell & SEO‑stark'},
+  {icon: 'fa-solid fa-cart-shopping', text: 'E‑Commerce Expertise'},
+  {icon: 'fa-solid fa-wand-magic-sparkles', text: 'Individuelles Design'}
+]
+
+const
+    serviceItems: ServiceItem[] = [
+      {
+        icon: 'fa-solid fa-globe',
+        title: 'Websites',
+        description: 'Responsive, barrierearme Websites mit Top‑Performance und sauberem Code.',
+      },
+      {
+        icon: 'fa-solid fa-cart-shopping',
+        title: 'Webshops (E‑Commerce)',
+        description: 'Skalierbare Onlineshops mit sicheren Zahlungen, Warenkorb & Checkout.',
+      },
+      {
+        icon: 'fa-solid fa-magnifying-glass-chart',
+        title: 'SEO & Performance',
+        description: 'Technisches SEO, schnelle Ladezeiten und Core Web Vitals im grünen Bereich.',
+      },
+      {
+        icon: 'fa-solid fa-plug',
+        title: 'CMS & Integrationen',
+        description: 'Headless CMS, ERP/CRM‑Anbindungen, Newsletter & Zahlungsanbieter.',
+      },
+    ];
+const playbackId = 'AgbCqAPj9r6nKpGNSOEJMLxMZKmQKC7ab5DPylVeqIs';
+const videoTitle = 'Mosaic Software GmbH – Websites & Webshops';
+const serviceTitel = 'Websites & Webshops<br/>mit Fokus auf Geschwindigkeit,<br/>Usability und Conversion';
+const serviceDescription = 'Wir planen, designen und entwickeln Websites und Online‑Shops, die begeistern und verkaufen. Zukunftssicher, wartbar und optimiert für Suchmaschinen.';
+
+const projects: Project[] = [
+  {
+    service: 'Website',
+    title: 'Kita Luftibus',
+    description:
+        'Relaunch einer Unternehmenswebsite mit hoher Performance, klarer Struktur und modernem Design.',
+    problem:
+        'Veraltete Seite, langsame Ladezeiten und geringe Sichtbarkeit in Suchmaschinen.',
+    solution:
+        'Neuentwicklung mit schlankem Tech‑Stack, technischer SEO und optimierter Informationsarchitektur.',
+    image: kitaLuftibus,
+    imageAlt: 'Website Projekt Mockup',
+  },
+  {
+    service: 'Webshop',
+    title: 'Bioshield',
+    description:
+        'Shop‑Implementierung mit sicherem Checkout, Produktverwaltung und Anbindung an Zahlungsanbieter.',
+    problem:
+        'Kein performanter, skalierbarer Verkaufskanal vorhanden.',
+    solution:
+        'Aufbau eines schnellen, mobilen Shops mit klaren UX‑Flows und Tracking‑Setup.',
+    image: bioShield,
+    imageAlt: 'E‑Commerce Mockup',
+  }
+];
+
+const faqItems: FAQItem[] = [
+  {
+    question: 'Was kostet eine Website oder ein Webshop in Zürich?',
+    answer:
+        'Die Kosten hängen von Umfang, Design‑Ansprüchen, Funktionen (z. B. Checkout, CMS) und Integrationen ab. Nach einem kostenlosen Erstgespräch erhalten Sie eine transparente Offerte.',
+  },
+  {
+    question: 'Wie schnell können wir starten und wie lange dauert es?',
+    answer:
+        'Kickoff ist meist in 2–3 Wochen möglich. Eine Website dauert typischerweise 3–6 Wochen, ein Webshop 6–10 Wochen – abhängig vom Funktionsumfang.',
+  },
+  {
+    question: 'Mit welchen Systemen arbeitet ihr?',
+    answer:
+        'Wir setzen auf moderne Web‑Stacks und Headless CMS und integrieren Zahlungsanbieter, ERP/CRM, Newsletter‑Tools u. v. m.',
+  },
+  {
+    question: 'Übernehmt ihr Wartung, Hosting & Support?',
+    answer:
+        'Ja. Wir bieten Betrieb, Monitoring, Sicherheits‑Updates, Content‑Pflege und Weiterentwicklung mit klaren SLAs.',
+  },
+];
+---
+
+<Layout
+    title="Websites & Webshops Zürich | Mosaic Software"
+    description="Wir entwickeln schnelle Websites und performante Webshops – nutzerzentriert, SEO‑stark und skalierbar. Design, Entwicklung & laufende Betreuung."
+>
+  <Navigation/>
+
+  <main class="mx-auto w-full max-w-screen-2xl p-3 sm:p-6 lg:p-10 space-y-24 !pt-20">
+    <Hero
+        h1={heroTitle}
+        description={heroDescription}
+        iconTexts={heroIconsWithText}
+        heroImage={heroImg}
+    />
+    <Services items={serviceItems} title={serviceTitel} description={serviceDescription}
+              playbackId={playbackId} videoTitle={videoTitle}/>
+    <Testimonials/>
+    <Projects projects={projects}/>
+
+    <FAQ
+        title="FAQ: Websites & Webshops"
+        items={faqItems}
+    />
+  </main>
+
+  <Contact/>
+  <Footer/>
+</Layout>

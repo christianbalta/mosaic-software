@@ -11,7 +11,6 @@ export interface Props {
 const {
   href,
   label,
-  color = '#000',
   target,
   rel,
   type = 'button',
@@ -25,11 +24,11 @@ const Tag = href ? 'a' : 'button';
     target={target}
     rel={rel}
     type={!href ? type : undefined}
-    style={`--clr: ${color}`}
-    class={`group inline-flex items-center gap-3 rounded-full font-semibold leading-none text-white px-6 py-3 pl-5 whitespace-nowrap overflow-hidden transition-colors duration-300 bg-[var(--clr)] hover:bg-black ${className}`}
+    class={`group inline-flex items-center gap-3 rounded-full font-semibold leading-none text-white px-6 py-3 pl-5
+    whitespace-nowrap overflow-hidden transition-colors duration-300 bg-dark-brown hover:bg-black ${className}`}
 >
   <span
-      class="relative grid place-items-center w-[25px] h-[25px] rounded-full overflow-hidden shrink-0 bg-white text-[var(--clr)] transition-colors duration-300 group-hover:text-black">
+      class="relative grid place-items-center w-[25px] h-[25px] rounded-full overflow-hidden shrink-0 bg-white text-dark-brown transition-colors duration-300 group-hover:text-black">
     <svg
         viewBox="0 0 14 15"
         fill="none"

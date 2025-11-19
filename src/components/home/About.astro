@@ -1,5 +1,7 @@
 ---
-
+import {Image} from "astro:assets";
+import team from "../../assets/team-mosaic-software.png"
+import ButtonPrimary from "../shared/ButtonPrimary.astro";
 ---
 
 <section id="about" class="relative">
@@ -9,19 +11,20 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
       <!-- Column 1: Image -->
       <div class="w-full">
-        <img
-            src="https://placehold.co/500"
-            alt="About us placeholder image"
-            class="w-full h-auto rounded-lg shadow-2xl object-cover"
+        <Image
+            src={team}
+            alt="Mosaic Software GmbH Team"
+            loading="eager"
+            class="w-full h-auto rounded-lg object-cover"
         />
       </div>
 
       <!-- Column 2: Title & Text -->
       <div class="text-center md:text-left">
         <h2
-            class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-desert-rock"
+            class="text-3xl md:text-4xl lg:text-5xl tracking-tight text-dark-brown"
         >
-          Das sind wir.
+          Das sind wir
         </h2>
         <p class="mt-4 text-dark-brown md:text-lg leading-relaxed">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
@@ -38,6 +41,9 @@
           consequuntur doloremque et fuga id iste laboriosam laudantium officiis
           quaerat voluptatem!
         </p>
+        <div class="mt-8">
+          <a href="/ueber-uns" class="underline">Mehr dazu -></a>
+        </div>
       </div>
 
       <!-- Column 3: Facts -->
