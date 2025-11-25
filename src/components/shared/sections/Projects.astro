@@ -1,7 +1,7 @@
 ---
 import defaultImg from "../../../assets/Agebetter-Mockup.png";
 import {Image} from "astro:assets";
-import type { Project } from "../../../types/project.ts";
+import type {Project} from "../../../types/project.ts";
 
 interface Props {
   title?: string;
@@ -9,15 +9,15 @@ interface Props {
 }
 
 const {
-  title = 'Referenzen',
+  title = 'Ausgewählte Arbeiten',
   projects = [
     {
       service: 'Desktop App',
       title: 'Canline',
       description:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et harum laboriosam quae repudiandae sequi, tempora voluptatum! Necessitatibus possimus provident quos.',
-      problem: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad cupiditate explicabo harum incidunt optio quod similique sit vitae voluptatem.',
-      solution: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, soluta! Lorem ipsum dolor sit amet.',
+      problem: 'Veraltete Prozesse und langsame Datenverarbeitung hemmten das Wachstum.',
+      solution: 'Entwicklung einer nativen Desktop-Applikation mit Offline-First Architektur.',
       image: defaultImg,
       imageAlt: 'Project showcase image',
     },
@@ -25,58 +25,93 @@ const {
 } = Astro.props as Props;
 ---
 
-<section id="projects" aria-labelledby="projects-title" class="space-y-8">
-  <div class="mb-1">
-    <h2 id="projects-title" class="text-3xl sm:text-4xl lg:text-5xl leading-tight text-dark-brown">
+<section id="projects" aria-labelledby="projects-title" class="space-y-16 lg:space-y-24">
+  <!-- Section Header -->
+
+    <h2 id="projects-title"
+        class="text-3xl sm:text-4xl lg:text-5xl leading-tight text-dark-brown my-5">
       {title}
     </h2>
-  </div>
 
-  <div class="mt-5">
-    {projects.map((p: Project) => (
-        <article class="relative rounded-2xl border border-soft-sandstone/60 bg-white/70 my-5">
-          <div class="grid gap-8 p-6 sm:p-8 lg:p-10 items-start lg:grid-cols-2">
-            <!-- Left: Content -->
-            <div class="space-y-6">
-              <div class="text-xs font-semibold uppercase tracking-wider text-white">
-                {p.service && (
-                    <span
-                        class="inline-block rounded-full bg-desert-rock px-3 py-1">
-                    {p.service}
-                  </span>
-                )}
+  <div class="space-y-20 lg:space-y-32">
+    {projects.map((p: Project, index) => (
+        <article
+            class="group relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+
+          <!--
+             Image Section
+             If index is even, image is on Left (col-start-1).
+             If index is odd, image is on Right (lg:order-last).
+          -->
+          <div class={`lg:col-span-7 relative ${index % 2 === 1 ? 'lg:order-last' : ''}`}>
+            <!-- Background Blob -->
+            <div
+                class="absolute -inset-4 bg-gradient-to-br from-creamed-oat to-soft-sandstone/20 rounded-[2.5rem] -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
+
+            <div
+                class="relative rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-700 border border-soft-sandstone/30 bg-porcelain-mist">
+              <!-- Browser-like Header -->
+              <div
+                  class="h-8 bg-white/80 backdrop-blur border-b border-soft-sandstone/20 flex items-center px-4 space-x-2">
+                <div class="w-2.5 h-2.5 rounded-full bg-soft-sandstone/60"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-soft-sandstone/60"></div>
               </div>
-              <h3 class="text-3xl sm:text-4xl lg:text-5xl text-dark-brown">
+
+              <div class="overflow-hidden aspect-[16/10] cursor-pointer">
+                <Image
+                    src={p.image}
+                    alt={p.imageAlt ?? p.title}
+                    class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+                <div
+                    class="absolute inset-0 bg-dark-brown/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Section -->
+          <div class="lg:col-span-5 space-y-8 relative">
+            <div class="space-y-3">
+              {p.service && (
+                  <div class="flex items-center gap-3">
+                    <span class="w-8 h-[1px] bg-desert-rock"></span>
+                    <span class="text-sm font-bold uppercase tracking-widest text-desert-rock">
+                  {p.service}
+                </span>
+                  </div>
+              )}
+              <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark-brown leading-tight">
                 {p.title}
               </h3>
-
-              <p class="text-base sm:text-lg lg:text-xl max-w-prose text-dark-brown/90">
+              <p class="text-lg text-dark-brown/70 leading-relaxed">
                 {p.description}
               </p>
+            </div>
 
-              <div class="grid grid-cols-1 gap-6 pt-4">
-                <div class="space-y-1">
-                  <div class="text-sm uppercase tracking-wide text-desert-rock text-bold">
-                    Anforderung
-                  </div>
-                  <div class="text-dark-brown text-lg">{p.problem}</div>
+            <!-- Problem / Solution -->
+            <div class="grid grid-cols-1 gap-4 border-l-2 border-creamed-oat pl-6">
+
+              <div class="relative pb-4">
+                <div class="flex items-center gap-2 mb-2 text-dark-brown/60">
+                  <i class="fa-solid fa-circle-exclamation text-desert-rock"></i>
+                  <span class="text-xs font-bold uppercase tracking-wider">Herausforderung</span>
                 </div>
-                <div class="space-y-1">
-                  <div class="text-sm uppercase tracking-wide text-desert-rock text-bold">Lösung
-                  </div>
-                  <div class="text-dark-brown text-lg">{p.solution}
-                  </div>
+                <p class="text-dark-brown font-medium text-base leading-snug">
+                  {p.problem}
+                </p>
+              </div>
+
+              <div class="relative">
+                <div class="flex items-center gap-2 mb-2 text-dark-brown/60">
+                  <i class="fa-solid fa-circle-check text-black-olive"></i>
+                  <span class="text-xs font-bold uppercase tracking-wider">Lösung</span>
                 </div>
+                <p class="text-dark-brown font-medium text-base leading-snug">
+                  {p.solution}
+                </p>
               </div>
             </div>
 
-            <div class="lg:pl-4 self-center">
-              <Image
-                  src={p.image}
-                  alt={p.imageAlt ?? p.title}
-                  class="w-full h-72 sm:h-96 lg:h-[420px] object-cover rounded-2xl"
-              />
-            </div>
           </div>
         </article>
     ))}

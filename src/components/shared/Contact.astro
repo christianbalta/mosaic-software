@@ -1,551 +1,224 @@
 ---
-
 ---
 
-<section id="contact" class="relative py-16 lg:py-24 bg-porcelain-mist">
-  <div class="relative mx-auto w-full max-w-screen-2xl px-3 sm:px-4 lg:px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-      <!-- Left Column: Contact Information -->
-      <div class="space-y-8 animate-fade-up">
-        <div>
-          <h2
-              class="text-5xl md:text-6xl tracking-tight text-dark-brown mb-4"
-          >
-            Kontaktiere uns
+<section id="kontakt" class="relative py-16 lg:py-24 overflow-hidden">
+  <!-- Background Noise/Texture -->
+  <div class="absolute inset-0 bg-porcelain-mist -z-20"></div>
+  <div
+      class="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] -z-10 pointer-events-none"></div>
+
+  <div class="relative mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+
+      <div class="lg:col-span-5 space-y-10 lg:sticky lg:top-32">
+
+        <!-- Header -->
+        <div class="space-y-6">
+          <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black-olive/10 border border-black-olive/20 text-black-olive text-xs font-bold uppercase tracking-wider">
+            <span class="relative flex h-2 w-2">
+              <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-black-olive opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-black-olive"></span>
+            </span>
+            Verfügbar für neue Projekte
+          </div>
+
+          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark-brown leading-[1.1]">
+            Lass uns etwas <br/><span class="text-desert-rock">Grossartiges</span> bauen.
           </h2>
-          <p class="text-lg text-dark-brown/70">
-            Wir freuen uns, von dir zu hören. Fülle das Formular aus und wir
-            melden uns schnellstmöglich.
+          <p class="text-lg text-dark-brown/80 leading-relaxed max-w-md">
+            Erzähl uns von deiner Vision. Ob Website Relaunch, Webshop oder komplexe Applikation –
+            wir hören zu.
           </p>
         </div>
 
-        <!-- Contact Methods Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
-          <!-- Email -->
-          <div class="space-y-3">
-            <div class="flex items-center gap-3">
-              <div
-                  class="w-10 h-10 bg-desert-rock/10 rounded-lg flex items-center justify-center"
-              >
-                <i class="fas fa-envelope text-desert-rock"></i>
-              </div>
-              <h3 class="text-xl text-dark-brown">E-Mail</h3>
+        <!-- Contact Cards -->
+        <div class="grid gap-4">
+          <a href="mailto:contact@mosaic-software.ch"
+             class="group flex items-center p-5 bg-white border border-soft-sandstone/40 rounded-2xl hover:border-desert-rock hover:shadow-lg transition-all duration-300">
+            <div
+                class="w-12 h-12 rounded-xl bg-porcelain-mist flex items-center justify-center text-dark-brown group-hover:bg-desert-rock group-hover:text-feather-white transition-colors">
+              <i class="fas fa-envelope text-xl"></i>
             </div>
-            <p class="text-dark-brown/70 text-sm leading-relaxed">
-              Kontaktiere uns per E-Mail und wir antworten schnell.
-            </p>
-            <a
-                href="mailto:contact@mosaic-software.ch"
-                class="text-desert-rock hover:text-dark-brown font-medium transition-colors"
-            >
-              contact@mosaic-software.ch
-            </a>
-          </div>
+            <div class="ml-5">
+              <span class="block text-xs font-bold uppercase tracking-wider text-desert-rock">Email schreiben</span>
+              <span class="text-lg font-medium text-dark-brown">contact@mosaic-software.ch</span>
+            </div>
+            <i class="fas fa-arrow-right ml-auto text-dark-brown/30 group-hover:text-desert-rock group-hover:translate-x-1 transition-all"></i>
+          </a>
 
-          <!-- Phone -->
-          <div class="space-y-3">
-            <div class="flex items-center gap-3">
-              <div
-                  class="w-10 h-10 bg-desert-rock/10 rounded-lg flex items-center justify-center"
-              >
-                <i class="fas fa-phone text-desert-rock"></i>
-              </div>
-              <h3 class="text-xl text-dark-brown">Telefon</h3>
+          <a href="tel:+41767439974"
+             class="group flex items-center p-5 bg-white border border-soft-sandstone/40 rounded-2xl hover:border-desert-rock hover:shadow-lg transition-all duration-300">
+            <div
+                class="w-12 h-12 rounded-xl bg-porcelain-mist flex items-center justify-center text-dark-brown group-hover:bg-desert-rock group-hover:text-feather-white transition-colors">
+              <i class="fas fa-phone text-xl"></i>
             </div>
-            <p class="text-dark-brown/70 text-sm leading-relaxed">
-              Ruf uns an, werktags von 8 Uhr bis 17 Uhr.
-            </p>
-            <a
-                href="tel:+41767439974"
-                class="text-desert-rock hover:text-dark-brown font-medium transition-colors"
-            >
-              +41 76 473 99 74
-            </a>
-          </div>
+            <div class="ml-5">
+              <span class="block text-xs font-bold uppercase tracking-wider text-desert-rock">Anrufen</span>
+              <span class="text-lg font-medium text-dark-brown">+41 76 473 99 74</span>
+            </div>
+            <i class="fas fa-arrow-right ml-auto text-dark-brown/30 group-hover:text-desert-rock group-hover:translate-x-1 transition-all"></i>
+          </a>
         </div>
       </div>
 
-      <!-- Right Column: Contact Form -->
-      <div class="animate-fade-up animation-delay-100">
-        <div class="bg-feather-white rounded-2xl shadow-xl p-8 md:p-10">
-          <h3 class="text-3xl text-dark-brown mb-8">
-            Bereit für den nächsten Schritt?
-          </h3>
+      <!-- Form -->
+      <div class="lg:col-span-7">
+        <div
+            class="bg-white rounded-[2.5rem] shadow-xl shadow-soft-sandstone/20 p-8 sm:p-12 border border-soft-sandstone/20 relative overflow-hidden">
+          <form id="contact-form" class="space-y-8 relative z-10">
 
-          <form id="contact-form" class="space-y-6">
-            <!-- Name Row -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <!-- First Name -->
-              <div class="form-group">
-                <label
-                    for="firstName"
-                    class="block text-sm font-medium text-dark-brown mb-2"
-                >
-                  Vorname <span class="text-desert-rock">*</span>
-                </label>
-                <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    required
-                    class="w-full px-4 py-3 bg-porcelain-mist border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-desert-rock/50 focus:border-desert-rock focus:bg-white transition-all duration-200 hover:bg-porcelain-mist/50"
-                    placeholder="Max"
-                />
-                <span class="error-message hidden text-xs text-red-500 mt-1"
-                >Bitte gib deinen Vornamen ein</span
-                >
-              </div>
-
-              <!-- Last Name -->
-              <div class="form-group">
-                <label
-                    for="lastName"
-                    class="block text-sm font-medium text-dark-brown mb-2"
-                >
-                  Nachname <span class="text-desert-rock">*</span>
-                </label>
-                <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    required
-                    class="w-full px-4 py-3 bg-porcelain-mist border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-desert-rock/50 focus:border-desert-rock focus:bg-white transition-all duration-200 hover:bg-porcelain-mist/50"
-                    placeholder="Mustermann"
-                />
-                <span class="error-message hidden text-xs text-red-500 mt-1"
-                >Bitte gib deinen Nachnamen ein</span
-                >
-              </div>
-            </div>
-
-            <!-- Email -->
-            <div class="form-group">
-              <label
-                  for="email"
-                  class="block text-sm font-medium text-dark-brown mb-2"
-              >
-                E-Mail <span class="text-desert-rock">*</span>
-              </label>
-              <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  class="w-full px-4 py-3 bg-porcelain-mist border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-desert-rock/50 focus:border-desert-rock focus:bg-white transition-all duration-200 hover:bg-porcelain-mist/50"
-                  placeholder="max@beispiel.ch"
-              />
-              <span class="error-message hidden text-xs text-red-500 mt-1"
-              >Bitte gib eine gültige E-Mail-Adresse ein</span
-              >
-            </div>
-
-            <!-- Phone & Company Row -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <!-- Phone -->
-              <div class="form-group">
-                <label
-                    for="phone"
-                    class="block text-sm font-medium text-dark-brown mb-2"
-                >
-                  Telefon
-                </label>
-                <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    class="w-full px-4 py-3 bg-porcelain-mist border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-desert-rock/50 focus:border-desert-rock focus:bg-white transition-all duration-200 hover:bg-porcelain-mist/50"
-                    placeholder="+41 79 123 45 67"
-                />
-              </div>
-
-              <!-- Company -->
-              <div class="form-group">
-                <label
-                    for="company"
-                    class="block text-sm font-medium text-dark-brown mb-2"
-                >
-                  Unternehmen
-                </label>
-                <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    class="w-full px-4 py-3 bg-porcelain-mist border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-desert-rock/50 focus:border-desert-rock focus:bg-white transition-all duration-200 hover:bg-porcelain-mist/50"
-                    placeholder="Firma GmbH"
-                />
-              </div>
-            </div>
-
-            <!-- Project Timeline -->
-            <div class="form-group">
-              <label
-                  for="timeline"
-                  class="block text-sm font-medium text-dark-brown mb-2"
-              >
-                Wann planst du den Projektstart? <span class="text-desert-rock"
-              >*</span
-              >
-              </label>
-              <div class="relative">
-                <select
-                    id="timeline"
-                    name="timeline"
-                    required
-                    class="w-full px-4 py-3 bg-porcelain-mist border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-desert-rock/50 focus:border-desert-rock focus:bg-white transition-all duration-200 hover:bg-porcelain-mist/50 appearance-none cursor-pointer"
-                >
-                  <option value="" disabled selected>Bitte wählen</option>
-                  <option value="immediately">Sofort</option>
-                  <option value="1-3months">In 1-3 Monaten</option>
-                  <option value="3-6months">In 3-6 Monaten</option>
-                  <option value="6-12months">In 6-12 Monaten</option>
-                  <option value="not-sure">Noch nicht sicher</option>
-                </select>
-                <!-- Custom dropdown arrow -->
-                <div
-                    class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"
-                >
-                  <i class="fas fa-chevron-down text-dark-brown/60"></i>
+            <!-- Personal Details -->
+            <div class="space-y-6">
+              <h3 class="text-xl font-bold text-dark-brown flex items-center gap-2 mb-0">
+                <span
+                    class="w-6 h-6 rounded-full bg-desert-rock text-white text-xs flex items-center justify-center">1</span>
+                Deine Daten
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="form-group">
+                  <input type="text" id="firstName" name="firstName" required placeholder=" "
+                         class="peer w-full px-4 py-3 bg-porcelain-mist/50 border border-transparent rounded-xl focus:outline-none focus:ring-2 focus:ring-desert-rock focus:bg-white transition-all placeholder-transparent"/>
+                  <label for="firstName"
+                         class="absolute left-4 top-3.5 text-dark-brown/50 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3.5 peer-focus:-top-6 peer-focus:text-xs peer-focus:text-desert-rock pointer-events-none">Vorname*</label>
+                </div>
+                <div class="form-group relative">
+                  <input type="text" id="lastName" name="lastName" required placeholder=" "
+                         class="peer w-full px-4 py-3 bg-porcelain-mist/50 border border-transparent rounded-xl focus:outline-none focus:ring-2 focus:ring-desert-rock focus:bg-white transition-all placeholder-transparent"/>
+                  <label for="lastName"
+                         class="absolute left-4 top-3.5 text-dark-brown/50 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3.5 peer-focus:-top-6 peer-focus:text-xs peer-focus:text-desert-rock pointer-events-none">Nachname*</label>
                 </div>
               </div>
-              <span class="error-message hidden text-xs text-red-500 mt-1"
-              >Bitte wähle einen Zeitraum aus</span
-              >
+              <div class="form-group relative">
+                <input type="email" id="email" name="email" required placeholder=" "
+                       class="peer w-full px-4 py-3 bg-porcelain-mist/50 border border-transparent rounded-xl focus:outline-none focus:ring-2 focus:ring-desert-rock focus:bg-white transition-all placeholder-transparent"/>
+                <label for="email"
+                       class="absolute left-4 top-3.5 text-dark-brown/50 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3.5 peer-focus:-top-6 peer-focus:text-xs peer-focus:text-desert-rock pointer-events-none">E-Mail
+                  Adresse*</label>
+              </div>
+            </div>
+
+            <!-- Interactive Timeline Selector -->
+            <div class="space-y-4">
+              <h3 class="text-xl font-bold text-dark-brown flex items-center gap-2">
+                <span
+                    class="w-6 h-6 rounded-full bg-desert-rock text-white text-xs flex items-center justify-center">2</span>
+                Zeitrahmen
+              </h3>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  {val: 'asap', label: 'Sofort'},
+                  {val: '1-3m', label: '1-3 Monate'},
+                  {val: '3-6m', label: '3-6 Monate'},
+                  {val: 'later', label: '> 6 Monate'}
+                ].map((opt) => (
+                    <label class="cursor-pointer">
+                      <input type="radio" name="timeline" value={opt.val} class="peer sr-only"
+                             required/>
+                      <div
+                          class="h-full py-3 px-2 text-center rounded-xl border border-soft-sandstone/30 bg-white text-sm font-medium text-dark-brown/70 transition-all peer-checked:border-desert-rock peer-checked:bg-desert-rock/10 peer-checked:text-dark-brown hover:border-desert-rock/50">
+                        {opt.label}
+                      </div>
+                    </label>
+                ))}
+              </div>
             </div>
 
             <!-- Message -->
-            <div class="form-group">
-              <label
-                  for="message"
-                  class="block text-sm font-medium text-dark-brown mb-2"
-              >
-                Wobei können wir unterstützen? <span class="text-desert-rock"
-              >*</span
-              >
-              </label>
-              <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows="4"
-                  class="w-full px-4 py-3 bg-porcelain-mist border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-desert-rock/50 focus:border-desert-rock focus:bg-white transition-all duration-200 hover:bg-porcelain-mist/50 resize-none"
-                  placeholder="Erzähle uns von deinem Projekt..."></textarea>
-              <span class="error-message hidden text-xs text-red-500 mt-1"
-              >Bitte beschreibe dein Projekt</span
-              >
-            </div>
-
-            <!-- Privacy Checkbox -->
-            <div class="flex items-center">
-              <input
-                  type="checkbox"
-                  id="privacy"
-                  name="privacy"
-                  required
-                  class="w-4 h-4 text-desert-rock border-creamed-oat rounded focus:ring-desert-rock/50"
-              />
-              <label for="privacy" class="ml-3 text-sm text-dark-brown/70">
-                Ich stimme der <a
-                  href="/data-protection"
-                  class="text-desert-rock hover:underline"
-              >Datenschutzerklärung</a
-              >
-                zu.
-              </label>
-            </div>
-
-            <!-- Submit Button -->
-            <button
-                type="submit"
-                class="w-full px-8 py-4 bg-desert-rock text-feather-white rounded-full hover:bg-dark-brown transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-desert-rock disabled:opacity-50 disabled:cursor-not-allowed group"
-            >
-              <span class="flex items-center justify-center gap-3">
-                Senden
-                <i
-                    class="fas fa-paper-plane transform transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5"
-                ></i>
-              </span>
-            </button>
-
-            <!-- Success Message -->
-            <div id="success-message" class="hidden">
-              <div
-                  class="bg-soft-sandstone/20 border border-desert-rock/30 rounded-lg p-4"
-              >
-                <div class="flex items-start gap-3">
-                  <i class="fas fa-check-circle text-desert-rock mt-0.5"></i>
-                  <div>
-                    <p class="font-semibold text-dark-brown">
-                      Vielen Dank für deine Nachricht!
-                    </p>
-                    <p class="text-sm text-dark-brown/80 mt-1">
-                      Wir werden uns innerhalb von 24 Stunden bei dir melden.
-                    </p>
-                  </div>
-                </div>
+            <div class="space-y-4">
+              <h3 class="text-xl font-bold text-dark-brown flex items-center gap-2">
+                <span
+                    class="w-6 h-6 rounded-full bg-desert-rock text-white text-xs flex items-center justify-center">3</span>
+                Details
+              </h3>
+              <div class="form-group">
+                <label for="message"></label>
+                <textarea id="message" name="message" required rows="4"
+                          placeholder="Erzähle uns kurz von deinem Projekt..."
+                          class="w-full px-4 py-3 bg-porcelain-mist/50 border border-transparent rounded-xl focus:outline-none focus:ring-2 focus:ring-desert-rock focus:bg-white transition-all resize-none"></textarea>
               </div>
             </div>
+
+            <!-- Privacy & Submit -->
+            <div class="pt-4 border-t border-soft-sandstone/20">
+              <div class="flex items-start mb-6">
+                <input type="checkbox" id="privacy" name="privacy" required
+                       class="mt-1 w-4 h-4 text-desert-rock rounded focus:ring-desert-rock border-gray-300"/>
+                <label for="privacy" class="ml-3 text-sm text-dark-brown/70">
+                  Ich stimme der <a href="/data-protection"
+                                    class="text-desert-rock hover:underline font-medium">Datenschutzerklärung</a>
+                  zu.
+                </label>
+              </div>
+
+              <button type="submit"
+                      class="w-full py-4 px-6 bg-dark-brown text-white rounded-xl font-bold text-lg hover:bg-desert-rock hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 group">
+                <span>Anfrage absenden</span>
+                <i class="fas fa-paper-plane transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+              </button>
+            </div>
+
+            <!-- Success Message Overlay -->
+            <div id="success-message"
+                 class="absolute inset-0 bg-white/95 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500 z-20 rounded-[2.5rem]">
+              <div class="text-center p-8 transform scale-90 transition-transform duration-500"
+                   id="success-content">
+                <div
+                    class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600 text-3xl">
+                  <i class="fas fa-check"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-dark-brown mb-2">Nachricht gesendet!</h3>
+                <p class="text-dark-brown/70">Wir melden uns in Kürze bei dir.</p>
+              </div>
+            </div>
+
           </form>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <style>
-  /* Custom animations that extend the existing global.css animations */
-  .form-group input:focus,
-  .form-group textarea:focus,
-  .form-group select:focus {
-    transform: translateY(-1px);
+  input[type="radio"]:checked + div {
+    box-shadow: 0 0 0 1px var(--color-desert-rock);
   }
 
-  /* Smooth transitions for form elements */
-  .form-group input,
-  .form-group textarea,
-  .form-group select {
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  /* Invalid input styling */
-  .form-group input:invalid:not(:placeholder-shown),
-  .form-group textarea:invalid:not(:placeholder-shown) {
-    border-color: rgb(239 68 68 / 0.5);
-    background-color: rgb(254 242 242 / 0.5);
-  }
-
-  /* Custom scrollbar for textarea */
-  textarea::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  textarea::-webkit-scrollbar-track {
-    background: var(--color-porcelain-mist);
-    border-radius: 3px;
-  }
-
-  textarea::-webkit-scrollbar-thumb {
-    background: var(--color-soft-sandstone);
-    border-radius: 3px;
-  }
-
-  textarea::-webkit-scrollbar-thumb:hover {
-    background: var(--color-desert-rock);
-  }
-
-  /* Loading state for button */
-  button[type="submit"].loading {
+  .form-group {
     position: relative;
-    color: transparent;
+    margin-top: 1.5rem;
   }
 
-  button[type="submit"].loading::after {
-    content: "";
-    position: absolute;
-    width: 16px;
-    height: 16px;
+  input:placeholder-shown + label {
     top: 50%;
-    left: 50%;
-    margin-left: -8px;
-    margin-top: -8px;
-    border: 2px solid var(--color-feather-white);
-    border-radius: 50%;
-    border-top-color: transparent;
-    animation: spinner 0.6s linear infinite;
+    transform: translateY(-50%);
   }
 
-  @keyframes spinner {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  /* Checkbox custom styling */
-  input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 1rem;
-    height: 1rem;
-    border: 2px solid var(--color-creamed-oat);
-    border-radius: 0.25rem;
-    background-color: transparent;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.2s ease;
-  }
-
-  input[type="checkbox"]:checked {
-    background-color: var(--color-desert-rock);
-    border-color: var(--color-desert-rock);
-  }
-
-  input[type="checkbox"]:checked::after {
-    content: "";
-    position: absolute;
-    left: 3px;
-    top: 0px;
-    width: 5px;
-    height: 8px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-  }
-
-  input[type="checkbox"]:focus {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-    box-shadow: 0 0 0 2px var(--color-desert-rock);
-  }
-
-  /* Address styling */
-  address {
-    font-style: normal;
+  input:not(:placeholder-shown) + label,
+  input:focus + label {
+    top: -0.75rem;
+    font-size: 0.75rem;
+    color: var(--color-desert-rock);
+    background: white;
+    padding: 0 4px;
   }
 </style>
 
 <script>
-  // Form validation and submission
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contact-form") as HTMLFormElement;
-    const successMessage = document.getElementById("success-message");
-    const submitButton = form.querySelector(
-        'button[type="submit"]',
-    ) as HTMLButtonElement;
+    const successMsg = document.getElementById("success-message");
+    const successContent = document.getElementById("success-content");
 
-    // Real-time validation
-    const inputs = form.querySelectorAll(
-        "input[required], textarea[required], select[required]",
-    );
-
-    inputs.forEach((input) => {
-      input.addEventListener("blur", () => {
-        validateField(
-            input as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement,
-        );
-      });
-
-      input.addEventListener("input", () => {
-        const formGroup = input.closest(".form-group");
-        const errorMessage = formGroup?.querySelector(".error-message");
-        if (errorMessage?.classList.contains("block")) {
-          validateField(
-              input as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement,
-          );
-        }
-      });
-    });
-
-    function validateField(
-        field: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement,
-    ): boolean {
-      const formGroup = field.closest(".form-group");
-      const errorMessage = formGroup?.querySelector(".error-message");
-
-      if (!field.validity.valid || field.value.trim() === "") {
-        field.classList.add("border-red-500");
-        errorMessage?.classList.remove("hidden");
-        errorMessage?.classList.add("block");
-        return false;
-      } else {
-        field.classList.remove("border-red-500");
-        errorMessage?.classList.add("hidden");
-        errorMessage?.classList.remove("block");
-        return true;
-      }
-    }
-
-    // Form submission
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
 
-      // Check privacy checkbox
-      const privacyCheckbox = document.getElementById(
-          "privacy",
-      ) as HTMLInputElement;
-      if (!privacyCheckbox.checked) {
-        privacyCheckbox.focus();
-        privacyCheckbox.classList.add("border-red-500");
-        return;
-      }
-
-      // Validate all required fields
-      let isValid = true;
-      inputs.forEach((input) => {
-        if (
-            !validateField(
-                input as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement,
-            )
-        ) {
-          isValid = false;
-        }
-      });
-
-      if (!isValid) {
-        // Scroll to first error
-        const firstError = form.querySelector(".border-red-500");
-        firstError?.scrollIntoView({behavior: "smooth", block: "center"});
-        return;
-      }
-
-      // Add loading state
-      submitButton.classList.add("loading");
-      submitButton.disabled = true;
-
-      // Simulate form submission (replace with actual API call)
-      try {
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-
-        // Show success message
-        successMessage?.classList.remove("hidden");
-        form.reset();
-
-        // Scroll to success message
-        successMessage?.scrollIntoView({behavior: "smooth", block: "center"});
-
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-          successMessage?.classList.add("hidden");
-        }, 5000);
-      } catch (error) {
-        console.error("Error submitting form:", error);
-        // Handle error (show error message)
-      } finally {
-        submitButton.classList.remove("loading");
-        submitButton.disabled = false;
-      }
-    });
-
-    // Phone number formatting
-    const phoneInput = document.getElementById("phone") as HTMLInputElement;
-    phoneInput?.addEventListener("input", (e) => {
-      const target = e.target as HTMLInputElement;
-      let value = target.value.replace(/\D/g, "");
-
-      // Swiss phone number format
-      if (value.startsWith("41")) {
-        value = "+41 " + value.slice(2);
-        if (value.length > 7) {
-          value = value.slice(0, 7) + " " + value.slice(7);
-        }
-        if (value.length > 11) {
-          value = value.slice(0, 11) + " " + value.slice(11);
-        }
-        if (value.length > 14) {
-          value = value.slice(0, 14) + " " + value.slice(14, 16);
-        }
-      } else if (value.startsWith("0")) {
-        // Handle local Swiss numbers
-        if (value.length > 3) {
-          value = value.slice(0, 3) + " " + value.slice(3);
-        }
-        if (value.length > 7) {
-          value = value.slice(0, 7) + " " + value.slice(7);
-        }
-        if (value.length > 10) {
-          value = value.slice(0, 10) + " " + value.slice(10, 12);
-        }
-      }
-
-      target.value = value;
+      // 1. Loading State
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Sende...';
     });
   });
 </script>

@@ -1,0 +1,170 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import Footer from "../components/shared/Footer.astro";
+import Contact from "../components/shared/Contact.astro";
+import Hero from "../components/shared/sections/Hero.astro";
+import Services from "../components/shared/sections/Services.astro";
+import Projects from "../components/shared/sections/Projects.astro";
+import Testimonials from "../components/shared/sections/Testimonials.astro";
+import FAQ from "../components/shared/sections/FAQ.astro";
+import Considerations from "../components/shared/sections/Considerations.astro";
+
+import heroImg from "../assets/software/DSC00216.jpg";
+import kitaLuftibus from "../assets/Kita-Luftibus-Mockup.png";
+import bioShield from "../assets/Bioshield-Mockup.png";
+
+import type {Project} from "../types/project.ts";
+import type {FAQItem} from "../types/faq.ts";
+import type {ServiceItem} from "../types/serviceItem.ts";
+import type {ConsiderationItem} from "../types/considerationItem";
+
+// --- SEO & Hero Data ---
+const pageTitle = "Website erstellen lassen im Abo | Ab CHF 175/Mt. | Zürich";
+const pageDescription = "Professionelle Website erstellen lassen – ohne hohe Einmalkosten. Massgeschneidert programmiert, kein Baukasten. Inklusive Wartung & Updates ab CHF 175 monatlich.";
+
+const heroTitle = 'Website erstellen lassen';
+const heroDescription = "Wir erstellen Ihre Website von Hand – ohne träge CMS oder Baukästen. Maximale Performance, Sicherheit und Design-Qualität zum fairen Monatspreis. Keine hohen Investitionskosten.";
+const heroIcons = [
+  {icon: 'fa-solid fa-hand-holding-dollar', text: 'Ab CHF 175 / Monat'},
+  {icon: 'fa-solid fa-code', text: '100% Hand-Coded'},
+  {icon: 'fa-solid fa-infinity', text: 'Inkl. Wartung & Updates'}
+];
+
+// --- Services Data ---
+const serviceTitle = 'Warum eine handprogrammierte<br>Website besser rankt';
+const serviceDesc = 'Baukästen wie WordPress sind oft langsam und anfällig. Wir setzen auf moderne Web-Technologien für Ihren Wettbewerbsvorteil.';
+const serviceVideoTitle = "Webdesign Prozess Mosaic Software";
+const playbackId = 'dSr8i00jXSrtrsWkOYi301PHczBxxRay5Z31F9cXjZtGw';
+
+const serviceItems: ServiceItem[] = [
+  {
+    icon: 'fa-solid fa-gauge-high',
+    title: 'Unschlagbare Performance',
+    description: 'Da wir keinen unnötigen Baukasten-Ballast laden, erreichen wir Google PageSpeed Scores von 95-100. Ein massiver SEO-Vorteil.',
+  },
+  {
+    icon: 'fa-solid fa-shield-halved',
+    title: 'Maximale Sicherheit',
+    description: 'Wo kein CMS (wie WordPress) ist, kann auch keines gehackt werden. Unsere statischen Seiten sind praktisch unangreifbar.',
+  },
+  {
+    icon: 'fa-solid fa-gem',
+    title: 'Design ohne Grenzen',
+    description: 'Wir sind nicht an Templates gebunden. Jedes Element wird exakt so programmiert, wie es für Ihre Marke am besten wirkt.',
+  }
+];
+
+// --- Projects Data ---
+const selectedProjects: Project[] = [
+  {
+    service: 'Website',
+    title: 'Kita Luftibus',
+    description: 'Durch den Wechsel von WordPress auf unsere handcodierte Lösung lade die Seite nun in 0.4 Sekunden.',
+    problem: 'Hohe Wartungskosten und ständige Sicherheitslücken im alten System.',
+    solution: 'Rundum-Sorglos Abo: Relaunch ohne Investitionskosten, Hosting inklusive.',
+    image: kitaLuftibus,
+    imageAlt: 'Kita Website Mockup',
+  },
+  {
+    service: 'Webshop',
+    title: 'Bioshield',
+    description: 'Hochperformante B2B-Präsentation, die Vertrauen schafft und Leads generiert.',
+    problem: 'Die alte Seite war auf Mobilgeräten kaum nutzbar.',
+    solution: 'Mobile-First Entwicklung für perfekte Darstellung auf allen Geräten.',
+    image: bioShield,
+    imageAlt: 'Corporate Website Mockup',
+  }
+];
+
+// --- FAQ Data ---
+const specificFaq: FAQItem[] = [
+  {
+    question: 'Warum ist "Hand-Coded" besser als WordPress?',
+    answer: 'WordPress ist ein Baukasten, der viel unnötigen Code lädt, was Websites langsam und anfällig für Hacker macht. Unsere handprogrammierten Seiten laden sofort, sind extrem sicher und brauchen keine ständigen Plugin-Updates.',
+  },
+  {
+    question: 'Wie kann ich Inhalte ändern, wenn es kein CMS gibt?',
+    answer: 'Das ist Teil unseres Services! Schicken Sie uns einfach Ihre Änderungswünsche per Mail oder WhatsApp. Im Abo sind Text- und Bildanpassungen bereits enthalten. Sie müssen sich nicht mit Technik herumschlagen.',
+  },
+  {
+    question: 'Gibt es eine Mindestlaufzeit?',
+    answer: 'Da wir die Website ohne hohe Einmalkosten für Sie erstellen, beträgt die Mindestlaufzeit in der Regel 24 Monate. Danach gehört die Website Ihnen oder Sie verlängern den Service für Hosting & Updates.',
+  },
+  {
+    question: 'Kommen versteckte Kosten hinzu?',
+    answer: 'Nein. Hosting, Domain, SSL-Zertifikat und technische Wartung sind im Monatspreis enthalten. Lediglich spezielle Drittanbieter-Tools (falls gewünscht) könnten extra kosten.',
+  },
+];
+
+// --- Considerations Data ---
+const considerationsBadge = 'Expertise';
+const considerationsTitle = 'Worauf Sie <br/><span class="text-desert-rock italic">wirklich</span> achten müssen.';
+const considerationsDescription = 'Der Markt ist voll von leeren Versprechungen. Hier ist der Unterschied zwischen einer Ausgabe und einer Investition.';
+const considerationsItems: ConsiderationItem[] = [
+  {
+    title: 'Qualität vs. Template-Masse',
+    descriptionHtml:
+        'Viele Anbieter nutzen "Themes", die tausendfach im Internet existieren. Sie sind oft schlecht programmiert und bieten kaum Möglichkeiten zur Suchmaschinenoptimierung (SEO). Wir programmieren jede Zeile Code selbst.',
+    dotBgClass: 'bg-desert-rock',
+    lineGradientFromClass: 'from-desert-rock',
+    showConnector: true,
+  },
+  {
+    title: 'Performance als Währung',
+    descriptionHtml:
+        '<strong>Die Geschwindigkeit ist Key:</strong> Google straft langsame Websites ab. Wenn Sie eine Website erstellen lassen, fragen Sie nach den "Google Core Web Vitals". Bei uns sind grüne Werte Standard, nicht Zufall.',
+    dotBgClass: 'bg-black-olive',
+    lineGradientFromClass: 'from-black-olive',
+    showConnector: true,
+  },
+  {
+    title: 'Aktualität im Abo',
+    descriptionHtml:
+        'Eine gekaufte Website veraltet schnell. Unser "Website as a Service" Modell garantiert, dass Ihre Seite technisch immer auf dem neuesten Stand bleibt – ohne versteckte Update-Kosten.',
+    dotBgClass: 'bg-creamed-oat',
+    showConnector: false,
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Navigation/>
+
+  <main class="mx-auto w-full max-w-screen-2xl p-3 sm:p-6 lg:p-10 space-y-24 !pt-20">
+    <Hero
+        h1={heroTitle}
+        description={heroDescription}
+        iconTexts={heroIcons}
+        heroImage={heroImg}
+    />
+    <Services
+        items={serviceItems}
+        title={serviceTitle}
+        description={serviceDesc}
+        playbackId={playbackId}
+        videoTitle={serviceVideoTitle}
+    />
+    <Testimonials/>
+    <Projects
+        title="Aktuelle Arbeiten"
+        projects={selectedProjects}
+    />
+
+    <Considerations
+        badgeLabel={considerationsBadge}
+        titleHtml={considerationsTitle}
+        description={considerationsDescription}
+        items={considerationsItems}
+    />
+
+    <FAQ
+        title="Häufig gestellte Fragen"
+        items={specificFaq}
+    />
+
+  </main>
+
+  <Contact/>
+  <Footer/>
+</Layout>

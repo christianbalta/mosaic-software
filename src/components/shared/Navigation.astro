@@ -30,19 +30,24 @@ import ButtonPrimary from "./ButtonPrimary.astro";
         >
         <a
             href="/individualsoftware"
-            class={`menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200 ${Astro.url.pathname === "/software" ? "text-desert-rock" : ""}`}
+            class={`menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200 ${Astro.url.pathname === "/individualsoftware" ? "text-desert-rock" : ""}`}
         >Individualsoftware</a
         >
         <a
             href="/websites-und-webshops"
-            class={`menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200 ${Astro.url.pathname === "/website" ? "text-desert-rock" : ""}`}
+            class={`menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200 ${Astro.url.pathname === "/websites-und-webshops" ? "text-desert-rock" : ""}`}
         >Websites & Webshops</a
+        >
+        <a
+            href="/ueber-uns"
+            class={`menu-link text-dark-brown hover:text-desert-rock font-medium transition-colors duration-200 ${Astro.url.pathname === "/ueber-uns" ? "text-desert-rock" : ""}`}
+        >Über uns</a
         >
       </div>
 
       <!-- CTA Button -->
       <div class="hidden md:block">
-        <ButtonPrimary href="/#contact" label="Kontakt"/>
+        <ButtonPrimary href="/#kontakt" label="Kontakt"/>
       </div>
 
       <!-- Animated Hamburger Button -->
@@ -73,7 +78,7 @@ import ButtonPrimary from "./ButtonPrimary.astro";
     id="mobile-menu"
     class="fixed top-0 right-0 bottom-0 w-full bg-feather-white transform translate-x-full transition-transform duration-500 ease-out md:hidden z-[100] shadow-2xl custom-scrollbar overflow-y-auto"
 >
-  <!-- Decorative elements with soft colors -->
+  <!-- Decorative elements -->
   <div
       class="absolute top-0 right-0 w-64 h-64 bg-soft-sandstone opacity-10 rounded-full blur-3xl pointer-events-none"
   >
@@ -128,6 +133,7 @@ import ButtonPrimary from "./ButtonPrimary.astro";
             class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"
         ></i>
       </a>
+
       <a
           href="/websites-und-webshops"
           class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300"
@@ -148,6 +154,27 @@ import ButtonPrimary from "./ButtonPrimary.astro";
             class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"
         ></i>
       </a>
+
+      <a
+          href="/ueber-uns"
+          class="menu-item group flex items-center justify-between p-4 rounded-xl bg-porcelain-mist hover:bg-creamed-oat transition-all duration-300"
+      >
+        <div class="flex items-center space-x-4">
+          <div
+              class="w-10 h-10 bg-soft-sandstone rounded-lg flex items-center justify-center group-hover:bg-desert-rock group-hover:scale-110 transition-all duration-300"
+          >
+            <i
+                class="fa-solid fa-people-group text-dark-brown group-hover:text-feather-white transition-colors duration-300"
+            ></i>
+          </div>
+          <span class="text-lg font-medium text-dark-brown"
+          >Über uns</span
+          >
+        </div>
+        <i
+            class="fas fa-chevron-right text-soft-sandstone group-hover:text-desert-rock group-hover:translate-x-1 transition-all duration-300"
+        ></i>
+      </a>
     </nav>
 
     <!-- Divider -->
@@ -155,7 +182,7 @@ import ButtonPrimary from "./ButtonPrimary.astro";
 
     <!-- CTA Button -->
     <div class="menu-item">
-      <ButtonPrimary href="/#contact" label="Kontakt"/>
+      <ButtonPrimary href="/#kontakt" label="Kontakt"/>
     </div>
 
     <!-- Additional Quick Links -->

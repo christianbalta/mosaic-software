@@ -11,8 +11,6 @@ export interface Props {
 const {
   href,
   label,
-  borderColor = 'var(--color-desert-rock)',
-  textColor = '#000',
   target,
   rel,
   type = 'button',
@@ -26,7 +24,7 @@ const Tag = href ? 'a' : 'button';
     target={target}
     rel={rel}
     type={!href ? type : undefined}
-    style={`--ms-border: ${borderColor}; --ms-text: ${textColor}`}
+    style={`--ms-border: var(--color-desert-rock); --ms-text: #000`}
     class={`group inline-flex items-center gap-3 rounded-full font-semibold leading-none px-6 py-4 pl-5 whitespace-nowrap overflow-hidden transition-colors duration-300 border-2 bg-transparent text-[var(--ms-text)] border-[var(--ms-border)] hover:bg-[var(--ms-border)] hover:text-white ${className}`}
 >
   {label}

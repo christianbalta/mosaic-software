@@ -1,0 +1,291 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import Footer from "../components/shared/Footer.astro";
+import Contact from "../components/shared/Contact.astro";
+import {Image} from "astro:assets";
+import customerMeeting from "../assets/ueber-uns/kundengespraech-mosaic-software.jpg"
+import codeQuality from "../assets/ueber-uns/codeQuailty.png"
+import teamMosaicSoftware from "../assets/ueber-uns/team-mosaic-software.jpg"
+import davidLipps from "../assets/ueber-uns/david-lipps.jpg"
+import amirAwak from "../assets/ueber-uns/amir-awak.jpg"
+import christianBalta from "../assets/ueber-uns/christian-balta.jpg"
+
+
+const teamMembers = [
+  {
+    name: "David Lipps",
+    role: "Founder, Developer, Operations & Finance",
+    img: davidLipps,
+    email: "mailto:dlipps@mosaic-software.ch"
+  },
+  {
+    name: "Amir Awak",
+    role: "Founder, Developer, Technic & Products",
+    img: amirAwak,
+    email: "mailto:aawak@mosaic-software.ch"
+  },
+  {
+    name: "Christian Balta",
+    role: "Founder, Developer, Market & Customers",
+    img: christianBalta,
+    email: "mailto:cbalta@mosaic-software.ch"
+  },
+];
+const processSteps = [
+  {
+    step: "01",
+    title: "Onboarding",
+    desc: "Wir lernen Ihr Geschäft, Ihre Ziele und Ihre Zielgruppe kennen. Gemeinsam definieren wir den Projektumfang.",
+    icon: "fa-solid fa-handshake"
+  },
+  {
+    step: "02",
+    title: "Wireframing",
+    desc: "Wir erstellen die Struktur und den Aufbau der Seite, um die Nutzerführung (UX) logisch zu planen.",
+    icon: "fa-solid fa-pen-ruler"
+  },
+  {
+    step: "03",
+    title: "UI/UX Design",
+    desc: "Das visuelle Design entsteht. Wir gestalten ein modernes Interface, das Ihre Marke perfekt repräsentiert.",
+    icon: "fa-solid fa-palette"
+  },
+  {
+    step: "04",
+    title: "Entwicklung",
+    desc: "Wir setzen das Design in sauberen, performanten Code um – responsive und zukunftssicher.",
+    icon: "fa-solid fa-code"
+  },
+  {
+    step: "05",
+    title: "Testing & Launch",
+    desc: "Ausgiebige Tests auf allen Geräten. Nach Ihrer Freigabe geht die neue Seite live.",
+    icon: "fa-solid fa-rocket"
+  },
+  {
+    step: "06",
+    title: "Support",
+    desc: "Auch nach dem Launch sind wir für Sie da. Wartung, Updates und Weiterentwicklung.",
+    icon: "fa-solid fa-headset"
+  }
+];
+---
+
+<Layout
+    title="Über uns | Mosaic Software Zürich"
+    description="Lernen Sie das Team hinter Mosaic Software kennen. Unsere Mission, Vision und Arbeitsweise für digitale Exzellenz."
+>
+  <Navigation/>
+  <main class="mx-auto w-full max-w-screen-2xl p-3 sm:p-6 lg:p-10 space-y-24 !pt-20">
+    <!-- Hero Section -->
+    <section class="animate-fade-up py-10 lg:py-16">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl leading-tight text-dark-brown">
+            Digitale Handwerkskunst<br>aus Zürich.
+          </h1>
+          <p class="text-lg sm:text-xl text-dark-brown/80 leading-relaxed">
+            Bei uns trifft High-End-Technologie auf Business-Verstand. Wir entwickeln performante
+            Lösungen als Fundament für Ihren messbaren Geschäftserfolg.
+          </p>
+        </div>
+        <div class="relative group">
+          <Image
+              src={teamMosaicSoftware}
+              alt="Das Mosaic Software Team"
+              class="w-full rounded-3xl shadow-xl object-cover aspect-[4/3] relative z-10"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
+      <div class="bg-porcelain-mist rounded-2xl p-8 lg:p-12 border border-soft-sandstone/30">
+        <div
+            class="w-12 h-12 bg-dark-brown rounded-full flex items-center justify-center mb-6 text-feather-white">
+          <i class="fa-solid fa-bullseye text-xl"></i>
+        </div>
+        <h2 class="text-2xl lg:text-3xl font-bold text-dark-brown mb-4">Unsere Mission</h2>
+        <p class="text-dark-brown/80 leading-relaxed">
+          Unternehmen dabei zu unterstützen, im digitalen Raum nicht nur präsent zu sein, sondern zu
+          dominieren. Wir bauen keine Wegwerf-Lösungen, sondern nachhaltige digitale Assets, die mit
+          Ihrem Unternehmen wachsen.
+        </p>
+      </div>
+
+      <div class="bg-porcelain-mist rounded-2xl p-8 lg:p-12 border border-soft-sandstone/30">
+        <div
+            class="w-12 h-12 bg-dark-brown rounded-full flex items-center justify-center mb-6 text-feather-white">
+          <i class="fa-solid fa-eye text-xl"></i>
+        </div>
+        <h2 class="text-2xl lg:text-3xl font-bold text-dark-brown mb-4">Unsere Vision</h2>
+        <p class="text-dark-brown/80 leading-relaxed">
+          Eine Digitale-Landschaft, in der Geschwindigkeit, Barrierefreiheit und ästhetisches Design
+          Standard sind. Wir streben danach, die Lücke zwischen technischer Komplexität und
+          intuitiver Nutzung zu schliessen.
+        </p>
+      </div>
+    </section>
+
+    <!-- Arbeitsweise Section -->
+    <section class="space-y-10">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl text-dark-brown mb-4">Unsere Arbeitsweise</h2>
+        <p class="text-lg text-dark-brown">Qualität, Transparenz und moderne Prozesse.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <div
+            class="group lg:col-span-2 relative h-[320px] rounded-[2rem] overflow-hidden shadow-sm">
+          <Image
+              src={customerMeeting}
+              alt="Team Meeting"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div
+              class="absolute inset-0 bg-gradient-to-t from-dark-brown/90 via-dark-brown/40 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8 sm:p-10 w-full">
+            <h3 class="text-2xl sm:text-3xl font-bold text-feather-white mb-2">Direkte
+              Kommunikation</h3>
+            <p class="text-creamed-oat/90 text-base sm:text-lg max-w-lg leading-relaxed">
+              Wir sind Teil Ihres Teams. Kein "Stille Post" Prinzip, sondern direkter Austausch mit
+              den Entwicklern via Slack, Teams oder Telefon.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 (Top Right) -->
+        <div
+            class="lg:col-span-1 bg-creamed-oat rounded-[2rem] p-8 sm:p-10 flex flex-col justify-center h-[320px] shadow-sm transition-all">
+          <div
+              class="w-12 h-12 rounded-full bg-dark-brown text-feather-white flex items-center justify-center mb-6 text-xl">
+            <i class="fa-solid fa-list-check"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-dark-brown mb-3">Agile Planung</h3>
+          <p class="text-dark-brown/80 leading-relaxed">
+            Wir arbeiten in Sprints. Das bedeutet für Sie: Regelmässige Updates, planbare Ergebnisse
+            und Flexibilität bei Änderungen.
+          </p>
+        </div>
+
+        <!-- Card 3 (Bottom Left) -->
+        <div
+            class="lg:col-span-1 bg-desert-rock rounded-[2rem] p-8 sm:p-10 flex flex-col justify-center h-[320px] shadow-sm transition-all">
+          <div
+              class="w-12 h-12 rounded-full bg-feather-white text-desert-rock flex items-center justify-center mb-6 text-xl">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-feather-white mb-3">User First</h3>
+          <p class="text-feather-white/90 leading-relaxed">
+            Technik ist wichtig, aber der Mensch entscheidet. Wir designen Interfaces, die intuitiv
+            bedienbar sind und Ihre Kunden begeistern.
+          </p>
+        </div>
+
+        <!-- Card 4 (Bottom Right) -->
+        <div
+            class="group lg:col-span-2 bg-dark-brown rounded-[2rem] relative h-[320px] overflow-hidden shadow-sm flex items-center">
+          <div class="relative z-10 p-8 sm:p-10 w-full sm:w-3/5">
+            <h3 class="text-2xl sm:text-3xl font-bold text-feather-white mb-2">Code Qualität</h3>
+            <p class="text-soft-sandstone text-base sm:text-lg leading-relaxed">
+              Was man nicht sieht, ist oft am wichtigsten. Wir schreiben sauberen, skalierbaren
+              Code, der auch in Zukunft wartbar bleibt und schnell lädt.
+            </p>
+          </div>
+
+          <div class="absolute right-0 top-0 h-full w-2/5 hidden sm:block">
+            <Image
+                src={codeQuality}
+                alt="Coding"
+                class="w-full h-full object-cover opacity-80 transition-transform duration-700 mask-image-linear"
+            />
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-dark-brown via-dark-brown/50 to-transparent"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- Process Section -->
+    <section id="prozess" class="space-y-12">
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl text-dark-brown">Der Prozess</h2>
+        <p class="text-dark-brown text-lg">In 6 Schritten zu Ihrem digitalen Erfolg.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {processSteps.map((step, index) => (
+            <div
+                class="group glass p-8 rounded-xl border border-soft-sandstone/40 transition-all duration-300 hover:border-desert-rock hover:shadow-lg relative overflow-hidden">
+              <div
+                  class="absolute -right-4 -top-4 text-9xl font-bold text-porcelain-mist group-hover:text-creamed-oat transition-colors z-0 select-none">
+                {step.step}
+              </div>
+              <div class="relative z-10">
+                <div
+                    class="w-12 h-12 rounded-lg bg-feather-white shadow-sm flex items-center justify-center text-desert-rock text-xl mb-6">
+                  <i class={step.icon}></i>
+                </div>
+                <h3 class="text-xl font-bold text-dark-brown mb-3">{step.title}</h3>
+                <p class="text-dark-brown/70 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="space-y-10">
+      <div class="space-y-4">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl text-dark-brown">Das Team</h2>
+        <p class="text-lg text-dark-brown max-w-2xl">
+          Experten in ihren Feldern, vereint durch die Leidenschaft für grossartige Software.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+        {teamMembers.map((member) => (
+            <div class="group relative bg-transparent" tabindex="0" role="group"
+                 aria-label={member.name}>
+              <div
+                  class="relative aspect-[3/4] overflow-hidden rounded-[2rem] mb-6 shadow-sm transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 group-focus:shadow-2xl group-focus:-translate-y-2 group-active:shadow-2xl group-active:-translate-y-2">
+                <!-- Grayscale by default, Color on hover -->
+                <Image
+                    src={member.img}
+                    alt={member.name}
+                    class="w-full h-full object-cover object-center transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105 group-focus:grayscale-0 group-focus:scale-105 group-active:grayscale-0 group-active:scale-105"
+                />
+                <!-- Gradient Overlay -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-dark-brown/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 group-focus:opacity-100 group-active:opacity-100 transition-opacity duration-500"></div>
+                <div
+                    class="absolute bottom-0 left-0 w-full p-6 flex justify-center gap-4 translate-y-full group-hover:translate-y-0 group-focus:translate-y-0 group-active:translate-y-0 transition-transform duration-500 ease-out">
+                  {member.email && (
+                      <a href={member.email}
+                         class="w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-dark-brown transition-all duration-300 hover:scale-110"
+                         aria-label="Email">
+                        <i class="fa-regular fa-envelope"></i>
+                      </a>
+                  )}
+                </div>
+              </div>
+              <div class="text-center space-y-3 px-2">
+                <div>
+                  <h3 class="text-2xl font-bold text-dark-brown">{member.name}</h3>
+                  <p class="text-desert-rock font-medium uppercase tracking-wider text-xs mt-1">{member.role}</p>
+                </div>
+              </div>
+
+            </div>
+        ))}
+      </div>
+    </section>
+
+  </main>
+
+  <Contact/>
+  <Footer/>
+</Layout>
