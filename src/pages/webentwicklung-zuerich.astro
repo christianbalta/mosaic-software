@@ -1,0 +1,170 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import Footer from "../components/shared/Footer.astro";
+import Contact from "../components/shared/Contact.astro";
+import Hero from "../components/shared/sections/Hero.astro";
+import Services from "../components/shared/sections/Services.astro";
+import Projects from "../components/shared/sections/Projects.astro";
+import Testimonials from "../components/shared/sections/Testimonials.astro";
+import FAQ from "../components/shared/sections/FAQ.astro";
+import Considerations from "../components/shared/sections/Considerations.astro";
+
+import heroImg from "../assets/software/DSC00216.jpg";
+import kitaLuftibus from "../assets/Kita-Mockup.png";
+import bioShield from "../assets/Bioshield-Mockup.png";
+
+import type {Project} from "../types/project.ts";
+import type {FAQItem} from "../types/faq.ts";
+import type {ServiceItem} from "../types/serviceItem.ts";
+import type {ConsiderationItem} from "../types/considerationItem";
+
+// --- SEO & Hero Data ---
+const pageTitle = "Webentwicklung Zürich | Individuelle Software & Websites ab CHF 175";
+const pageDescription = "Suchst du professionelle Webentwicklung in Zürich? Wir programmieren individuelle Websites und Web-Apps. Performance & Code-Qualität aus Zürich.";
+
+const heroTitle = 'Webentwicklung Zürich';
+const heroDescription = "Als Experten für Webentwicklung in Zürich programmieren wir digitale Lösungen, die funktionieren. Sauberer Code, hohe Performance und Skalierbarkeit – für deinen langfristigen Erfolg.";
+const heroIcons = [
+  {icon: 'fa-solid fa-code', text: 'Sauberer Code'},
+  {icon: 'fa-solid fa-location-dot', text: 'Aus Zürich'},
+  {icon: 'fa-solid fa-rocket', text: 'High Performance'}
+];
+
+// --- Services Data ---
+const serviceTitle = 'Webentwicklung aus Zürich<br>mit technischer Exzellenz';
+const serviceDesc = 'Moderne Webentwicklung ist das Fundament deines digitalen Erfolgs. Wir verbinden komplexe Anforderungen mit einfacher Bedienbarkeit und rasender Geschwindigkeit in Zürich.';
+const serviceVideoTitle = "Entwicklungsprozess Mosaic Software";
+const playbackId = 'dSr8i00jXSrtrsWkOYi301PHczBxxRay5Z31F9cXjZtGw';
+
+const serviceItems: ServiceItem[] = [
+  {
+    icon: 'fa-solid fa-layer-group',
+    title: 'Massgeschneiderte Lösungen',
+    description: 'Wir entwickeln Web-Anwendungen, die exakt auf deine Prozesse abgestimmt sind. Keine Standard-Lösung von der Stange, sondern Code, der für dich arbeitet.',
+  },
+  {
+    icon: 'fa-solid fa-gauge-high',
+    title: 'Performance First',
+    description: 'Geschwindigkeit ist ein Feature. Durch saubere Programmierung und moderne Frameworks erreichen wir Ladezeiten, die deine Nutzer und Google lieben.',
+  },
+  {
+    icon: 'fa-solid fa-shield-halved',
+    title: 'Sicher & Skalierbar',
+    description: 'Wir bauen Architekturen, die mit deinem Unternehmen wachsen. Sicherheit und Wartbarkeit stehen bei unserer Entwicklung an erster Stelle.',
+  }
+];
+
+// --- Projects Data ---
+const selectedProjects: Project[] = [
+  {
+    service: 'Website',
+    title: 'Kita Luftibus',
+    description: 'Technisch perfekt umgesetzt für schnelle Ladezeiten. Ein robustes System, das einfach zu verwalten ist und Eltern zuverlässig informiert.',
+    problem: 'Veraltete Technik führte zu langsamen Ladezeiten und schlechter Wartbarkeit.',
+    solution: 'Neuentwicklung auf moderner statischer Architektur für maximale Performance.',
+    image: kitaLuftibus,
+    imageAlt: 'Kita Luftibus Webentwicklung Zürich',
+  },
+  {
+    service: 'Webshop',
+    title: 'Bioshield',
+    description: 'Ein komplexer Webshop, sauber strukturiert. Backend und Frontend greifen nahtlos ineinander für ein reibungsloses Einkaufserlebnis.',
+    problem: 'Unübersichtliche Struktur und technische Hürden im alten System.',
+    solution: 'Entwicklung einer klaren UX-Struktur und performante technische Umsetzung.',
+    image: bioShield,
+    imageAlt: 'Bioshield Webentwicklung Projekt',
+  }
+];
+
+// --- FAQ Data ---
+const specificFaq: FAQItem[] = [
+  {
+    question: 'Warum Webentwicklung aus Zürich?',
+    answer: 'Die Nähe ermöglicht eine direkte, effiziente Kommunikation. Wir entwickeln hier vor Ort und verstehen deine Anforderungen ohne "Stille Post" und Zeitzonen-Probleme.',
+  },
+  {
+    question: 'Was ist der Unterschied zu Webdesign?',
+    answer: 'Während Webdesign sich auf die Optik konzentriert, sorgt die Webentwicklung für die technische Funktion "unter der Haube". Wir bieten beides aus einer Hand für das beste Ergebnis.',
+  },
+  {
+    question: 'Welche Technologien nutzt ihr?',
+    answer: 'Wir setzen auf moderne, zukunftssichere Stacks wie Astro, Angular und Tailwind CSS. Das garantiert schnelle, sichere und wartbare Websites für dein Unternehmen.',
+  },
+  {
+    question: 'Kann ich Inhalte selbst ändern?',
+    answer: 'Nein, das übernehmen wir für dich. Im Rahmen des Abonnements sind alle Änderungen inklusive. Wir kümmern uns um die Aktualisierung, damit du dich auf dein Geschäft konzentrieren kannst.',
+  },
+];
+
+// --- Considerations Data ---
+const considerationsBadge = 'Tech-Fokus';
+const considerationsTitle = 'Was gute Webentwicklung <br/><span class="text-desert-rock italic">ausmacht</span>.';
+const considerationsDescription = 'Code ist nicht gleich Code. Hier ist, worauf es bei professioneller Softwareentwicklung wirklich ankommt.';
+const considerationsItems: ConsiderationItem[] = [
+  {
+    title: 'Clean Code',
+    descriptionHtml:
+        'Spaghetti-Code bremst dich aus. Wir schreiben <strong>strukturierten, dokumentierten Code</strong>, der auch in Jahren noch wartbar und erweiterbar ist.',
+    dotBgClass: 'bg-desert-rock',
+    lineGradientFromClass: 'from-desert-rock',
+    showConnector: true,
+  },
+  {
+    title: 'Performance',
+    descriptionHtml:
+        'Jede Millisekunde zählt. Wir optimieren Assets, Caching und Datenbankabfragen. <strong>Schnelle Seiten ranken besser</strong> und konvertieren mehr Besucher.',
+    dotBgClass: 'bg-black-olive',
+    lineGradientFromClass: 'from-black-olive',
+    showConnector: true,
+  },
+  {
+    title: 'Zukunftssicherheit',
+    descriptionHtml:
+        'Technologie entwickelt sich schnell. Wir setzen auf <strong>moderne Standards</strong> und skalierbare Architekturen, damit deine Investition langfristig geschützt ist.',
+    dotBgClass: 'bg-creamed-oat',
+    showConnector: false,
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Navigation/>
+
+  <main class="mx-auto w-full max-w-screen-2xl p-3 sm:p-6 lg:p-10 space-y-24 !pt-20">
+    <Hero
+        h1={heroTitle}
+        description={heroDescription}
+        iconTexts={heroIcons}
+        heroImage={heroImg}
+    />
+    <Services
+        items={serviceItems}
+        title={serviceTitle}
+        description={serviceDesc}
+        playbackId={playbackId}
+        videoTitle={serviceVideoTitle}
+    />
+    <Testimonials/>
+    <Projects
+        title="Referenzen"
+        projects={selectedProjects}
+    />
+
+    <Considerations
+        badgeLabel={considerationsBadge}
+        titleHtml={considerationsTitle}
+        description={considerationsDescription}
+        items={considerationsItems}
+    />
+
+    <FAQ
+        title="Fragen zur Webentwicklung"
+        items={specificFaq}
+    />
+
+  </main>
+
+  <Contact/>
+  <Footer/>
+</Layout>
