@@ -9,6 +9,7 @@ import Testimonials from "../components/shared/sections/Testimonials.astro";
 import FAQ from "../components/shared/sections/FAQ.astro";
 import Contact from "../components/shared/Contact.astro";
 import AgebetterImg from "../assets/Agebetter-Mockup.png";
+import canlineImg from "../assets/canline-mockup.png";
 import type {Project} from "../types/project.ts";
 import type {FAQItem} from "../types/faq.ts";
 import type {ServiceItem} from "../types/serviceItem.ts";
@@ -47,7 +48,7 @@ const
     ];
 const playbackId = 'dSr8i00jXSrtrsWkOYi301PHczBxxRay5Z31F9cXjZtGw';
 const videoTitle = 'Mosaic Software GmbH - Software Development';
-const serviceTitel = 'Individuelle Softwarelösungen <br/> für Web, Mobile <br/> und Desktop';
+const serviceTitle = 'Individuelle Softwarelösungen <br/> für Web, Mobile <br/> und Desktop';
 const serviceDescription = 'Wir entwickeln Anwendungen für alle Plattformen. Mit modernsten Technologien und bewährten Frameworks realisieren wir Ihre digitalen Projekte – von der Web-App bis zur Desktop-Software.';
 
 const projects: Project[] = [
@@ -55,25 +56,25 @@ const projects: Project[] = [
     service: 'Desktop App',
     title: 'Canline',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et harum laboriosam quae repudiandae sequi, tempora voluptatum! Necessitatibus possimus provident quos.',
+        'Individuelle Desktop-Software zur effizienten Sensor-Konfiguration durch Servicetechniker.',
     problem:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad cupiditate explicabo harum incidunt optio quod similique sit vitae voluptatem.',
+        'Ineffiziente und fehleranfällige Konfiguration der Sensoren vor Ort.',
     solution:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, soluta! Lorem ipsum dolor sit amet.',
-    image: AgebetterImg,
-    imageAlt: 'Project showcase image',
+        'Intuitive Windows-Anwendung, die den Arbeitsprozess der Techniker drastisch vereinfacht.',
+    image: canlineImg,
+    imageAlt: 'Canline Desktop App',
   },
   {
     service: 'Web App',
     title: 'Agebetter',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi aspernatur at cumque deleniti dignissimos doloribus illum impedit necessitatibus.',
+        'Digitale Spitex-Vergleichsplattform mit intelligentem Matching-Algorithmus.',
     problem:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur dicta doloremque doloribus earum esse expedita impedit ipsa iure laboriosam.',
+        'Unübersichtlicher Markt und fehlende Transparenz bei Spitex-Dienstleistungen.',
     solution:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, dicta. Soluta aperiam, repellat beatae eveniet cumque.',
+        'Automatisierte Vermittlung zwischen Suchenden und Anbietern in Echtzeit.',
     image: AgebetterImg,
-    imageAlt: 'Bioshield mobile app mockup',
+    imageAlt: 'Agebetter Web App',
   }
 ];
 
@@ -114,10 +115,10 @@ const faqItems: FAQItem[] = [
         iconTexts={heroIconsWithText}
         heroImage={heroImg}
     />
-    <Services items={serviceItems} title={serviceTitel} description={serviceDescription}
+    <Services items={serviceItems} title={serviceTitle} description={serviceDescription}
               playbackId={playbackId} videoTitle={videoTitle}/>
     <Testimonials/>
-    <Projects projects={projects}/>
+    <Projects title="Aktuelle Arbeiten" projects={projects}/>
 
     <FAQ
         title="FAQ: Individualsoftware"

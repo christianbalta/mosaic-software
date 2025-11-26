@@ -1,0 +1,170 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import Footer from "../components/shared/Footer.astro";
+import Contact from "../components/shared/Contact.astro";
+import Hero from "../components/shared/sections/Hero.astro";
+import Services from "../components/shared/sections/Services.astro";
+import Projects from "../components/shared/sections/Projects.astro";
+import Testimonials from "../components/shared/sections/Testimonials.astro";
+import FAQ from "../components/shared/sections/FAQ.astro";
+import Considerations from "../components/shared/sections/Considerations.astro";
+
+import heroImg from "../assets/software/DSC00216.jpg";
+import kitaLuftibus from "../assets/Kita-Mockup.png";
+import bioShield from "../assets/Bioshield-Mockup.png";
+
+import type {Project} from "../types/project.ts";
+import type {FAQItem} from "../types/faq.ts";
+import type {ServiceItem} from "../types/serviceItem.ts";
+import type {ConsiderationItem} from "../types/considerationItem";
+
+// --- SEO & Hero Data ---
+const pageTitle = "Webdesigner Zürich | Individuelles Webdesign im Abo ab CHF 175";
+const pageDescription = "Suchst du einen erfahrenen Webdesigner in Zürich? Wir gestalten und programmieren massgeschneiderte Websites – ohne Baukasten. Performance & Design aus Zürich.";
+
+const heroTitle = 'Webdesigner Zürich';
+const heroDescription = "Als Webdesigner in Zürich entwickeln wir Websites die gut aussehen und verkaufen. Handgeschriebener Code, massgeschneidertes Design und Schweizer Qualität – ohne Baukasten-Limiten.";
+const heroIcons = [
+  {icon: 'fa-solid fa-pencil', text: 'Individuelles Design'},
+  {icon: 'fa-solid fa-location-dot', text: 'Aus Zürich'},
+  {icon: 'fa-solid fa-code', text: 'Clean Code Garantie'}
+];
+
+// --- Services Data ---
+const serviceTitle = 'Webdesign aus Zürich<br>mit technischer Exzellenz';
+const serviceDesc = 'Gutes Webdesign ist mehr als nur schöne Bilder. Es ist die Symbiose aus Ästhetik, Nutzerführung und perfekter Technik für deinen Erfolg in Zürich und der Schweiz.';
+const serviceVideoTitle = "Webdesign Prozess Mosaic Software";
+const playbackId = 'dSr8i00jXSrtrsWkOYi301PHczBxxRay5Z31F9cXjZtGw';
+
+const serviceItems: ServiceItem[] = [
+  {
+    icon: 'fa-solid fa-palette',
+    title: 'Unverwechselbares Design',
+    description: 'Als Webdesigner kreieren wir Layouts, die exakt zu deiner Marke passen. Kein "Theme", das schon hunderte andere nutzen, sondern ein Massanzug für deinen Auftritt.',
+  },
+  {
+    icon: 'fa-solid fa-bolt',
+    title: 'Performance by Design',
+    description: 'Design und Speed gehen Hand in Hand. Unsere handcodierten Designs erreichen Top-Werte bei Google, was deine Sichtbarkeit (SEO) massiv verbessert.',
+  },
+  {
+    icon: 'fa-solid fa-mobile-screen',
+    title: 'Mobile First & Responsive',
+    description: 'Über 60% deiner Kunden kommen via Smartphone. Wir gestalten und optimieren deine Website primär für mobile Endgeräte – für ein perfektes Nutzererlebnis überall.',
+  }
+];
+
+// --- Projects Data ---
+const selectedProjects: Project[] = [
+  {
+    service: 'Website',
+    title: 'Kita Luftibus',
+    description: 'Ein liebevolles, farbenfrohes Design, technisch perfekt umgesetzt für schnelle Ladezeiten und einfache Eltern-Kommunikation.',
+    problem: 'Altes Design wirkte veraltet und die Seite war langsam.',
+    solution: 'Kompletter Relaunch mit modernem Webdesign-Konzept und statischer Architektur.',
+    image: kitaLuftibus,
+    imageAlt: 'Kita Luftibus Webdesign Zürich',
+  },
+  {
+    service: 'Webshop',
+    title: 'Bioshield',
+    description: 'Clean, seriös und vertrauenserweckend. Ein Webdesign, das die Professionalität des Unternehmens unterstreicht.',
+    problem: 'Komplexe Inhalte waren unübersichtlich dargestellt.',
+    solution: 'Strukturiertes UI/UX-Design für klare Informationsvermittlung.',
+    image: bioShield,
+    imageAlt: 'Bioshield Webdesign Projekt',
+  }
+];
+
+// --- FAQ Data ---
+const specificFaq: FAQItem[] = [
+  {
+    question: 'Warum einen Webdesigner in Zürich beauftragen?',
+    answer: 'Die Nähe ermöglicht eine direkte, persönliche Kommunikation. Wir verstehen den Zürcher Markt und Schweizer Qualitätsansprüche besser als anonyme Online-Agenturen.',
+  },
+  {
+    question: 'Macht ihr Webdesign oder Webentwicklung?',
+    answer: 'Beides. Bei Mosaic Software erhältst du Design und Programmierung aus einer Hand. Das verhindert Reibungsverluste und garantiert, dass das Design auch technisch performant umgesetzt wird.',
+  },
+  {
+    question: 'Kann ich das Design später anpassen?',
+    answer: 'Ja, absolut. Im Rahmen unseres Abos sind Anpassungen am Inhalt und kleinere Design-Änderungen inklusive. Wir sorgen dafür, dass deine Website mit deinem Unternehmen mitwächst.',
+  },
+  {
+    question: 'Arbeitet ihr mit Vorlagen (Templates)?',
+    answer: 'Nein. Als professionelle Webdesigner lehnen wir starre Baukasten-Templates ab. Jedes Projekt wird individuell gestaltet und von Grund auf programmiert.',
+  },
+];
+
+// --- Considerations Data ---
+const considerationsBadge = 'Webdesign-Fokus';
+const considerationsTitle = 'Was gutes Webdesign <br/><span class="text-desert-rock italic">ausmacht</span>.';
+const considerationsDescription = 'Schönes Aussehen reicht nicht. Hier ist, worauf es bei einem professionellen Webauftritt wirklich ankommt.';
+const considerationsItems: ConsiderationItem[] = [
+  {
+    title: 'Identität statt Kopie',
+    descriptionHtml:
+        'Ein Webdesigner sollte deine DNA verstehen. <strong>Standard-Templates verwässern deine Marke.</strong> Wir entwickeln eine visuelle Sprache, die dich von der Konkurrenz in Zürich abhebt.',
+    dotBgClass: 'bg-desert-rock',
+    lineGradientFromClass: 'from-desert-rock',
+    showConnector: true,
+  },
+  {
+    title: 'UX vor Ego',
+    descriptionHtml:
+        'Design muss funktionieren. Wir gestalten "User Journeys", die deine Besucher intuitiv zur Kontaktaufnahme führen. <strong>Form follows function</strong> ist unser Credo für höhere Conversion-Raten.',
+    dotBgClass: 'bg-black-olive',
+    lineGradientFromClass: 'from-black-olive',
+    showConnector: true,
+  },
+  {
+    title: 'Langlebigkeit',
+    descriptionHtml:
+        'Modetrends vergehen, gutes Design bleibt. Wir setzen auf zeitlose Ästhetik kombiniert mit modernster Technik, damit deine Website auch in Jahren noch frisch und aktuell wirkt.',
+    dotBgClass: 'bg-creamed-oat',
+    showConnector: false,
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Navigation/>
+
+  <main class="mx-auto w-full max-w-screen-2xl p-3 sm:p-6 lg:p-10 space-y-24 !pt-20">
+    <Hero
+        h1={heroTitle}
+        description={heroDescription}
+        iconTexts={heroIcons}
+        heroImage={heroImg}
+    />
+    <Services
+        items={serviceItems}
+        title={serviceTitle}
+        description={serviceDesc}
+        playbackId={playbackId}
+        videoTitle={serviceVideoTitle}
+    />
+    <Testimonials/>
+    <Projects
+        title="Referenzen Webdesign"
+        projects={selectedProjects}
+    />
+
+    <Considerations
+        badgeLabel={considerationsBadge}
+        titleHtml={considerationsTitle}
+        description={considerationsDescription}
+        items={considerationsItems}
+    />
+
+    <FAQ
+        title="Fragen an deinen Webdesigner"
+        items={specificFaq}
+    />
+
+  </main>
+
+  <Contact/>
+  <Footer/>
+</Layout>
