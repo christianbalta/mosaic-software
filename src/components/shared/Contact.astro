@@ -77,13 +77,13 @@
                 Deine Daten
               </h3>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="form-group">
+                <div class="form-group relative !mt-5">
                   <input type="text" id="firstName" name="firstName" required placeholder=" "
                          class="peer w-full px-4 py-3 bg-porcelain-mist/50 border border-transparent rounded-xl focus:outline-none focus:ring-2 focus:ring-desert-rock focus:bg-white transition-all placeholder-transparent"/>
                   <label for="firstName"
                          class="absolute left-4 top-3.5 text-dark-brown/50 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3.5 peer-focus:-top-6 peer-focus:text-xs peer-focus:text-desert-rock pointer-events-none">Vorname*</label>
                 </div>
-                <div class="form-group relative">
+                <div class="form-group relative !mt-0 md:!mt-5">
                   <input type="text" id="lastName" name="lastName" required placeholder=" "
                          class="peer w-full px-4 py-3 bg-porcelain-mist/50 border border-transparent rounded-xl focus:outline-none focus:ring-2 focus:ring-desert-rock focus:bg-white transition-all placeholder-transparent"/>
                   <label for="lastName"
@@ -144,7 +144,7 @@
             <div class="pt-4 border-t border-soft-sandstone/20">
               <div class="flex items-start mb-6">
                 <input type="checkbox" id="privacy" name="privacy" required
-                       class="mt-1 w-4 h-4 text-desert-rock rounded focus:ring-desert-rock border-gray-300"/>
+                       class="w-4 h-4 text-desert-rock rounded focus:ring-desert-rock border-gray-300"/>
                 <label for="privacy" class="ml-3 text-sm text-dark-brown/70">
                   Ich stimme der <a href="/data-protection"
                                     class="text-desert-rock hover:underline font-medium">Datenschutzerklärung</a>
@@ -153,7 +153,7 @@
               </div>
 
               <button type="submit"
-                      class="w-full py-4 px-6 bg-dark-brown text-white rounded-xl font-bold text-lg hover:bg-desert-rock hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 group">
+                      class="w-full py-4 px-6 bg-desert-rock text-white rounded-xl font-bold text-lg hover:bg-dark-brown hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 group">
                 <span>Anfrage absenden</span>
                 <i class="fas fa-paper-plane transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
               </button>
