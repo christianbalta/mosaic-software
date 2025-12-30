@@ -206,19 +206,4 @@
   }
 </style>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("contact-form") as HTMLFormElement;
-    const successMsg = document.getElementById("success-message");
-    const successContent = document.getElementById("success-content");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-
-      // 1. Loading State
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Sende...';
-    });
-  });
-</script>
+<script src="../../js/contact.js"></script>
