@@ -1,0 +1,170 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import Footer from "../components/shared/Footer.astro";
+import Contact from "../components/shared/Contact.astro";
+import Hero from "../components/shared/sections/Hero.astro";
+import Services from "../components/shared/sections/Services.astro";
+import Projects from "../components/shared/sections/Projects.astro";
+import Testimonials from "../components/shared/sections/Testimonials.astro";
+import FAQ from "../components/shared/sections/FAQ.astro";
+import Considerations from "../components/shared/sections/Considerations.astro";
+
+import heroImg from "../assets/software/DSC00216.jpg";
+import kitaLuftibus from "../assets/Kita-Mockup.png";
+import bioShield from "../assets/Bioshield-Mockup.png";
+
+import type {Project} from "../types/project.ts";
+import type {FAQItem} from "../types/faq.ts";
+import type {ServiceItem} from "../types/serviceItem.ts";
+import type {ConsiderationItem} from "../types/considerationItem";
+
+// --- SEO & Hero Data ---
+const pageTitle = "Webdesign Agentur Zürich | Individuelle Websites ab CHF 175";
+const pageDescription = "Deine Webdesign Agentur in Zürich. Wir gestalten und entwickeln massgeschneiderte Websites – ohne Baukasten, mit persönlicher Betreuung und Schweizer Qualität.";
+
+const heroTitle = 'Webdesign Agentur';
+const heroDescription = "Als Webdesign Agentur aus Zürich entwickeln wir Websites, die begeistern und verkaufen. Persönliche Betreuung, individuelles Design und technische Exzellenz – alles aus einer Hand.";
+const heroIcons = [
+  {icon: 'fa-solid fa-handshake', text: 'Persönliche Betreuung'},
+  {icon: 'fa-solid fa-location-dot', text: 'Aus Zürich'},
+  {icon: 'fa-solid fa-pencil-ruler', text: 'Individuelles Design'}
+];
+
+// --- Services Data ---
+const serviceTitle = 'Deine Webdesign Agentur für massgeschneiderte Lösungen';
+const serviceDesc = 'Als Full-Service Webdesign Agentur übernehmen wir alles: von der Konzeption über das Design bis zur technischen Umsetzung. Du erhältst eine Website, die perfekt zu dir passt.';
+const serviceVideoTitle = "Webdesign Prozess Mosaic Software";
+const playbackId = 'dSr8i00jXSrtrsWkOYi301PHczBxxRay5Z31F9cXjZtGw';
+
+const serviceItems: ServiceItem[] = [
+  {
+    icon: 'fa-solid fa-comments',
+    title: 'Persönliche Beratung',
+    description: 'Als Webdesign Agentur nehmen wir uns Zeit für dich. Wir verstehen deine Ziele und entwickeln eine Strategie, die zu deinem Unternehmen passt.',
+  },
+  {
+    icon: 'fa-solid fa-palette',
+    title: 'Design & Entwicklung',
+    description: 'Alles aus einer Hand: Unsere Agentur vereint kreatives Webdesign mit technischer Umsetzung. Keine Reibungsverluste, ein Ansprechpartner.',
+  },
+  {
+    icon: 'fa-solid fa-arrows-rotate',
+    title: 'Laufende Betreuung',
+    description: 'Nach dem Launch ist vor dem Erfolg. Unsere Webdesign Agentur betreut deine Website langfristig mit Updates, Änderungen und Optimierungen.',
+  }
+];
+
+// --- Projects Data ---
+const selectedProjects: Project[] = [
+  {
+    service: 'Website',
+    title: 'Kita Luftibus',
+    description: 'Ein Projekt unserer Webdesign Agentur: Liebevolles Design trifft auf technische Perfektion für eine Kindertagesstätte in Zürich.',
+    problem: 'Veralteter Webauftritt ohne klare Struktur.',
+    solution: 'Komplette Neugestaltung durch unsere Agentur mit modernem Design und optimierter Technik.',
+    image: kitaLuftibus,
+    imageAlt: 'Kita Luftibus Webdesign Agentur Projekt',
+  },
+  {
+    service: 'Webshop',
+    title: 'Bioshield',
+    description: 'Professioneller Webshop, entwickelt von unserer Webdesign Agentur. Klare Struktur für komplexe Produkte.',
+    problem: 'Unübersichtlicher Online-Shop mit schlechter Conversion.',
+    solution: 'Strategische Neukonzeption und Umsetzung durch unser Agentur-Team.',
+    image: bioShield,
+    imageAlt: 'Bioshield Webdesign Agentur Projekt',
+  }
+];
+
+// --- FAQ Data ---
+const specificFaq: FAQItem[] = [
+  {
+    question: 'Was macht eine gute Webdesign Agentur aus?',
+    answer: 'Eine gute Webdesign Agentur vereint Kreativität mit technischem Know-how. Sie hört zu, versteht deine Ziele und liefert massgeschneiderte Lösungen statt Standard-Templates.',
+  },
+  {
+    question: 'Warum eine Webdesign Agentur statt Freelancer?',
+    answer: 'Als Agentur bieten wir dir ein eingespieltes Team mit verschiedenen Expertisen. Design, Entwicklung und Strategie greifen nahtlos ineinander – und wir sind langfristig für dich da.',
+  },
+  {
+    question: 'Was kostet eine Website bei eurer Agentur?',
+    answer: 'Unsere Websites starten ab CHF 175 im Monat. Darin enthalten sind Design, Entwicklung, Hosting und laufende Betreuung – transparent und planbar.',
+  },
+  {
+    question: 'Wie läuft ein Projekt mit eurer Webdesign Agentur ab?',
+    answer: 'Wir starten mit einem persönlichen Gespräch, entwickeln ein Konzept, gestalten das Design und setzen es technisch um. Du bist in jeden Schritt eingebunden.',
+  },
+];
+
+// --- Considerations Data ---
+const considerationsBadge = 'Agentur-Vorteile';
+const considerationsTitle = 'Warum eine Webdesign Agentur <br/><span class="text-desert-rock italic">den Unterschied macht</span>.';
+const considerationsDescription = 'Deine Website ist mehr als nur ein Projekt. Hier ist, was du von einer professionellen Webdesign Agentur erwarten kannst.';
+const considerationsItems: ConsiderationItem[] = [
+  {
+    title: 'Alles aus einer Hand',
+    descriptionHtml:
+        'Keine Koordination zwischen Designer und Entwickler. <strong>Unsere Webdesign Agentur liefert Konzept, Design und Code</strong> aus einem Guss.',
+    dotBgClass: 'bg-desert-rock',
+    lineGradientFromClass: 'from-desert-rock',
+    showConnector: true,
+  },
+  {
+    title: 'Langfristige Partnerschaft',
+    descriptionHtml:
+        'Wir verschwinden nicht nach dem Launch. <strong>Als deine Webdesign Agentur sind wir auch morgen noch für dich da</strong> – mit Support, Updates und neuen Ideen.',
+    dotBgClass: 'bg-black-olive',
+    lineGradientFromClass: 'from-black-olive',
+    showConnector: true,
+  },
+  {
+    title: 'Lokale Expertise',
+    descriptionHtml:
+        'Als Zürcher Webdesign Agentur kennen wir den Schweizer Markt. <strong>Persönliche Treffen, kurze Wege</strong> und ein Team, das deine Sprache spricht.',
+    dotBgClass: 'bg-creamed-oat',
+    showConnector: false,
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Navigation/>
+
+  <main class="mx-auto w-full max-w-screen-2xl p-3 sm:p-6 lg:p-10 space-y-24 !pt-20">
+    <Hero
+        h1={heroTitle}
+        description={heroDescription}
+        iconTexts={heroIcons}
+        heroImage={heroImg}
+    />
+    <Services
+        items={serviceItems}
+        title={serviceTitle}
+        description={serviceDesc}
+        playbackId={playbackId}
+        videoTitle={serviceVideoTitle}
+    />
+    <Testimonials/>
+    <Projects
+        title="Referenzen unserer Webdesign Agentur"
+        projects={selectedProjects}
+    />
+
+    <Considerations
+        badgeLabel={considerationsBadge}
+        titleHtml={considerationsTitle}
+        description={considerationsDescription}
+        items={considerationsItems}
+    />
+
+    <FAQ
+        title="Fragen an unsere Webdesign Agentur"
+        items={specificFaq}
+    />
+
+  </main>
+
+  <Contact/>
+  <Footer/>
+</Layout>

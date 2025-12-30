@@ -1,0 +1,170 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import Footer from "../components/shared/Footer.astro";
+import Contact from "../components/shared/Contact.astro";
+import Hero from "../components/shared/sections/Hero.astro";
+import Services from "../components/shared/sections/Services.astro";
+import Projects from "../components/shared/sections/Projects.astro";
+import Testimonials from "../components/shared/sections/Testimonials.astro";
+import FAQ from "../components/shared/sections/FAQ.astro";
+import Considerations from "../components/shared/sections/Considerations.astro";
+
+import heroImg from "../assets/software/DSC00216.jpg";
+import kitaLuftibus from "../assets/Kita-Mockup.png";
+import bioShield from "../assets/Bioshield-Mockup.png";
+
+import type {Project} from "../types/project.ts";
+import type {FAQItem} from "../types/faq.ts";
+import type {ServiceItem} from "../types/serviceItem.ts";
+import type {ConsiderationItem} from "../types/considerationItem";
+
+// --- SEO & Hero Data ---
+const pageTitle = "Software Unternehmen Zürich | Individuelle Softwarelösungen ab CHF 175";
+const pageDescription = "Mosaic Software – dein Software Unternehmen in Zürich. Wir entwickeln massgeschneiderte Websites, Web-Apps und Individualsoftware für Schweizer KMU.";
+
+const heroTitle = 'Software Unternehmen';
+const heroDescription = "Als Software Unternehmen aus Zürich entwickeln wir digitale Lösungen, die dein Business voranbringen. Von der Website bis zur Individualsoftware – wir sind dein Partner für nachhaltige Digitalisierung.";
+const heroIcons = [
+  {icon: 'fa-solid fa-building', text: 'Schweizer Unternehmen'},
+  {icon: 'fa-solid fa-location-dot', text: 'Aus Zürich'},
+  {icon: 'fa-solid fa-code', text: 'Eigene Entwicklung'}
+];
+
+// --- Services Data ---
+const serviceTitle = 'Dein Software Unternehmen für digitale Lösungen';
+const serviceDesc = 'Als etabliertes Software Unternehmen in Zürich verbinden wir technische Expertise mit unternehmerischem Denken. Wir entwickeln Software, die zu deinen Prozessen passt.';
+const serviceVideoTitle = "Entwicklungsprozess Mosaic Software";
+const playbackId = 'dSr8i00jXSrtrsWkOYi301PHczBxxRay5Z31F9cXjZtGw';
+
+const serviceItems: ServiceItem[] = [
+  {
+    icon: 'fa-solid fa-globe',
+    title: 'Websites & Webshops',
+    description: 'Unser Software Unternehmen entwickelt performante Websites und Webshops. Handgeschriebener Code statt Baukasten – für maximale Geschwindigkeit und Flexibilität.',
+  },
+  {
+    icon: 'fa-solid fa-laptop-code',
+    title: 'Web-Applikationen',
+    description: 'Komplexe Anforderungen brauchen massgeschneiderte Lösungen. Wir programmieren Web-Apps, die deine Geschäftsprozesse digitalisieren und automatisieren.',
+  },
+  {
+    icon: 'fa-solid fa-cogs',
+    title: 'Individualsoftware',
+    description: 'Wenn Standard-Software nicht reicht: Unser Software Unternehmen entwickelt individuelle Lösungen, die exakt auf deine Anforderungen zugeschnitten sind.',
+  }
+];
+
+// --- Projects Data ---
+const selectedProjects: Project[] = [
+  {
+    service: 'Website',
+    title: 'Kita Luftibus',
+    description: 'Ein Projekt unseres Software Unternehmens: Moderne Website mit perfekter Performance für eine Kindertagesstätte.',
+    problem: 'Veraltete Technik und langsame Ladezeiten.',
+    solution: 'Neuentwicklung mit modernem Tech-Stack durch unser Entwicklerteam.',
+    image: kitaLuftibus,
+    imageAlt: 'Kita Luftibus Software Unternehmen Projekt',
+  },
+  {
+    service: 'Webshop',
+    title: 'Bioshield',
+    description: 'Professioneller Webshop, entwickelt von unserem Software Unternehmen. Skalierbare Architektur für wachsende Anforderungen.',
+    problem: 'Technische Limitationen im bestehenden Shop-System.',
+    solution: 'Massgeschneiderte E-Commerce-Lösung mit zukunftssicherer Technik.',
+    image: bioShield,
+    imageAlt: 'Bioshield Software Unternehmen Projekt',
+  }
+];
+
+// --- FAQ Data ---
+const specificFaq: FAQItem[] = [
+  {
+    question: 'Was macht euer Software Unternehmen?',
+    answer: 'Wir entwickeln digitale Lösungen für Schweizer KMU: Websites, Webshops, Web-Applikationen und Individualsoftware. Alles aus eigener Entwicklung, ohne externe Abhängigkeiten.',
+  },
+  {
+    question: 'Warum ein lokales Software Unternehmen wählen?',
+    answer: 'Mit einem Zürcher Software Unternehmen hast du einen Partner vor Ort. Persönliche Meetings, schnelle Kommunikation und ein Team, das den Schweizer Markt versteht.',
+  },
+  {
+    question: 'Für welche Branchen entwickelt ihr Software?',
+    answer: 'Unser Software Unternehmen arbeitet branchenübergreifend. Von Gastronomie über Gesundheitswesen bis zu E-Commerce – wir passen uns deinen Anforderungen an.',
+  },
+  {
+    question: 'Wie arbeitet euer Software Unternehmen?',
+    answer: 'Wir setzen auf enge Zusammenarbeit: Persönliche Beratung, transparente Kommunikation und iterative Entwicklung. Du bist in jeden Schritt eingebunden.',
+  },
+];
+
+// --- Considerations Data ---
+const considerationsBadge = 'Unternehmenswerte';
+const considerationsTitle = 'Warum unser Software Unternehmen <br/><span class="text-desert-rock italic">anders arbeitet</span>.';
+const considerationsDescription = 'Als Software Unternehmen stehen wir für Qualität, Transparenz und langfristige Partnerschaften. Das unterscheidet uns.';
+const considerationsItems: ConsiderationItem[] = [
+  {
+    title: 'Eigene Entwicklung',
+    descriptionHtml:
+        'Kein Outsourcing, keine Freelancer-Ketten. <strong>Unser Software Unternehmen entwickelt alles intern</strong> – für konsistente Qualität und direkte Kommunikation.',
+    dotBgClass: 'bg-desert-rock',
+    lineGradientFromClass: 'from-desert-rock',
+    showConnector: true,
+  },
+  {
+    title: 'Faire Preismodelle',
+    descriptionHtml:
+        'Transparente Abo-Modelle statt versteckter Kosten. <strong>Du weisst genau, was du zahlst</strong> – und kannst dein Budget sicher planen.',
+    dotBgClass: 'bg-black-olive',
+    lineGradientFromClass: 'from-black-olive',
+    showConnector: true,
+  },
+  {
+    title: 'Langfristige Partnerschaft',
+    descriptionHtml:
+        'Wir denken über das Projekt hinaus. <strong>Als dein Software Unternehmen begleiten wir dich</strong> mit Support, Wartung und Weiterentwicklung.',
+    dotBgClass: 'bg-creamed-oat',
+    showConnector: false,
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Navigation/>
+
+  <main class="mx-auto w-full max-w-screen-2xl p-3 sm:p-6 lg:p-10 space-y-24 !pt-20">
+    <Hero
+        h1={heroTitle}
+        description={heroDescription}
+        iconTexts={heroIcons}
+        heroImage={heroImg}
+    />
+    <Services
+        items={serviceItems}
+        title={serviceTitle}
+        description={serviceDesc}
+        playbackId={playbackId}
+        videoTitle={serviceVideoTitle}
+    />
+    <Testimonials/>
+    <Projects
+        title="Projekte unseres Software Unternehmens"
+        projects={selectedProjects}
+    />
+
+    <Considerations
+        badgeLabel={considerationsBadge}
+        titleHtml={considerationsTitle}
+        description={considerationsDescription}
+        items={considerationsItems}
+    />
+
+    <FAQ
+        title="Fragen an unser Software Unternehmen"
+        items={specificFaq}
+    />
+
+  </main>
+
+  <Contact/>
+  <Footer/>
+</Layout>

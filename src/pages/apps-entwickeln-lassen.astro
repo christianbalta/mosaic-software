@@ -1,0 +1,170 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import Footer from "../components/shared/Footer.astro";
+import Contact from "../components/shared/Contact.astro";
+import Hero from "../components/shared/sections/Hero.astro";
+import Services from "../components/shared/sections/Services.astro";
+import Projects from "../components/shared/sections/Projects.astro";
+import Testimonials from "../components/shared/sections/Testimonials.astro";
+import FAQ from "../components/shared/sections/FAQ.astro";
+import Considerations from "../components/shared/sections/Considerations.astro";
+
+import heroImg from "../assets/software/DSC00216.jpg";
+import canlineImg from "../assets/canline-mockup.png";
+import agebetterImg from "../assets/Agebetter-Mockup.png";
+
+import type {Project} from "../types/project.ts";
+import type {FAQItem} from "../types/faq.ts";
+import type {ServiceItem} from "../types/serviceItem.ts";
+import type {ConsiderationItem} from "../types/considerationItem";
+
+// --- SEO & Hero Data ---
+const pageTitle = "Apps entwickeln lassen | App Entwicklung Zürich ab CHF 175";
+const pageDescription = "Apps entwickeln lassen von Profis aus Zürich. Wir programmieren Web-Apps, Desktop-Apps und mobile Anwendungen – massgeschneidert für dein Unternehmen.";
+
+const heroTitle = 'Apps entwickeln lassen';
+const heroDescription = "Du willst eine App entwickeln lassen? Wir sind dein Partner in Zürich für Web-Apps, Desktop-Anwendungen und mobile Lösungen. Massgeschneiderte Entwicklung statt Standard-Software.";
+const heroIcons = [
+  {icon: 'fa-solid fa-mobile-screen-button', text: 'Web & Desktop Apps'},
+  {icon: 'fa-solid fa-location-dot', text: 'Aus Zürich'},
+  {icon: 'fa-solid fa-screwdriver-wrench', text: 'Massgeschneidert'}
+];
+
+// --- Services Data ---
+const serviceTitle = 'Apps entwickeln lassen – für jede Plattform';
+const serviceDesc = 'Ob Web-App, Desktop-Anwendung oder mobile App: Wir entwickeln Software, die perfekt zu deinen Anforderungen passt. Professionell, skalierbar und zukunftssicher.';
+const serviceVideoTitle = "App Entwicklung Mosaic Software";
+const playbackId = 'dSr8i00jXSrtrsWkOYi301PHczBxxRay5Z31F9cXjZtGw';
+
+const serviceItems: ServiceItem[] = [
+  {
+    icon: 'fa-solid fa-globe',
+    title: 'Web-Apps entwickeln',
+    description: 'Browserbasierte Anwendungen, die überall funktionieren. Wir entwickeln Web-Apps mit modernen Frameworks für maximale Performance und Benutzerfreundlichkeit.',
+  },
+  {
+    icon: 'fa-solid fa-desktop',
+    title: 'Desktop-Apps entwickeln',
+    description: 'Native Windows-Anwendungen für komplexe Anforderungen. Wenn du eine Desktop-App entwickeln lassen willst, sind wir dein Partner.',
+  },
+  {
+    icon: 'fa-solid fa-mobile-screen',
+    title: 'Mobile Apps entwickeln',
+    description: 'Cross-Platform Apps für iOS und Android. Wir entwickeln mobile Anwendungen, die auf allen Geräten perfekt funktionieren.',
+  }
+];
+
+// --- Projects Data ---
+const selectedProjects: Project[] = [
+  {
+    service: 'Desktop App',
+    title: 'Canline',
+    description: 'Desktop-App für effiziente Sensor-Konfiguration. Ein Beispiel dafür, was möglich ist, wenn du eine App entwickeln lässt.',
+    problem: 'Ineffiziente und fehleranfällige Konfiguration der Sensoren vor Ort.',
+    solution: 'Intuitive Windows-Anwendung, die den Arbeitsprozess der Techniker drastisch vereinfacht.',
+    image: canlineImg,
+    imageAlt: 'Canline Desktop App entwickeln lassen',
+  },
+  {
+    service: 'Web App',
+    title: 'Agebetter',
+    description: 'Web-App mit intelligentem Matching-Algorithmus. Digitale Spitex-Vergleichsplattform für die Schweiz.',
+    problem: 'Unübersichtlicher Markt und fehlende Transparenz bei Spitex-Dienstleistungen.',
+    solution: 'Automatisierte Vermittlung zwischen Suchenden und Anbietern in Echtzeit.',
+    image: agebetterImg,
+    imageAlt: 'Agebetter Web App entwickeln lassen',
+  }
+];
+
+// --- FAQ Data ---
+const specificFaq: FAQItem[] = [
+  {
+    question: 'Was kostet es, eine App entwickeln zu lassen?',
+    answer: 'Die Kosten hängen von Umfang und Komplexität ab. Einfache Web-Apps starten im Abo ab CHF 175/Monat. Für komplexere Projekte erstellen wir ein individuelles Angebot nach einem kostenlosen Erstgespräch.',
+  },
+  {
+    question: 'Wie lange dauert es, eine App entwickeln zu lassen?',
+    answer: 'Je nach Umfang zwischen 4-16 Wochen. Eine einfache Web-App ist schneller fertig als eine komplexe Desktop-Anwendung. Wir geben dir nach der Anforderungsanalyse eine realistische Zeitschätzung.',
+  },
+  {
+    question: 'Welche App-Typen könnt ihr entwickeln?',
+    answer: 'Wir entwickeln Web-Apps (browserbasiert), Desktop-Apps (Windows) und Cross-Platform Mobile Apps. Je nach Anforderung empfehlen wir die passende Technologie.',
+  },
+  {
+    question: 'Kann ich meine bestehende Software erweitern lassen?',
+    answer: 'Ja, wir übernehmen auch die Weiterentwicklung bestehender Anwendungen. Nach einer Code-Analyse besprechen wir, ob eine Erweiterung oder Neuentwicklung sinnvoller ist.',
+  },
+];
+
+// --- Considerations Data ---
+const considerationsBadge = 'App-Entwicklung';
+const considerationsTitle = 'Worauf es ankommt, wenn du eine App <br/><span class="text-desert-rock italic">entwickeln lässt</span>.';
+const considerationsDescription = 'Eine gute App entsteht nicht zufällig. Hier ist, worauf wir bei der Entwicklung achten.';
+const considerationsItems: ConsiderationItem[] = [
+  {
+    title: 'Anforderungen verstehen',
+    descriptionHtml:
+        'Bevor wir Code schreiben, hören wir zu. <strong>Wir analysieren deine Prozesse und Ziele</strong>, um eine App zu entwickeln, die wirklich Mehrwert schafft.',
+    dotBgClass: 'bg-desert-rock',
+    lineGradientFromClass: 'from-desert-rock',
+    showConnector: true,
+  },
+  {
+    title: 'Skalierbare Architektur',
+    descriptionHtml:
+        'Deine App soll wachsen können. <strong>Wir setzen auf moderne Technologien und sauberen Code</strong>, damit Erweiterungen jederzeit möglich sind.',
+    dotBgClass: 'bg-black-olive',
+    lineGradientFromClass: 'from-black-olive',
+    showConnector: true,
+  },
+  {
+    title: 'Langfristige Betreuung',
+    descriptionHtml:
+        'Nach dem Launch geht es weiter. <strong>Wir betreuen deine App mit Updates, Support und Weiterentwicklung</strong> – so lange du uns brauchst.',
+    dotBgClass: 'bg-creamed-oat',
+    showConnector: false,
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Navigation/>
+
+  <main class="mx-auto w-full max-w-screen-2xl p-3 sm:p-6 lg:p-10 space-y-24 !pt-20">
+    <Hero
+        h1={heroTitle}
+        description={heroDescription}
+        iconTexts={heroIcons}
+        heroImage={heroImg}
+    />
+    <Services
+        items={serviceItems}
+        title={serviceTitle}
+        description={serviceDesc}
+        playbackId={playbackId}
+        videoTitle={serviceVideoTitle}
+    />
+    <Testimonials/>
+    <Projects
+        title="Apps die wir entwickelt haben"
+        projects={selectedProjects}
+    />
+
+    <Considerations
+        badgeLabel={considerationsBadge}
+        titleHtml={considerationsTitle}
+        description={considerationsDescription}
+        items={considerationsItems}
+    />
+
+    <FAQ
+        title="Fragen zur App-Entwicklung"
+        items={specificFaq}
+    />
+
+  </main>
+
+  <Contact/>
+  <Footer/>
+</Layout>

@@ -1,0 +1,170 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import Footer from "../components/shared/Footer.astro";
+import Contact from "../components/shared/Contact.astro";
+import Hero from "../components/shared/sections/Hero.astro";
+import Services from "../components/shared/sections/Services.astro";
+import Projects from "../components/shared/sections/Projects.astro";
+import Testimonials from "../components/shared/sections/Testimonials.astro";
+import FAQ from "../components/shared/sections/FAQ.astro";
+import Considerations from "../components/shared/sections/Considerations.astro";
+
+import heroImg from "../assets/software/DSC00216.jpg";
+import kitaLuftibus from "../assets/Kita-Mockup.png";
+import bioShield from "../assets/Bioshield-Mockup.png";
+
+import type {Project} from "../types/project.ts";
+import type {FAQItem} from "../types/faq.ts";
+import type {ServiceItem} from "../types/serviceItem.ts";
+import type {ConsiderationItem} from "../types/considerationItem";
+
+// --- SEO & Hero Data ---
+const pageTitle = "Suchmaschinenoptimierte Website | SEO Website aus Zürich ab CHF 175";
+const pageDescription = "Eine suchmaschinenoptimierte Website bringt dich auf Seite 1 bei Google. Wir entwickeln SEO-optimierte Websites in Zürich – technisch perfekt, inhaltlich stark.";
+
+const heroTitle = '<span class="text-3xl sm:text-5xl lg:text-6xl">Suchmaschinen&shy;optimierte Website</span>';
+const heroDescription = "Eine suchmaschinenoptimierte Website ist der Schlüssel zu mehr Sichtbarkeit. Wir entwickeln Websites, die bei Google gefunden werden – mit technischer Perfektion und strategischem SEO aus Zürich.";
+const heroIcons = [
+  {icon: 'fa-solid fa-chart-line', text: 'Top Google Rankings'},
+  {icon: 'fa-solid fa-location-dot', text: 'Aus Zürich'},
+  {icon: 'fa-solid fa-bolt', text: 'Core Web Vitals 100'}
+];
+
+// --- Services Data ---
+const serviceTitle = 'SEO-optimierte Websites aus Zürich';
+const serviceDesc = 'Eine suchmaschinenoptimierte Website verbindet technische Perfektion mit strategischem Content. So wirst du gefunden – nicht nur heute, sondern langfristig.';
+const serviceVideoTitle = "SEO Webentwicklung Mosaic Software";
+const playbackId = 'dSr8i00jXSrtrsWkOYi301PHczBxxRay5Z31F9cXjZtGw';
+
+const serviceItems: ServiceItem[] = [
+  {
+    icon: 'fa-solid fa-microchip',
+    title: 'Technische SEO-Grundlage',
+    description: 'Schnelle Ladezeiten, sauberer Code und perfekte Core Web Vitals. Unsere Websites erfüllen alle technischen Anforderungen für Top-Rankings bei Google.',
+  },
+  {
+    icon: 'fa-solid fa-sitemap',
+    title: 'Optimierte Seitenstruktur',
+    description: 'Klare Hierarchien, semantisches HTML und durchdachte interne Verlinkung. Wir bauen Websites, die Suchmaschinen und Nutzer verstehen.',
+  },
+  {
+    icon: 'fa-solid fa-seedling',
+    title: 'Nachhaltiges Ranking',
+    description: 'Keine kurzfristigen Tricks, sondern fundierte SEO-Arbeit. Deine suchmaschinenoptimierte Website rankt stabil und wächst organisch.',
+  }
+];
+
+// --- Projects Data ---
+const selectedProjects: Project[] = [
+  {
+    service: 'Website',
+    title: 'Kita Luftibus',
+    description: 'Eine suchmaschinenoptimierte Website mit perfekten Core Web Vitals. Seite 1 bei Google für relevante lokale Suchanfragen.',
+    problem: 'Keine Sichtbarkeit bei Google trotz gutem Angebot.',
+    solution: 'Technisch perfekte SEO-Website mit schnellen Ladezeiten und optimierter Struktur.',
+    image: kitaLuftibus,
+    imageAlt: 'Kita Luftibus SEO-optimierte Website',
+  },
+  {
+    service: 'Webshop',
+    title: 'Bioshield',
+    description: 'SEO-optimierter Webshop mit klarer Struktur. Organischer Traffic statt teure Werbung.',
+    problem: 'Hohe Werbekosten bei geringer organischer Reichweite.',
+    solution: 'Suchmaschinenoptimierte Produktseiten und technisches SEO für bessere Rankings.',
+    image: bioShield,
+    imageAlt: 'Bioshield SEO-optimierter Webshop',
+  }
+];
+
+// --- FAQ Data ---
+const specificFaq: FAQItem[] = [
+  {
+    question: 'Was kostet eine suchmaschinenoptimierte Website?',
+    answer: 'Unsere SEO-optimierten Websites starten ab CHF 175 im Monat. Darin enthalten sind Entwicklung, Hosting, technische SEO und laufende Optimierungen.',
+  },
+  {
+    question: 'Wie lange dauert es, bis meine Website bei Google rankt?',
+    answer: 'Erste Ergebnisse sehen wir meist nach 3-6 Monaten. SEO ist ein langfristiger Prozess – aber mit einer technisch perfekten Basis verkürzt sich diese Zeit erheblich.',
+  },
+  {
+    question: 'Was ist der Unterschied zu einer normalen Website?',
+    answer: 'Eine suchmaschinenoptimierte Website wird von Anfang an für Google gebaut: schneller Code, optimierte Struktur, strategische Keywords und technische Perfektion in allen Details.',
+  },
+  {
+    question: 'Brauche ich zusätzliche SEO-Betreuung?',
+    answer: 'Die technische SEO ist in unserer Entwicklung bereits enthalten. Für Content-SEO und laufende Optimierungen bieten wir optional erweiterte Betreuung an.',
+  },
+];
+
+// --- Considerations Data ---
+const considerationsBadge = 'SEO-Fokus';
+const considerationsTitle = 'Was eine suchmaschinenoptimierte Website <br/><span class="text-desert-rock italic">ausmacht</span>.';
+const considerationsDescription = 'Gefunden werden ist kein Zufall. Hier ist, worauf es bei einer SEO-Website wirklich ankommt.';
+const considerationsItems: ConsiderationItem[] = [
+  {
+    title: 'Technisches Fundament',
+    descriptionHtml:
+        'Ohne Speed kein Ranking. <strong>Core Web Vitals, sauberer Code und mobile Optimierung</strong> sind die Basis jeder suchmaschinenoptimierten Website.',
+    dotBgClass: 'bg-desert-rock',
+    lineGradientFromClass: 'from-desert-rock',
+    showConnector: true,
+  },
+  {
+    title: 'Struktur & Semantik',
+    descriptionHtml:
+        'Google muss verstehen, worum es geht. <strong>Klare Hierarchien, semantisches HTML und strategische Keywords</strong> machen deine Inhalte auffindbar.',
+    dotBgClass: 'bg-black-olive',
+    lineGradientFromClass: 'from-black-olive',
+    showConnector: true,
+  },
+  {
+    title: 'Langfristige Strategie',
+    descriptionHtml:
+        'SEO ist ein Marathon. Wir setzen auf <strong>nachhaltige Optimierung</strong> statt kurzfristiger Tricks – für Rankings, die bleiben.',
+    dotBgClass: 'bg-creamed-oat',
+    showConnector: false,
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Navigation/>
+
+  <main class="mx-auto w-full max-w-screen-2xl p-3 sm:p-6 lg:p-10 space-y-24 !pt-20">
+    <Hero
+        h1={heroTitle}
+        description={heroDescription}
+        iconTexts={heroIcons}
+        heroImage={heroImg}
+    />
+    <Services
+        items={serviceItems}
+        title={serviceTitle}
+        description={serviceDesc}
+        playbackId={playbackId}
+        videoTitle={serviceVideoTitle}
+    />
+    <Testimonials/>
+    <Projects
+        title="Referenzen SEO-Websites"
+        projects={selectedProjects}
+    />
+
+    <Considerations
+        badgeLabel={considerationsBadge}
+        titleHtml={considerationsTitle}
+        description={considerationsDescription}
+        items={considerationsItems}
+    />
+
+    <FAQ
+        title="Fragen zu SEO-optimierten Websites"
+        items={specificFaq}
+    />
+
+  </main>
+
+  <Contact/>
+  <Footer/>
+</Layout>
