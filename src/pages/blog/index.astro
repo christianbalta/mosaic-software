@@ -1,0 +1,119 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/shared/Navigation.astro";
+import Contact from "../../components/shared/Contact.astro";
+import Footer from "../../components/shared/Footer.astro";
+
+const allPosts = await getCollection("blog", ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+});
+
+const posts = allPosts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Layout
+  title="Blog | Mosaic Software"
+  description="Entdecken Sie Einblicke, Tipps und Neuigkeiten aus der Welt der Softwareentwicklung und des Webdesigns auf dem Mosaic Software Blog."
+>
+  <Navigation />
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="bg-porcelain-mist py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-brown mb-6">
+          Unser Blog
+        </h1>
+        <p class="text-lg md:text-xl text-dark-brown/70 max-w-3xl mx-auto">
+          Einblicke, Tipps und Neuigkeiten aus der Welt der Softwareentwicklung
+          und des Webdesigns.
+        </p>
+      </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="py-16 md:py-24 bg-feather-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {posts.length === 0 ? (
+          <div class="text-center py-12">
+            <p class="text-dark-brown/70 text-lg">
+              Noch keine Blogbeiträge vorhanden. Schauen Sie bald wieder vorbei!
+            </p>
+          </div>
+        ) : (
+          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post) => {
+              const formattedDate = post.data.pubDate.toLocaleDateString("de-CH", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              });
+
+              return (
+                <article class="group bg-porcelain-mist rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+                  {post.data.image && (
+                    <a href={`/blog/${post.id}`} class="block aspect-video overflow-hidden">
+                      <Image
+                        src={post.data.image}
+                        alt={post.data.imageAlt || post.data.title}
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        widths={[400, 600]}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </a>
+                  )}
+                  <div class="p-6">
+                    {post.data.tags && post.data.tags.length > 0 && (
+                      <div class="flex flex-wrap gap-2 mb-3">
+                        {post.data.tags.slice(0, 3).map((tag) => (
+                          <span class="px-2 py-1 bg-soft-sandstone/30 text-dark-brown text-xs rounded-full">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <h2 class="text-xl font-bold text-dark-brown mb-3 group-hover:text-desert-rock transition-colors duration-200">
+                      <a href={`/blog/${post.id}`} class="block">
+                        {post.data.title}
+                      </a>
+                    </h2>
+                    <p class="text-dark-brown/70 mb-4 line-clamp-3">
+                      {post.data.description}
+                    </p>
+                    <div class="flex items-center justify-between text-sm text-dark-brown/60">
+                      <time datetime={post.data.pubDate.toISOString()}>
+                        {formattedDate}
+                      </time>
+                      <a
+                        href={`/blog/${post.id}`}
+                        class="inline-flex items-center text-desert-rock hover:text-dark-brown transition-colors duration-200"
+                      >
+                        Weiterlesen
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        )}
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

@@ -1,0 +1,112 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import Layout from "./Layout.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import Footer from "../components/shared/Footer.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  author?: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
+  tags?: string[];
+}
+
+const {
+  title,
+  description,
+  pubDate,
+  author = "Mosaic Software",
+  image,
+  imageAlt = "",
+  tags,
+} = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString("de-CH", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Layout title={`${title} | Mosaic Software Blog`} description={description}>
+  <Navigation />
+  <main class="pt-20">
+    <article class="bg-feather-white">
+      <!-- Header -->
+      <header class="bg-porcelain-mist py-16 md:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <a
+            href="/blog"
+            class="inline-flex items-center text-desert-rock hover:text-dark-brown transition-colors duration-200 mb-8"
+          >
+            <i class="fas fa-arrow-left mr-2"></i>
+            Zurück zum Blog
+          </a>
+
+          {tags && tags.length > 0 && (
+            <div class="flex flex-wrap gap-2 mb-4">
+              {tags.map((tag) => (
+                <span class="px-3 py-1 bg-soft-sandstone/30 text-dark-brown text-sm rounded-full">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-brown mb-6">
+            {title}
+          </h1>
+
+          <div class="flex items-center text-dark-brown/70 space-x-4">
+            <span class="flex items-center">
+              <i class="fas fa-user mr-2"></i>
+              {author}
+            </span>
+            <span class="text-soft-sandstone">|</span>
+            <time datetime={pubDate.toISOString()} class="flex items-center">
+              <i class="fas fa-calendar mr-2"></i>
+              {formattedDate}
+            </time>
+          </div>
+        </div>
+      </header>
+
+      {image && (
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
+          <Image
+            src={image}
+            alt={imageAlt}
+            class="w-full h-64 md:h-96 object-cover rounded-xl shadow-lg"
+            widths={[400, 800, 1200]}
+            sizes="(max-width: 768px) 100vw, 896px"
+          />
+        </div>
+      )}
+
+      <!-- Content -->
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div class="prose prose-lg max-w-none prose-headings:text-dark-brown prose-p:text-dark-brown/80 prose-a:text-desert-rock hover:prose-a:text-dark-brown prose-strong:text-dark-brown prose-code:text-dark-brown prose-code:bg-porcelain-mist prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-dark-brown prose-pre:text-feather-white prose-blockquote:border-desert-rock prose-blockquote:text-dark-brown/70 prose-li:text-dark-brown/80">
+          <slot />
+        </div>
+      </div>
+
+      <!-- Back to blog -->
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div class="border-t border-creamed-oat pt-8">
+          <a
+            href="/blog"
+            class="inline-flex items-center px-6 py-3 bg-desert-rock text-feather-white rounded-lg hover:bg-dark-brown transition-colors duration-200"
+          >
+            <i class="fas fa-arrow-left mr-2"></i>
+            Alle Artikel anzeigen
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>
