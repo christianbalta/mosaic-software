@@ -1,13 +1,13 @@
 ---
-import {MuxPlayer} from '@mux/mux-player-astro';
-import type {ServiceItem} from "../../../types/serviceItem.ts";
+import { MuxPlayer } from "@mux/mux-player-astro";
+import type { ServiceItem } from "../../../types/serviceItem.ts";
 
 const {
-  title = '',
-  description = '',
+  title = "",
+  description = "",
   items = [],
-  playbackId = '',
-  videoTitle = '',
+  playbackId = "",
+  videoTitle = "",
 } = Astro.props as {
   title: string;
   description: string;
@@ -20,8 +20,10 @@ const {
 <section id="services" class="space-y-8">
   <div id="services" class="mb-16">
     <div class="text-center">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl leading-tight text-dark-brown"
-          set:html={title}></h2>
+      <h2
+        class="text-3xl sm:text-4xl lg:text-5xl leading-tight text-dark-brown"
+        set:html={title}
+      />
     </div>
   </div>
 
@@ -29,22 +31,24 @@ const {
     <div class="grid gap-10 items-start lg:grid-cols-4">
       <div class="lg:col-span-1 lg:self-center">
         <ul class="w-full max-w-none space-y-0">
-          {items.map((service, index) => (
+          {
+            items.map((service, index) => (
               <li class="relative flex items-start py-7">
-                <div
-                    class="flex items-center justify-center w-14 h-14 mr-6 rounded-full bg-white shadow-[0_4px_40px_rgba(0,0,0,0.05)] flex-none">
-                  <i class={`${service.icon} text-2xl text-desert-rock`}></i>
+                <div class="flex items-center justify-center w-14 h-14 mr-6 rounded-full bg-white shadow-[0_4px_40px_rgba(0,0,0,0.05)] flex-none">
+                  <i class={`${service.icon} text-2xl text-desert-rock`} />
                 </div>
                 <div>
-                  <div class="mb-2 text-lg text-dark-brown">{service.title}</div>
+                  <div class="mb-2 text-lg text-dark-brown">
+                    {service.title}
+                  </div>
                   <div>{service.description}</div>
                 </div>
                 {index < items.length - 1 && (
-                    <span
-                        class="absolute left-7 top-24 bottom-[-14px] border-l border-dashed border-soft-sandstone"></span>
+                  <span class="absolute left-7 top-24 bottom-[-14px] border-l border-dashed border-soft-sandstone" />
                 )}
               </li>
-          ))}
+            ))
+          }
         </ul>
       </div>
 
@@ -52,15 +56,16 @@ const {
         <div class="relative">
           <div class="relative overflow-hidden w-full max-w-none rounded-2xl">
             <MuxPlayer
-                theme="minimal"
-                playbackId={playbackId}
-                metadata={{
-                  video_title: videoTitle,
-                }}
-                primaryColor="#fff"
-                secondaryColor="#a48d78"
-                accentColor="#cbb9a4"
-                defaultShowRemainingTime={true}
+              theme="minimal"
+              playbackId={playbackId}
+              metadata={{
+                video_title: videoTitle,
+              }}
+              primaryColor="#fff"
+              secondaryColor="#000000"
+              accentColor="#000000"
+              defaultShowRemainingTime={true}
+              thumbnailTime={25.5}
             />
           </div>
         </div>
